@@ -194,7 +194,6 @@
       display: block;
     }
 
-    /* 手繪動畫 */
     .anim-car {
       animation: drivingBounce 1.2s infinite ease-in-out;
     }
@@ -349,7 +348,7 @@
     }
     .action-btn {
       flex: 1;
-      min-width: 120px;
+      min-width: 110px;
       padding: 8px 10px;
       border-radius: 12px;
       border: 2px solid var(--ink);
@@ -372,6 +371,52 @@
     .btn-navitime { background: var(--bamboo); }
     .btn-yahoo { background: #FFE0E0; }
     .btn-warn { background: var(--yamabuki); }
+
+    /* 折疊抽屜 Accordion */
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .accordion-item {
+      background: #FDF9F1;
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 2px 2px 0px var(--ink);
+    }
+    .accordion-header {
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .accordion-header:active {
+      background: #F8EFE0;
+    }
+    .acc-arrow {
+      font-size: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+    .accordion-item.open .acc-arrow {
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 12px 12px 12px;
+      border-top: 1px dashed #D5CEBF;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .accordion-item.open .accordion-content {
+      display: block;
+      padding-top: 10px;
+    }
 
     /* 避坑警示 */
     .alert-box {
@@ -494,20 +539,18 @@
       </div>
       <div class="countdown-note" id="countdown-text">距離 2026/11/27 (五) 降落關西機場還有 -- 天</div>
 
-      <!-- 手繪風 SVG 主視覺插圖 (車在右下角道路跑、飛機在天空飛) -->
+      <!-- 手繪風 SVG 主視覺插圖 (徹底修正：車在右下角跑，飛機在左上角飛) -->
       <div class="illustration-frame">
         <svg class="main-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- 天空 -->
           <rect width="400" height="150" fill="#A8D3E6" fill-opacity="0.8"/>
-          <!-- 太陽 -->
           <circle cx="330" cy="50" r="26" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          <!-- 白雲 -->
           <path d="M220 50 Q230 35 245 40 Q260 30 275 42 Q285 45 285 55 Q285 65 270 65 L225 65 Q215 65 220 50 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 天空小客機 (左上角) -->
-          <g class="anim-flight" transform="translate(60, 32)">
-            <path d="M0 12 L28 4 L36 12 L16 14 L24 22 L18 22 L12 15 L2 16 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M-8 16 Q-3 15 2 16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          <!-- 天空小客機 (左上角，徹底取代先前的幽靈小車) -->
+          <g class="anim-flight" id="sky-airplane" transform="translate(45, 30)">
+            <path d="M5 20 L35 10 L45 20 L22 23 L32 34 L25 34 L17 25 L4 26 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M-8 25 Q-2 24 5 25" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
           </g>
 
           <!-- 遠景山巒 -->
@@ -519,7 +562,6 @@
           <path d="M180 165 Q195 160 210 165" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
 
           <!-- 地標群 (宮島鳥居、神戶塔、岡山城、原爆圓頂) -->
-          <!-- 宮島大鳥居 -->
           <g id="torii" transform="translate(60, 85)">
             <path d="M0 6 L65 4 L65 14 L0 16 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
             <path d="M-5 0 C25 -2, 40 -2, 70 0 L68 7 L-3 7 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
@@ -529,29 +571,26 @@
             <rect x="29" y="15" width="7" height="13" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
           </g>
 
-          <!-- 神戶港塔 -->
           <g id="port-tower" transform="translate(230, 96)">
             <path d="M6 50 L12 0 L18 50 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
             <circle cx="12" cy="4" r="5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 岡山城 -->
           <g id="castle" transform="translate(270, 95)">
             <path d="M6 45 L10 20 L26 20 L30 45 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
             <path d="M2 32 L34 32 L18 20 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
             <path d="M7 20 L29 20 L18 10 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 原爆圓頂屋 -->
           <g id="dome" transform="translate(325, 112)">
             <path d="M6 32 L6 16 C6 8, 22 8, 22 16 L22 32 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
             <path d="M14 6 L14 16 M8 11 L20 11" stroke="#3E3A39" stroke-width="2"/>
           </g>
 
-          <!-- 前景沙灘陸地 -->
+          <!-- 前景沙灘 -->
           <path d="M0 180 Q100 176 180 185 L180 240 L0 240 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 宮島小鹿 (左下角) -->
+          <!-- 宮島小鹿 -->
           <g id="deer" transform="translate(50, 172)">
             <ellipse cx="18" cy="20" rx="15" ry="11" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
             <circle cx="28" cy="11" r="7" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
@@ -566,7 +605,7 @@
             <circle cx="18" cy="18" r="1.8" fill="#FFFFFF"/>
           </g>
 
-          <!-- 右下角：柏油公路 + 車道虛線 -->
+          <!-- 右下角公路與標線 -->
           <g id="road" transform="translate(180, 182)">
             <rect width="220" height="58" fill="#D3C9B8" stroke="#3E3A39" stroke-width="3"/>
             <line x1="15" y1="28" x2="45" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
@@ -575,16 +614,12 @@
             <line x1="195" y1="28" x2="220" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
           </g>
 
-          <!-- 自駕小黃車 (穩穩行駛在右下角道路上) -->
+          <!-- 小黃車 (全圖唯一，行駛於右下角道路) -->
           <g class="anim-car" id="road-car" transform="translate(245, 184)">
-            <!-- 車身 -->
             <path d="M4 18 L12 6 L38 6 L48 18 L58 18 C60 18, 62 20, 62 22 L62 30 C62 32, 60 33, 58 33 L2 33 C0.9 33, 0 32, 0 30 L0 22 C0 20, 2 18, 4 18 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 車窗 -->
             <path d="M15 8 L35 8 L35 18 L10 18 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
             <line x1="23" y1="8" x2="23" y2="18" stroke="#3E3A39" stroke-width="2"/>
-            <!-- 車燈 -->
             <circle cx="60" cy="24" r="2.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
-            <!-- 車輪 (著地) -->
             <circle cx="15" cy="33" r="6" fill="#3E3A39"/>
             <circle cx="15" cy="33" r="2.5" fill="#FFFFFF"/>
             <circle cx="47" cy="33" r="6" fill="#3E3A39"/>
@@ -601,7 +636,7 @@
         </div>
         <div class="menu-card" onclick="switchView('view-flights')">
           <div class="menu-card-title"><span>✈️</span> 機票航班資訊</div>
-          <div class="menu-card-desc">CX564・TPE ⇄ KIX</div>
+          <div class="menu-card-desc">國泰 CX564 ⇄ CX565</div>
         </div>
         <div class="menu-card" onclick="switchView('view-prep')">
           <div class="menu-card-title"><span>🎒</span> 行前行李清單</div>
@@ -636,10 +671,10 @@
             <span class="tag tag-flight">航班出發</span>
           </div>
           <div class="card-title">桃園 T1 報到 ➔ 降落關西機場 (KIX)</div>
-          <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。順利入境後領行李，開通網卡並備齊護照與國際駕照（日文譯本）。</div>
+          <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
         </div>
 
-        <!-- 電車接駁 -->
+        <!-- 電車接駁 (NAVITIME 精準帶入起訖編碼) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:00</span>
@@ -648,8 +683,9 @@
           <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
           <div class="card-desc">搭乘 JR 關空快速或南海電鐵（1 站即達，車程約 5~6 分鐘）。</div>
           <div class="btn-row">
-            <a href="navitime://route?start=関西空港&goal=りんくうタウン" class="action-btn btn-navitime">🟢 NAVITIME 班次</a>
-            <a href="https://transit.yahoo.co.jp/search/result?from=関西空港&to=りんくうタウン&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">🚆 Yahoo 即時時刻</a>
+            <!-- 採用官方標準 URL Scheme 帶入 UTF-8 編碼站名 -->
+            <a href="navitime://route?start=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&goal=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" class="action-btn btn-navitime">🟢 NAVITIME 班次</a>
+            <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">🚆 Yahoo 即時時刻</a>
           </div>
         </div>
 
@@ -660,7 +696,7 @@
             <span class="tag tag-car">自駕取車</span>
           </div>
           <div class="card-title">ニコニコレンタカー 関西空港りんくうタウン駅前店</div>
-          <div class="card-desc">核對合約、檢查車況與外觀、安裝 ETC 卡並確認開通 SEP 方案。電話：072-463-2525</div>
+          <div class="card-desc">核對合約、檢查車況、安裝 ETC 卡並確認開通 SEP 方案。電話：072-463-2525</div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-700')">
             <span>📍 大阪府泉佐野市りんくう往来北1-700</span>
             <span class="copy-badge">複製地址</span>
@@ -671,39 +707,114 @@
           </div>
         </div>
 
-        <!-- 神戶中途休息 -->
+        <!-- 神戶中途休息 (折疊式抽屜設計) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">17:00 - 19:30</span>
             <span class="tag tag-must">中途放風</span>
           </div>
-          <div class="card-title">神戶三宮・中途休息與喫茶巡禮</div>
-          <div class="card-desc">車程約 1 小時 15 分。停放三宮站前停車場，步行放風：<br>
-            • <b>にしむら珈琲店 (西村咖啡 三宮店)</b>：日式老派優雅氛圍<br>
-            • <b>觀音屋 起司蛋糕</b>：木村拓哉推薦熱融起司蛋糕 (三宮地下街 Santica 亦有店面)<br>
-            • <b>JR 三宮商圈 / Mint Kobe / 阪急百貨</b>：站前核心圈採買
-          </div>
-          <div class="btn-row">
-            <a href="https://www.google.com/maps/search/?api=1&query=神戸三宮駅" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ 定位三宮站</a>
+          <div class="card-title">神戶三宮・中途休息與散策景點</div>
+          <div class="card-desc">車程約 1 小時 15 分。車輛停放三宮站前周邊停車場，點擊下方探索推薦店家：</div>
+          
+          <div class="accordion-group">
+            <div class="accordion-item" onclick="toggleAcc(this)">
+              <div class="accordion-header">
+                <span>☕ にしむら珈琲店 三宮店 (西村咖啡)</span>
+                <span class="acc-arrow">▼</span>
+              </div>
+              <div class="accordion-content">
+                <p style="margin-bottom: 8px;">神戶最具代表性的老派喫茶店，充滿昭和洋食優雅氛圍與手沖香氣。</p>
+                <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区琴ノ緒町5丁目3-5')">
+                  <span>📍 兵庫県神戸市中央区琴ノ緒町5丁目3-5</span>
+                  <span class="copy-badge">複製地址</span>
+                </div>
+                <div class="btn-row">
+                  <a href="https://maps.app.goo.gl/5b5TUmUa2wXvdqXe6" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
+                  <a href="https://maps.apple.com/?q=にしむら珈琲店+三宮店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" onclick="toggleAcc(this)">
+              <div class="accordion-header">
+                <span>🧀 観音屋 三宮さんちか店 (木村拓哉推薦起司蛋糕)</span>
+                <span class="acc-arrow">▼</span>
+              </div>
+              <div class="accordion-content">
+                <p style="margin-bottom: 8px;">熱騰騰現烤的丹麥鹹甜融化起司蛋糕，位於三宮地下街（Santica）交通極為便利。</p>
+                <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街')">
+                  <span>📍 兵庫県神戸市中央区三宮町1-10-1 さんちか</span>
+                  <span class="copy-badge">複製地址</span>
+                </div>
+                <div class="btn-row">
+                  <a href="https://maps.app.goo.gl/hDjq9uuwg35FHodq8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
+                  <a href="https://maps.apple.com/?q=観音屋+三宮さんちか店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" onclick="toggleAcc(this)">
+              <div class="accordion-header">
+                <span>🛍️ 神戸三宮センター街 (三宮中心街)</span>
+                <span class="acc-arrow">▼</span>
+              </div>
+              <div class="accordion-content">
+                <p style="margin-bottom: 8px;">神戶最熱鬧的有蓋遮雨棚購物大街，藥妝、服飾與雜貨林立，步行即可快速抵達。</p>
+                <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区三宮町1丁目')">
+                  <span>📍 兵庫県神戸市中央区三宮町1丁目</span>
+                  <span class="copy-badge">複製地址</span>
+                </div>
+                <div class="btn-row">
+                  <a href="https://maps.app.goo.gl/KxLnrPq12BTpyRxv9" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
+                  <a href="https://maps.apple.com/?q=神戸三宮センター街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item" onclick="toggleAcc(this)">
+              <div class="accordion-header">
+                <span>🏮 神戶元町商店街</span>
+                <span class="acc-arrow">▼</span>
+              </div>
+              <div class="accordion-content">
+                <p style="margin-bottom: 8px;">百年老舖與神戶港歷史洋風店家聚集地，距離三宮約需步行或短程電車銜接。</p>
+                <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区元町通')">
+                  <span>📍 兵庫県神戸市中央区元町通</span>
+                  <span class="copy-badge">複製地址</span>
+                </div>
+                <div class="btn-row">
+                  <a href="https://maps.app.goo.gl/S5W2McZ3RqHm1AYu5" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
+                  <a href="https://maps.apple.com/?q=神戸元町商店街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- 神戶到岡山 (避坑導航) -->
+        <!-- 神戶到岡山 (雙導航選擇：花錢趕路 vs 避開收費省錢) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">19:40 - 22:00</span>
             <span class="tag tag-car">高速長途</span>
           </div>
           <div class="card-title">神戶三宮 ➔ 岡山站前</div>
-          <div class="card-desc">預計行車時間約 2 小時 10 分（約 135 km）。</div>
-          <div class="btn-row">
+          <div class="card-desc">依離開神戶的時間與精神狀況，選擇最適合的路線：</div>
+          
+          <div class="btn-row" style="margin-bottom: 8px;">
+            <!-- 選項 1：花錢快速 (新神戶隧道) -->
+            <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: #FFE3D8;">
+              ⚡ 最快趕路（自費約 1100円）
+            </a>
+            <!-- 選項 2：0円省錢 (避開收費段) -->
             <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
-              ⚠️ Google 經神戶西IC 避坑導航
+              💰 全程 0円（避開收費段）
             </a>
           </div>
+
           <div class="alert-box">
-            <div class="alert-title">⚠️ SEP 避坑防線提醒</div>
-            神戶市區出發請務必走平面道路往西開至【神戶西 IC】上山陽道直達岡山，<b>全程 SEP 0 円</b>！切勿聽從手機導航鑽入「新神戶收費隧道」或阪神高速。
+            <div class="alert-title">🧭 路線決策小筆記</div>
+            • <b>⚡ 最快趕路</b>：鑽新神戶隧道接阪神高速 7 號，車程約 20 分鐘即可上山陽道（多花 ~1,100 円，但省下 20 分鐘市區紅綠燈）。<br>
+            • <b>💰 全程 0円</b>：走市區平面省道至【神戶西 IC】上山陽道，車程約 40 分鐘，SEP 全程 0 円買單。
           </div>
         </div>
 
@@ -714,23 +825,33 @@
             <span class="tag tag-hotel">住宿 Check-in</span>
           </div>
           <div class="card-title">スマイルホテル岡山 (Smile Hotel Okayama)</div>
-          <div class="card-desc">辦理入住休息，放妥行李後步行吃拉麵。</div>
+          <div class="card-desc">辦理入住休息，放妥行李後步行前往消夜。</div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('岡山県岡山市北区磨屋町10-8')">
             <span>📍 岡山県岡山市北区磨屋町10-8</span>
             <span class="copy-badge">複製地址</span>
           </div>
-          <div class="btn-row">
+          <div class="btn-row" style="margin-bottom: 12px;">
             <a href="https://maps.app.goo.gl/BKwaSSfR4bMMbHsGA" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ Google 地圖</a>
             <a href="https://maps.apple.com/?q=スマイルホテル岡山" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 地圖</a>
           </div>
 
-          <!-- 宵夜 -->
-          <div style="margin-top: 12px; background: #FFF5F2; border: 2px solid var(--coral); border-radius: 12px; padding: 10px;">
-            <div style="font-weight: 900; color: #D9534F; font-size: 0.85rem;">🍜 宵夜首選：麺酒一照庵 岡山本店</div>
-            <div style="font-size: 0.8rem; margin: 4px 0 8px 0; color: #555;">營業至 23:30（步行約 5~7 分鐘）。招牌笠岡醬油拉麵與小酌下酒菜！</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=麺酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" style="width: 100%;">
-              🗺️ 導航至 麺酒一照庵
-            </a>
+          <!-- 折疊消夜抽屜 -->
+          <div class="accordion-item" onclick="toggleAcc(this)" style="background: #FFF5F2; border-color: var(--coral);">
+            <div class="accordion-header">
+              <span style="color: #D9534F;">🍜 宵夜推薦：麵酒一照庵 岡山本店 (營業至 23:30)</span>
+              <span class="acc-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 8px;">距離飯店步行約 5~7 分鐘。以特色笠岡醬油拉麵與小酌下酒菜聞名，營業時間至 23:30，長途自駕後的暖胃首選！</p>
+              <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('岡山県岡山市北区中山下1丁目7-16')">
+                <span>📍 岡山県岡山市北区中山下1丁目7-16</span>
+                <span class="copy-badge">複製地址</span>
+              </div>
+              <div class="btn-row">
+                <a href="https://maps.app.goo.gl/nveZSCX7Q57im7R38" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
+                <a href="https://maps.apple.com/?q=麵酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -748,7 +869,7 @@
     <div id="view-flights" class="view-container">
       <div class="card" style="border-top: 8px solid var(--coral);">
         <div class="card-header-bar">
-          <span class="tag tag-flight">去程機票・已開票</span>
+          <span class="tag tag-flight">去程機票・已確認</span>
           <span style="font-size: 0.8rem; font-weight: 900;">國泰航空 CX564</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin: 16px 0; text-align: center;">
@@ -771,23 +892,27 @@
         </div>
       </div>
 
-      <div class="card" style="border-top: 8px solid var(--water); opacity: 0.85;">
+      <div class="card" style="border-top: 8px solid var(--water);">
         <div class="card-header-bar">
-          <span class="tag" style="background: var(--water);">回程機票・待補</span>
-          <span style="font-size: 0.8rem; font-weight: 900;">待定</span>
+          <span class="tag" style="background: var(--water);">回程機票・已確認</span>
+          <span style="font-size: 0.8rem; font-weight: 900;">國泰航空 CX565</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin: 16px 0; text-align: center;">
           <div>
             <div style="font-size: 1.6rem; font-weight: 900;">KIX</div>
-            <div style="font-size: 0.75rem; color: #666;">關西機場</div>
+            <div style="font-size: 0.75rem; color: #666;">關西 T1</div>
           </div>
           <div style="font-size: 1.2rem; color: var(--water); font-weight: 900;">➔ ✈️ ➔</div>
           <div>
             <div style="font-size: 1.6rem; font-weight: 900;">TPE</div>
-            <div style="font-size: 0.75rem; color: #666;">桃園機場</div>
+            <div style="font-size: 0.75rem; color: #666;">桃園 T1</div>
           </div>
         </div>
-        <div class="card-desc">預計日期：<b>2026/12/03 (四)</b></div>
+        <div class="card-desc">
+          • 回程日期：<b>2026/12/03 (四)</b><br>
+          • 航班號碼：<b>CX565</b><br>
+          • 提醒：當天請預留臨空城還車與轉乘至關西機場的完整時間。
+        </div>
       </div>
     </div>
 
@@ -823,7 +948,6 @@
         </div>
       </div>
 
-      <!-- 日幣計算機 -->
       <div class="card">
         <div class="card-title">🧮 日幣即時換算</div>
         <div class="card-desc">匯率以 0.21 估算（含稅/未稅隨手算）：</div>
@@ -838,7 +962,6 @@
   </main>
 
   <script>
-    // 1. 視圖切換 (SPA)
     function switchView(viewId) {
       document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
@@ -853,7 +976,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 2. 行程天數切換
     function switchDay(dayKey, btn) {
       document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -880,7 +1002,10 @@
       }
     }
 
-    // 3. 倒數計時器 (目標: 2026/11/27 14:45 KIX)
+    function toggleAcc(element) {
+      element.classList.toggle('open');
+    }
+
     function updateCountdown() {
       const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
       const now = new Date().getTime();
@@ -902,7 +1027,6 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 4. 打勾清單保存
     function toggleCheck(item, key) {
       item.classList.toggle('done');
       const isDone = item.classList.contains('done');
@@ -911,7 +1035,6 @@
       localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
     }
 
-    // 初始化讀取清單
     window.addEventListener('DOMContentLoaded', () => {
       ['c1','c2','c3','c4','c5','c6'].forEach(key => {
         if (localStorage.getItem('checklist_' + key) === '1') {
@@ -924,7 +1047,6 @@
       });
     });
 
-    // 5. 匯率換算
     function calcTwd() {
       const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
       const twd = Math.round(jpy * 0.21);
