@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>關西・山陽自駕手帳</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="山陽自駕">
+  <meta name="theme-color" content="#FFFCF6">
+
+  <!-- Google 字體：Zen Maru Gothic (日系圓體) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-paper: #FFFCF6;
+      --ink: #3E3A39;
+      --card-bg: #FFFFFF;
+      --coral: #F2A497;
+      --yamabuki: #F6D27A;
+      --water: #A8D3E6;
+      --bamboo: #B9DAA5;
+      --border-thick: 3px solid #3E3A39;
+      --shadow-pop: 4px 4px 0px #3E3A39;
+      --shadow-sm: 2px 2px 0px #3E3A39;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Zen Maru Gothic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      min-height: 100vh;
+      padding-bottom: 60px;
+      line-height: 1.5;
+    }
+
+    /* 頂端選單 */
+    header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-paper);
+      z-index: 100;
+      padding: calc(env(safe-area-inset-top, 16px) + 6px) 16px 10px 16px;
+      border-bottom: var(--border-thick);
+    }
+
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-trip {
+      background: var(--yamabuki);
+      border: 2px solid var(--ink);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px var(--ink);
+    }
+
+    /* 純 CSS 分頁控制器 (Radio Hack) */
+    input[type="radio"].tab-radio {
+      display: none;
+    }
+    .day-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 2px 6px 2px;
+    }
+    .day-tabs::-webkit-scrollbar { display: none; }
+    
+    .day-tab-label {
+      flex: 0 0 auto;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background-color: #fff;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 2px 2px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .day-tab-label:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px var(--ink);
+    }
+
+    #tab-d1:checked ~ header .label-d1,
+    #tab-d2:checked ~ header .label-d2,
+    #tab-d3:checked ~ header .label-d3,
+    #tab-d4:checked ~ header .label-d4,
+    #tab-d5:checked ~ header .label-d5,
+    #tab-d6:checked ~ header .label-d6,
+    #tab-d7:checked ~ header .label-d7 {
+      background-color: var(--coral);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0px var(--ink);
+    }
+
+    /* 內容切換與彈跳動畫 */
+    .day-section { 
+      display: none; 
+      animation: bounceIn 0.25s ease-out;
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: translateY(6px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    #tab-d1:checked ~ main #section-d1 { display: block; }
+    #tab-d2:checked ~ main #section-d2 { display: block; }
+    #tab-d3:checked ~ main #section-d3 { display: block; }
+    #tab-d4:checked ~ main #section-d4 { display: block; }
+    #tab-d5:checked ~ main #section-d5 { display: block; }
+    #tab-d6:checked ~ main #section-d6 { display: block; }
+    #tab-d7:checked ~ main #section-d7 { display: block; }
+
+    main {
+      padding: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 手繪風橫幅與插圖 */
+    .hero-card {
+      background: #fff;
+      border: var(--border-thick);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: var(--shadow-pop);
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .hero-desc {
+      font-size: 0.82rem;
+      color: #666;
+    }
+    .svg-banner {
+      width: 100%;
+      height: 70px;
+      margin: 8px 0;
+    }
+    .floating-car {
+      animation: carWiggle 2.5s infinite ease-in-out;
+    }
+    @keyframes carWiggle {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(1deg); }
+    }
+
+    /* 時間軸項目 */
+    .timeline-item {
+      position: relative;
+      margin-bottom: 18px;
+    }
+    .item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .item-time {
+      font-size: 0.85rem;
+      font-weight: 900;
+      background: var(--ink);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+    .item-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      border: 1.5px solid var(--ink);
+    }
+    .tag-flight { background: var(--water); }
+    .tag-transit { background: var(--bamboo); }
+    .tag-car { background: var(--yamabuki); }
+    .tag-hotel { background: var(--coral); color: #fff; }
+    .tag-must { 
+      background: #FF5A5F; 
+      color: #fff; 
+      border: 1.5px solid var(--ink);
+      font-weight: 900;
+    }
+
+    /* 卡片設計 */
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 18px;
+      padding: 16px;
+      border: var(--border-thick);
+      box-shadow: var(--shadow-pop);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-meta {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    /* 複製地址按鈕 */
+    .copy-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F8F9FA;
+      padding: 9px 12px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      margin-bottom: 12px;
+      border: 2px dashed #B8B5B2;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .copy-box:active {
+      background: var(--yamabuki);
+    }
+    .copy-badge {
+      font-size: 0.72rem;
+      background: var(--ink);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    /* 動作按鈕排 */
+    .action-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      flex: 1;
+      min-width: 130px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 10px;
+      border-radius: 14px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0px var(--ink);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px var(--ink);
+    }
+    .btn-google { background-color: var(--water); }
+    .btn-apple { background-color: #f1f1f1; }
+    .btn-navitime { background-color: var(--bamboo); }
+    .btn-yahoo { background-color: #FFD2D2; }
+    .btn-warning { 
+      background-color: var(--yamabuki); 
+      font-weight: 900;
+    }
+
+    /* 高對比 ETC 避坑警示 */
+    .warning-box {
+      margin-top: 12px;
+      background-color: #FFF3CD;
+      border: 2px solid var(--ink);
+      border-left: 6px solid #D9534F;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      box-shadow: 2px 2px 0px var(--ink);
+    }
+    .warning-title {
+      font-weight: 900;
+      color: #D9534F;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 探索清單清單 (神戶小景點) */
+    .spot-list {
+      background: #FDF9F1;
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+    }
+    .spot-group-title {
+      font-weight: 800;
+      color: #B25E00;
+      margin-top: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* 支援減少動態設定 */
+    @media (prefers-reduced-motion: reduce) {
+      .floating-car, .day-section {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 純 CSS 分頁控制器 -->
+  <input type="radio" name="day-nav" id="tab-d1" class="tab-radio" checked>
+  <input type="radio" name="day-nav" id="tab-d2" class="tab-radio">
+  <input type="radio" name="day-nav" id="tab-d3" class="tab-radio">
+  <input type="radio" name="day-nav" id="tab-d4" class="tab-radio">
+  <input type="radio" name="day-nav" id="tab-d5" class="tab-radio">
+  <input type="radio" name="day-nav" id="tab-d6" class="tab-radio">
+  <input type="radio" name="day-nav" id="tab-d7" class="tab-radio">
+
+  <header>
+    <div class="brand-bar">
+      <div class="brand-title">
+        <span>🍁 關西・山陽自駕手帳</span>
+      </div>
+      <div class="badge-trip">7 Days SEP 自駕</div>
+    </div>
+    <div class="day-tabs">
+      <label for="tab-d1" class="day-tab-label label-d1">Day 1 (11/27)</label>
+      <label for="tab-d2" class="day-tab-label label-d2">Day 2 (11/28)</label>
+      <label for="tab-d3" class="day-tab-label label-d3">Day 3 (11/29)</label>
+      <label for="tab-d4" class="day-tab-label label-d4">Day 4 (11/30)</label>
+      <label for="tab-d5" class="day-tab-label label-d5">Day 5 (12/01)</label>
+      <label for="tab-d6" class="day-tab-label label-d6">Day 6 (12/02)</label>
+      <label for="tab-d7" class="day-tab-label label-d7">Day 7 (12/03)</label>
+    </div>
+  </header>
+
+  <main>
+    <!-- Day 1 行程內容 -->
+    <div id="section-d1" class="day-section">
+      
+      <!-- 頂部手繪視覺橫幅 -->
+      <div class="hero-card">
+        <div class="hero-title">Day 1：啟程・臨空城取車直奔岡山</div>
+        <div class="hero-desc">關西機場 ➔ 臨空城 ➔ 神戶放風咖啡 ➔ 岡山拉麵</div>
+        <svg class="svg-banner" viewBox="0 0 300 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 簡約山巒背景 -->
+          <path d="M10 55 Q 60 20 120 55" stroke="#3E3A39" stroke-width="2.5" fill="#B9DAA5" fill-opacity="0.5"/>
+          <path d="M100 55 Q 160 10 230 55" stroke="#3E3A39" stroke-width="2.5" fill="#A8D3E6" fill-opacity="0.4"/>
+          <line x1="0" y1="55" x2="300" y2="55" stroke="#3E3A39" stroke-width="3"/>
+          <!-- 可愛手繪自駕小車 -->
+          <g class="floating-car">
+            <rect x="180" y="30" width="46" height="20" rx="6" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="190" y="22" width="26" height="12" rx="4" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="192" cy="52" r="6" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="214" cy="52" r="6" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- 1. 機場報到與航班 -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">09:15</span>
+          <span class="item-tag tag-flight">航班出發</span>
+        </div>
+        <div class="card">
+          <div class="card-title">桃園國際機場 T1 報到 ➔ 降落關西</div>
+          <div class="card-meta">
+            ✈️ 國泰航空 CX564｜11:15 TPE ➔ 14:45 KIX<br>
+            入境領行李、開通網路，備妥護照與國際駕照（日文譯本）。
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 電車接駁至臨空城 -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">15:00</span>
+          <span class="item-tag tag-transit">短程電車</span>
+        </div>
+        <div class="card">
+          <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
+          <div class="card-meta">車程約 5~6 分鐘｜JR 關空快速或南海電鐵均可直達（1 站即達）。</div>
+          <div class="action-row">
+            <a href="navitime://route?start=関西空港&goal=りんくうタウン" class="btn btn-navitime">
+              <span>🟢 NAVITIME 班次</span>
+            </a>
+            <a href="https://transit.yahoo.co.jp/search/result?from=関西空港&to=りんくうタウン&type=1" target="_blank" rel="noopener noreferrer" class="btn btn-yahoo">
+              <span>🚆 Yahoo 即時時刻</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 臨空城取車 -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">15:30</span>
+          <span class="item-tag tag-car">自駕取車</span>
+        </div>
+        <div class="card">
+          <div class="card-title">ニコニコレンタカー 関西空港りんくうタウン駅前店</div>
+          <div class="card-meta">
+            核對合約、檢查車況、安裝 ETC 卡（確認開通 SEP 6天版）<br>
+            電話：072-463-2525
+          </div>
+          <div class="copy-box" onclick="navigator.clipboard && navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-700')">
+            <span>📍 大阪府泉佐野市りんくう往来北1-700</span>
+            <span class="copy-badge">點選複製</span>
+          </div>
+          <div class="action-row">
+            <a href="https://maps.app.goo.gl/Up1GinnkgB7MZQkF8" target="_blank" rel="noopener noreferrer" class="btn btn-google">🗺️ Google 地圖</a>
+            <a href="https://maps.apple/p/LE_GePstvQiJyD" target="_blank" rel="noopener noreferrer" class="btn btn-apple">🍏 Apple 地圖</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 神戶中途休息放風 (可選) -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">17:00 - 19:30</span>
+          <span class="item-tag tag-car">中途放風</span>
+          <span class="item-tag tag-must">推薦停留</span>
+        </div>
+        <div class="card">
+          <div class="card-title">神戶三宮・中途休息與甜點巡禮</div>
+          <div class="card-meta">
+            自駕約 1 小時 15 分抵達神戶三宮。建議停放「三宮站前周邊停車場」，徒步探索商圈與下午茶：
+          </div>
+
+          <div class="spot-list">
+            <div class="spot-group-title">☕ 喫茶推薦：</div>
+            • <b>にしむら珈琲店 (西村咖啡 三宮店)</b>：經典日式神戶老派喫茶氛圍。<br>
+            • <b>觀音屋 起司蛋糕</b>：木村拓哉推薦熱融丹麥起司蛋糕（三宮地下街 Santica 亦有分店）。<br>
+            <div class="spot-group-title" style="margin-top: 8px;">🛍️ 逛街備選：</div>
+            • <b>JR 三宮車站商店街 / Mint Kobe / 阪急百貨</b>（站前核心圈最省時）。<br>
+            • <b>元町商店街 / 南京町</b>（距離三宮約 12 分鐘，若時間充足可散步前往）。
+          </div>
+
+          <div class="action-row" style="margin-top: 10px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=神戸三宮駅" target="_blank" rel="noopener noreferrer" class="btn btn-google">🗺️ 定位三宮站周邊</a>
+            <a href="https://maps.apple.com/?q=神戸三宮駅" target="_blank" rel="noopener noreferrer" class="btn btn-apple">🍏 Apple 定位三宮</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. 高速行駛前往岡山 (避坑警示) -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">19:40 - 22:00</span>
+          <span class="item-tag tag-car">高速長途</span>
+        </div>
+        <div class="card">
+          <div class="card-title">神戶三宮 ➔ 岡山站前</div>
+          <div class="card-meta">預計車程：約 2 小時 10 分鐘｜距離約 135 km</div>
+          <div class="action-row">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="btn btn-warning">
+              <span>🗺️ Google 經神戶西IC 避坑導航</span>
+            </a>
+          </div>
+          <div class="warning-box">
+            <div class="warning-title">⚠️ SEP 避坑最高防線</div>
+            神戶出發請走市區平面道路往西開至【神戶西 IC】上山陽道直達【岡山 IC】，<b>全程 SEP 0 円</b>！<br>
+            切勿聽信其他導航走「新神戶收費隧道」或阪神高速（非 NEXCO 轄區需自費約 1,100 円）。
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 岡山住宿與消夜 -->
+      <div class="timeline-item">
+        <div class="item-header">
+          <span class="item-time">22:00</span>
+          <span class="item-tag tag-hotel">住宿 Check-in</span>
+        </div>
+        <div class="card">
+          <div class="card-title">スマイルホテル岡山 (Smile Hotel Okayama)</div>
+          <div class="card-meta">辦理入住休息，放妥行李後出門吃消夜。</div>
+          <div class="copy-box" onclick="navigator.clipboard && navigator.clipboard.writeText('岡山県岡山市北区磨屋町10-8')">
+            <span>📍 岡山県岡山市北区磨屋町10-8</span>
+            <span class="copy-badge">點選複製</span>
+          </div>
+          <div class="action-row">
+            <a href="https://maps.app.goo.gl/BKwaSSfR4bMMbHsGA" target="_blank" rel="noopener noreferrer" class="btn btn-google">🗺️ Google 地圖</a>
+            <a href="https://maps.apple.com/?q=スマイルホテル岡山" target="_blank" rel="noopener noreferrer" class="btn btn-apple">🍏 Apple 地圖</a>
+          </div>
+
+          <!-- 消夜推薦 -->
+          <div class="spot-list" style="margin-top: 12px; background: #FFF5F2; border-color: #F2A497;">
+            <div class="spot-group-title" style="color: #D9534F;">🍜 宵夜首選：麺酒一照庵 岡山本店</div>
+            • 營業時間至 <b>23:30</b>（距離飯店步行約 5~7 分鐘）。<br>
+            • 主打濃郁笠岡醬油拉麵與精緻下酒菜，自駕長途後療癒首選！
+            <div class="action-row" style="margin-top: 6px;">
+              <a href="https://www.google.com/maps/search/?api=1&query=麺酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="btn" style="background: #fff; min-width: 100%;">
+                🗺️ 導航至 麺酒一照庵 本店
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Day 2 ~ Day 7 佔位 -->
+    <div id="section-d2" class="day-section">
+      <div class="card" style="text-align: center; padding: 40px 16px;">
+        <p style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">Day 2 規劃中 🚗</p>
+        <p style="font-size: 0.85rem; color: #666;">等待後續行程定案後補充</p>
+      </div>
+    </div>
+    <div id="section-d3" class="day-section"><div class="card" style="text-align: center; padding: 40px 16px;"><p style="font-weight: 800;">Day 3 規劃中 🚗</p></div></div>
+    <div id="section-d4" class="day-section"><div class="card" style="text-align: center; padding: 40px 16px;"><p style="font-weight: 800;">Day 4 規劃中 🚗</p></div></div>
+    <div id="section-d5" class="day-section"><div class="card" style="text-align: center; padding: 40px 16px;"><p style="font-weight: 800;">Day 5 規劃中 🚗</p></div></div>
+    <div id="section-d6" class="day-section"><div class="card" style="text-align: center; padding: 40px 16px;"><p style="font-weight: 800;">Day 6 規劃中 🚗</p></div></div>
+    <div id="section-d7" class="day-section"><div class="card" style="text-align: center; padding: 40px 16px;"><p style="font-weight: 800;">Day 7 規劃中 🚗</p></div></div>
+  </main>
+
+</body>
+</html>
