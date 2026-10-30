@@ -22,8 +22,6 @@
       --yellow: #F6D27A;
       --blue: #A8D3E6;
       --green: #B9DAA5;
-      --sea: #5DB7DE;
-      --road: #D3C9B8;
       --border: 3px solid #3E3A39;
       --shadow: 4px 4px 0px #3E3A39;
       --shadow-sm: 2px 2px 0px #3E3A39;
@@ -103,7 +101,6 @@
     .view { display: none; }
     .view.active { display: block; }
 
-    /* 倒數計時 */
     .title-area {
       text-align: center;
       margin: 8px 0 14px 0;
@@ -140,7 +137,6 @@
       margin-bottom: 14px;
     }
 
-    /* 插圖外框 (徹底單純化，無任何多餘絕對定位層) */
     .art-frame {
       background: #fff;
       border: var(--border);
@@ -152,7 +148,6 @@
     }
     .art-svg { width: 100%; height: auto; display: block; }
 
-    /* 動畫 */
     .car-move { animation: roadBounce 1.2s infinite ease-in-out; }
     .plane-fly { animation: skySway 3s infinite ease-in-out; }
     @keyframes roadBounce {
@@ -164,7 +159,6 @@
       50% { transform: translateY(-3px); }
     }
 
-    /* 首頁選單按鈕 */
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -195,7 +189,6 @@
     .menu-head svg { width: 20px; height: 20px; flex-shrink: 0; }
     .menu-desc { font-size: 0.72rem; color: #666; }
 
-    /* 天數標籤 */
     .day-bar {
       display: flex;
       gap: 6px;
@@ -222,7 +215,6 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
-    /* 行程卡片 */
     .card {
       background: #fff;
       border: var(--border);
@@ -314,7 +306,6 @@
     .bg-pink { background: #FFE0E0; }
     .bg-yellow { background: var(--yellow); }
 
-    /* 折疊抽屜 */
     .acc-box {
       border: 2px solid var(--ink);
       border-radius: 12px;
@@ -343,7 +334,6 @@
     }
     .acc-box.open .acc-content { display: block; }
 
-    /* 路線卡 */
     .route-card {
       border: 2px solid var(--ink);
       border-radius: 12px;
@@ -377,7 +367,6 @@
       margin-top: 6px;
     }
 
-    /* 準備清單 */
     .todo-item {
       display: flex;
       align-items: center;
@@ -460,7 +449,7 @@
       </div>
       <div class="cd-note" id="cd-txt">距離 2026/11/27 (五) 降落關西機場還有 -- 天</div>
 
-      <!-- ================= 核心 SVG 插圖 (絕對無外層浮動車) ================= -->
+      <!-- ================= 核心 SVG 插圖 ================= -->
       <div class="art-frame">
         <svg class="art-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- 1. 天空背景 -->
@@ -470,8 +459,8 @@
           <circle cx="330" cy="50" r="26" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
           <path d="M220 50 Q230 35 245 40 Q260 30 275 42 Q285 45 285 55 Q285 65 270 65 L225 65 Q215 65 220 50 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 3. 左上角純客機 (含尾流，絕無車輛) -->
-          <g class="plane-fly" transform="translate(48, 28)">
+          <!-- 3. 左上角手繪純客機 -->
+          <g class="plane-fly" id="plane-sky" transform="translate(48, 28)">
             <line x1="-12" y1="20" x2="-2" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
             <path d="M0 16 L28 8 L36 17 L16 19 L25 28 L19 28 L12 21 L2 22 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
           </g>
@@ -539,7 +528,7 @@
             <line x1="195" y1="28" x2="220" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
           </g>
 
-          <!-- 9. 全圖唯一自駕黃色小車 (車輪緊咬右下角公路虛線) -->
+          <!-- 9. 全圖唯一自駕黃色小車 (車輪緊咬右下角公路) -->
           <g class="car-move" transform="translate(235, 185)">
             <path d="M4 18 L12 6 L38 6 L48 18 L58 18 C60 18, 62 20, 62 22 L62 30 C62 32, 60 33, 58 33 L2 33 C0.9 33, 0 32, 0 30 L0 22 C0 20, 2 18, 4 18 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
             <path d="M15 8 L35 8 L35 18 L10 18 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
@@ -553,7 +542,7 @@
         </svg>
       </div>
 
-      <!-- 首頁 4 大快捷入口 (純手繪向量圖標，無 Emoji) -->
+      <!-- 首頁 4 大快捷入口 -->
       <div class="menu-grid">
         <div class="menu-card" onclick="switchView('v-itinerary')">
           <div class="menu-head">
@@ -617,7 +606,6 @@
         <button class="d-btn" onclick="switchDay('d7', this)">Day 7 (12/03)</button>
       </div>
 
-      <!-- Day 1 內容 -->
       <div id="box-d1">
         <div class="card">
           <div class="card-meta">
@@ -649,8 +637,7 @@
           <div class="card-title">ニコニコレンタカー 関西空港りんくうタウン駅前店</div>
           <div class="card-desc">核對合約、檢查車況、安裝 ETC 卡並確認開通 SEP 方案。電話：072-463-2525</div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-700')">
-            <span>📍 大阪府泉佐野市りんくう往来北1-700</span>
-            <span>複製</span>
+            <span>📍 大阪府泉佐野市りんくう往来北1-700</span><span>複製</span>
           </div>
           <div class="btn-row">
             <a href="https://maps.app.goo.gl/Up1GinnkgB7MZQkF8" target="_blank" rel="noopener noreferrer" class="act-btn bg-blue">🗺️ Google 地圖</a>
@@ -809,7 +796,6 @@
         </div>
       </div>
 
-      <!-- Day 2 ~ 7 佔位 -->
       <div id="box-other" style="display: none;">
         <div class="card" style="text-align: center; padding: 40px 16px;">
           <p style="font-size: 1.1rem; font-weight: 900; margin-bottom: 6px;" id="other-title">Day 2 規劃中 🚗</p>
@@ -818,7 +804,7 @@
       </div>
     </div>
 
-    <!-- ================= 視圖 3: 航班 (手繪標準客機插畫) ================= -->
+    <!-- ================= 視圖 3: 航班 ================= -->
     <div id="v-flight" class="view">
       <div class="card" style="border-top: 8px solid var(--coral);">
         <div class="card-meta">
@@ -832,7 +818,6 @@
             <div style="font-size: 0.95rem; font-weight: 900; margin-top: 4px;">11:15</div>
           </div>
 
-          <!-- 手繪客機插畫 -->
           <div style="display: flex; align-items: center; justify-content: center; width: 110px;">
             <svg viewBox="0 0 110 32" style="width: 100%; height: auto;" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="2" y1="16" x2="28" y2="16" stroke-dasharray="4 4"/>
@@ -870,7 +855,6 @@
             <div style="font-size: 0.75rem; color: #666;">關西 T1</div>
           </div>
 
-          <!-- 手繪客機插畫 -->
           <div style="display: flex; align-items: center; justify-content: center; width: 110px;">
             <svg viewBox="0 0 110 32" style="width: 100%; height: auto;" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="2" y1="16" x2="28" y2="16" stroke-dasharray="4 4"/>
