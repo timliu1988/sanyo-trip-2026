@@ -348,7 +348,7 @@
     }
     .action-btn {
       flex: 1;
-      min-width: 110px;
+      min-width: 105px;
       padding: 8px 10px;
       border-radius: 12px;
       border: 2px solid var(--ink);
@@ -418,6 +418,32 @@
       padding-top: 10px;
     }
 
+    /* 路線決策專用卡片排版 */
+    .route-choice-card {
+      background: #FFFFFF;
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .route-choice-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .route-choice-title {
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+    .route-choice-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--ink);
+    }
+
     /* 避坑警示 */
     .alert-box {
       background: #FFF3CD;
@@ -427,7 +453,7 @@
       padding: 10px 12px;
       font-size: 0.8rem;
       line-height: 1.45;
-      margin-top: 10px;
+      margin-top: 6px;
     }
     .alert-title {
       font-weight: 900;
@@ -539,7 +565,7 @@
       </div>
       <div class="countdown-note" id="countdown-text">距離 2026/11/27 (五) 降落關西機場還有 -- 天</div>
 
-      <!-- 手繪風 SVG 主視覺插圖 (徹底修正：車在右下角跑，飛機在左上角飛) -->
+      <!-- 手繪風 SVG 主視覺插圖 (左上角純客機，右下角純道路小車) -->
       <div class="illustration-frame">
         <svg class="main-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- 天空 -->
@@ -547,8 +573,8 @@
           <circle cx="330" cy="50" r="26" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
           <path d="M220 50 Q230 35 245 40 Q260 30 275 42 Q285 45 285 55 Q285 65 270 65 L225 65 Q215 65 220 50 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 天空小客機 (左上角，徹底取代先前的幽靈小車) -->
-          <g class="anim-flight" id="sky-airplane" transform="translate(45, 30)">
+          <!-- 天空小客機 (左上角，徹底取代車輛) -->
+          <g class="anim-flight" id="sky-plane" transform="translate(48, 30)">
             <path d="M5 20 L35 10 L45 20 L22 23 L32 34 L25 34 L17 25 L4 26 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
             <path d="M-8 25 Q-2 24 5 25" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
           </g>
@@ -674,7 +700,7 @@
           <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
         </div>
 
-        <!-- 電車接駁 (NAVITIME 精準帶入起訖編碼) -->
+        <!-- 電車接駁 (NAVITIME 官方 Universal Link 完美自動帶入) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:00</span>
@@ -683,8 +709,8 @@
           <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
           <div class="card-desc">搭乘 JR 關空快速或南海電鐵（1 站即達，車程約 5~6 分鐘）。</div>
           <div class="btn-row">
-            <!-- 採用官方標準 URL Scheme 帶入 UTF-8 編碼站名 -->
-            <a href="navitime://route?start=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&goal=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" class="action-btn btn-navitime">🟢 NAVITIME 班次</a>
+            <!-- 使用官方 Universal Link：有裝 App 呼叫 App 填寫帶入，沒裝開網頁 -->
+            <a href="https://www.navitime.co.jp/transfer/searchlist?orvStationName=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&dnvStationName=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" target="_blank" rel="noopener noreferrer" class="action-btn btn-navitime">🟢 NAVITIME 班次</a>
             <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">🚆 Yahoo 即時時刻</a>
           </div>
         </div>
@@ -791,7 +817,7 @@
           </div>
         </div>
 
-        <!-- 神戶到岡山 (雙導航選擇：花錢趕路 vs 避開收費省錢) -->
+        <!-- 神戶到岡山 (雙路線導航決策：皆附 Google + Apple Maps CarPlay 支援) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">19:40 - 22:00</span>
@@ -800,21 +826,36 @@
           <div class="card-title">神戶三宮 ➔ 岡山站前</div>
           <div class="card-desc">依離開神戶的時間與精神狀況，選擇最適合的路線：</div>
           
-          <div class="btn-row" style="margin-bottom: 8px;">
-            <!-- 選項 1：花錢快速 (新神戶隧道) -->
-            <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn" style="background: #FFE3D8;">
-              ⚡ 最快趕路（自費約 1100円）
-            </a>
-            <!-- 選項 2：0円省錢 (避開收費段) -->
-            <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
-              💰 全程 0円（避開收費段）
-            </a>
+          <!-- 選項 1: 花錢趕路 -->
+          <div class="route-choice-card" style="background: #FFF7F5; border-color: var(--coral);">
+            <div class="route-choice-header">
+              <span class="route-choice-title">⚡ 方案 A：最快花錢趕路</span>
+              <span class="route-choice-tag" style="background: var(--coral); color: #fff;">自費約 1100円</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">鑽新神戶隧道接阪神高速 7 號，車程約 20 分鐘即可上山陽道（省下 20 分鐘市區紅綠燈）。</p>
+            <div class="btn-row">
+              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ Google 最快路線</a>
+              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=スマイルホテル岡山&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 最快導航</a>
+            </div>
+          </div>
+
+          <!-- 選項 2: 0円省錢避坑 -->
+          <div class="route-choice-card" style="background: #FFFAF0; border-color: var(--yamabuki);">
+            <div class="route-choice-header">
+              <span class="route-choice-title">💰 方案 B：全程 0円（避開收費）</span>
+              <span class="route-choice-tag" style="background: var(--yamabuki);">SEP 全額折抵</span>
+            </div>
+            <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">走市區平面省道至【神戶西 IC】上山陽道，車程約 40 分鐘，全程通行費 0 円。</p>
+            <div class="btn-row">
+              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">⚠️ Google 經神戶西IC</a>
+              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 先至神戶西IC</a>
+            </div>
           </div>
 
           <div class="alert-box">
-            <div class="alert-title">🧭 路線決策小筆記</div>
-            • <b>⚡ 最快趕路</b>：鑽新神戶隧道接阪神高速 7 號，車程約 20 分鐘即可上山陽道（多花 ~1,100 円，但省下 20 分鐘市區紅綠燈）。<br>
-            • <b>💰 全程 0円</b>：走市區平面省道至【神戶西 IC】上山陽道，車程約 40 分鐘，SEP 全程 0 円買單。
+            <div class="alert-title">⚠️ SEP 避坑決策提醒</div>
+            • 若精神好想省錢，請走 <b>方案 B（先開平面至神戶西 IC）</b>，上山陽道後通行費全由 SEP 買單。<br>
+            • 若逛完神戶已經疲憊，建議直接選 <b>方案 A</b>，花 1,100 円省 20 分鐘與繁雜紅綠燈。
           </div>
         </div>
 
