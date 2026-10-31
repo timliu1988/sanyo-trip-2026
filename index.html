@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>關西・山陽自駕手帳</title>
 
+  <!-- PWA 與全螢幕設定 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="山陽手帳">
   <meta name="theme-color" content="#FFFCF6">
 
+  <!-- 日系字型 Zen Maru Gothic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
@@ -46,6 +48,7 @@
       line-height: 1.5;
     }
 
+    /* 頂端導航列 */
     header {
       position: sticky;
       top: 0;
@@ -67,7 +70,10 @@
       cursor: pointer;
     }
 
-    .nav-tabs { display: flex; gap: 6px; }
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+    }
 
     .nav-btn {
       display: flex;
@@ -82,8 +88,15 @@
       color: var(--ink);
       cursor: pointer;
       box-shadow: 2px 2px 0px var(--ink);
+      transition: all 0.15s ease;
     }
-    .nav-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .nav-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
     .nav-btn.active {
       background-color: var(--coral);
       color: #fff;
@@ -91,18 +104,42 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
+    /* 內容視圖管理 (SPA) */
     main {
       padding: 16px;
       max-width: 580px;
       margin: 0 auto;
     }
 
-    .view-container { display: none; }
-    .view-container.active { display: block; }
+    .view-container {
+      display: none;
+      animation: fadeIn 0.2s ease-out;
+    }
 
-    .hero-title-wrap { text-align: center; margin: 8px 0 14px 0; }
-    .main-title { font-size: 1.35rem; font-weight: 900; letter-spacing: 0.5px; }
-    .sub-title { font-size: 0.8rem; color: #666; margin-top: 2px; }
+    .view-container.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 標題與倒數膠囊 */
+    .hero-title-wrap {
+      text-align: center;
+      margin: 8px 0 14px 0;
+    }
+    .main-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .sub-title {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2px;
+    }
 
     .countdown-grid {
       display: grid;
@@ -118,8 +155,15 @@
       text-align: center;
       box-shadow: var(--shadow-sm);
     }
-    .count-num { font-size: 1.25rem; font-weight: 900; line-height: 1.1; }
-    .count-label { font-size: 0.72rem; font-weight: 800; }
+    .count-num {
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+    .count-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
     .cd-coral { background: var(--coral); color: #fff; }
     .cd-yellow { background: var(--yamabuki); }
     .cd-water { background: var(--water); }
@@ -133,6 +177,7 @@
       font-weight: 700;
     }
 
+    /* 插圖框架 */
     .illustration-frame {
       background: #fff;
       border: var(--border-thick);
@@ -142,14 +187,29 @@
       margin-bottom: 16px;
       display: flex;
     }
-    .main-svg { width: 100%; height: auto; display: block; }
+    .main-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-    .anim-flight { animation: flightSway 3s infinite ease-in-out; }
+    /* 嚴謹的小車行駛動畫 (上下微顛簸 + 懸吊晃動) */
+    .anim-car-moving {
+      animation: drivingRide 0.8s infinite ease-in-out;
+    }
+    .anim-flight {
+      animation: flightSway 3s infinite ease-in-out;
+    }
+    @keyframes drivingRide {
+      0%, 100% { transform: translate(240px, 184px); }
+      50% { transform: translate(240px, 182px); }
+    }
     @keyframes flightSway {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-3px); }
     }
 
+    /* 首頁快捷入口 */
     .home-menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -165,6 +225,7 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      transition: all 0.15s ease;
     }
     .menu-card:active {
       transform: translate(2px, 2px);
@@ -177,9 +238,17 @@
       align-items: center;
       gap: 6px;
     }
-    .menu-icon-svg { width: 20px; height: 20px; flex-shrink: 0; }
-    .menu-card-desc { font-size: 0.72rem; color: #666; }
+    .menu-icon-svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .menu-card-desc {
+      font-size: 0.72rem;
+      color: #666;
+    }
 
+    /* 行程頁 Tab */
     .day-selector {
       display: flex;
       gap: 6px;
@@ -206,6 +275,7 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
+    /* 卡片通用樣式 */
     .card {
       background: #fff;
       border: var(--border-thick);
@@ -241,9 +311,19 @@
     .tag-hotel { background: var(--coral); color: #fff; }
     .tag-must { background: #FF5A5F; color: #fff; }
 
-    .card-title { font-size: 1rem; font-weight: 900; margin-bottom: 4px; }
-    .card-desc { font-size: 0.82rem; color: #555; line-height: 1.45; margin-bottom: 10px; }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
 
+    /* 複製地址與動作按鈕 */
     .copy-chip {
       background: #F8F9FA;
       border: 2px dashed #B8B5B2;
@@ -257,6 +337,11 @@
       cursor: pointer;
     }
     .copy-chip:active { background: var(--yamabuki); }
+    .copy-chip-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .copy-badge {
       font-size: 0.68rem;
       background: var(--ink);
@@ -266,7 +351,11 @@
       font-weight: 800;
     }
 
-    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .action-btn {
       flex: 1;
       min-width: 105px;
@@ -280,20 +369,31 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 6px;
       box-shadow: 2px 2px 0px var(--ink);
     }
     .action-btn:active {
       transform: translate(2px, 2px);
       box-shadow: 0px 0px 0px var(--ink);
     }
+    .btn-icon-svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
     .btn-gmap { background: var(--water); }
-    .btn-amap { background: #f0f0f0; }
+    .btn-amap { background: #F0EFEB; }
     .btn-navitime { background: var(--bamboo); }
     .btn-yahoo { background: #FFE0E0; }
     .btn-warn { background: var(--yamabuki); }
 
-    .accordion-group { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+    /* 折疊抽屜 Accordion */
+    .accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
     .accordion-item {
       background: #FDF9F1;
       border: 2px solid var(--ink);
@@ -309,10 +409,23 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      user-select: none;
     }
-    .accordion-header:active { background: #F8EFE0; }
-    .acc-arrow { font-size: 0.75rem; transition: transform 0.2s ease; }
-    .accordion-item.open .acc-arrow { transform: rotate(180deg); }
+    .accordion-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .accordion-header:active {
+      background: #F8EFE0;
+    }
+    .acc-arrow {
+      font-size: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+    .accordion-item.open .acc-arrow {
+      transform: rotate(180deg);
+    }
     .accordion-content {
       display: none;
       padding: 0 12px 12px 12px;
@@ -320,8 +433,12 @@
       font-size: 0.8rem;
       color: #555;
     }
-    .accordion-item.open .accordion-content { display: block; padding-top: 10px; }
+    .accordion-item.open .accordion-content {
+      display: block;
+      padding-top: 10px;
+    }
 
+    /* 路線決策專用卡片排版 */
     .route-choice-card {
       background: #FFFFFF;
       border: 2px solid var(--ink);
@@ -335,7 +452,13 @@
       justify-content: space-between;
       margin-bottom: 6px;
     }
-    .route-choice-title { font-size: 0.86rem; font-weight: 900; }
+    .route-choice-title {
+      font-size: 0.86rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
     .route-choice-tag {
       font-size: 0.72rem;
       font-weight: 800;
@@ -344,6 +467,7 @@
       border: 1px solid var(--ink);
     }
 
+    /* 避坑警示 */
     .alert-box {
       background: #FFF3CD;
       border: 2px solid var(--ink);
@@ -354,8 +478,16 @@
       line-height: 1.45;
       margin-top: 6px;
     }
-    .alert-title { font-weight: 900; color: #D9534F; margin-bottom: 2px; }
+    .alert-title {
+      font-weight: 900;
+      color: #D9534F;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
+    /* 備忘清單 */
     .check-item {
       display: flex;
       align-items: center;
@@ -369,7 +501,11 @@
       font-weight: 800;
       cursor: pointer;
     }
-    .check-item.done { text-decoration: line-through; background: #F0EFEA; color: #999; }
+    .check-item.done {
+      text-decoration: line-through;
+      background: #F0EFEA;
+      color: #999;
+    }
     .check-box {
       width: 18px;
       height: 18px;
@@ -381,7 +517,12 @@
       font-size: 0.8rem;
     }
 
-    .calc-box { display: flex; gap: 8px; margin-top: 10px; }
+    /* 貨幣計算機 */
+    .calc-box {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
     .calc-input {
       flex: 1;
       padding: 8px 12px;
@@ -395,8 +536,10 @@
 </head>
 <body>
 
+  <!-- 頂部導航 -->
   <header>
     <div class="brand-logo" onclick="switchView('view-home')">
+      <!-- 手繪鳥居小圖標 (無 Emoji) -->
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round">
         <line x1="2" y1="5" x2="22" y2="5"/>
         <line x1="4" y1="9" x2="20" y2="9"/>
@@ -429,6 +572,7 @@
         <p class="sub-title">神戶・岡山・尾道・廣島・宮島 7 日手帳</p>
       </div>
 
+      <!-- 四格倒數膠囊 -->
       <div class="countdown-grid">
         <div class="count-card cd-coral">
           <div class="count-num" id="cd-days">--</div>
@@ -449,91 +593,125 @@
       </div>
       <div class="countdown-note" id="countdown-text">距離 2026/11/27 (五) 降落關西機場還有 -- 天</div>
 
-      <!-- ================= 主插圖 (左上純客機、右下柏油路黃色小車) ================= -->
+      <!-- ================= 核心 SVG 主視覺插圖 (完全還原圖1手繪風＋依真實地理位置排列＋右下動態小車) ================= -->
       <div class="illustration-frame">
         <svg class="main-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 1. 天空 -->
-          <rect width="400" height="150" fill="#A8D3E6"/>
+          <!-- 1. 天空背景 -->
+          <rect width="400" height="145" fill="#A8D3E6"/>
           
-          <!-- 2. 太陽與手繪白雲 -->
-          <circle cx="330" cy="50" r="26" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          <path d="M220 50 Q230 35 245 40 Q260 30 275 42 Q285 45 285 55 Q285 65 270 65 L225 65 Q215 65 220 50 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
+          <!-- 2. 圖1風格：太陽 (粗墨黑邊) -->
+          <circle cx="320" cy="55" r="23" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+          
+          <!-- 3. 圖1風格：白雲 -->
+          <path d="M220 54 Q228 38 245 42 Q258 32 272 44 Q282 48 280 58 Q280 68 266 68 L226 68 Q214 68 220 54 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
 
-          <!-- 3. 左上角純客機 (無任何車輛) -->
+          <!-- 4. 左上角客機 (帶手繪噴射尾流，徹底無車輛) -->
           <g class="anim-flight" transform="translate(48, 28)">
             <line x1="-12" y1="20" x2="-2" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
             <path d="M0 16 L28 8 L36 17 L16 19 L25 28 L19 28 L12 21 L2 22 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
           </g>
 
-          <!-- 4. 遠景青山 -->
-          <path d="M-10 150 Q70 100 150 140 Q220 95 320 145 Q360 125 410 150 L410 160 L-10 160 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+          <!-- 5. 圖1風格：遠景山巒線條 -->
+          <path d="M-10 145 Q70 100 150 135 Q230 95 320 140 Q360 120 410 145 L410 155 L-10 155 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 5. 瀨戶內海 -->
-          <rect y="145" width="400" height="45" fill="#5DB7DE" stroke="#3E3A39" stroke-width="3"/>
-          <path d="M30 160 Q45 155 60 160" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M180 165 Q195 160 210 165" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- 6. 圖1風格：瀨戶內海 -->
+          <rect y="140" width="400" height="48" fill="#5DB7DE" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M45 155 Q60 150 75 155" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+          <path d="M208 152 Q223 147 238 152" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
 
-          <!-- 6. 沿岸地標群 -->
-          <!-- 宮島鳥居 -->
-          <g transform="translate(60, 85)">
-            <path d="M0 6 L65 4 L65 14 L0 16 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <path d="M-5 0 C25 -2, 40 -2, 70 0 L68 7 L-3 7 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <rect x="15" y="15" width="6" height="52" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <rect x="44" y="15" width="6" height="52" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <line x1="12" y1="28" x2="53" y2="28" stroke="#3E3A39" stroke-width="3"/>
-            <rect x="29" y="15" width="7" height="13" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+          <!-- ================= 7. 沿岸地標 (按真實地理位置：西 ➔ 東 嚴格排列) ================= -->
+          
+          <!-- [地理 1：最西邊] 宮島大鳥居 (還原圖1手繪粗樑、方塊額束與斜撐柱細節) -->
+          <g id="spot-torii" transform="translate(60, 48)">
+            <!-- 笠木與島木 (頂層雙樑) -->
+            <path d="M0 10 C25 2, 75 2, 100 10 L98 22 C75 16, 25 16, 2 22 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M6 22 L94 22 L92 30 L8 30 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <!-- 主柱左與主柱右 -->
+            <rect x="20" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <rect x="70" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <!-- 貫 (中橫樑) 與額束 -->
+            <line x1="12" y1="52" x2="88" y2="52" stroke="#3E3A39" stroke-width="3.5"/>
+            <rect x="44" y="30" width="12" height="22" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 圖1特有：左右兩側斜撐袖柱 -->
+            <path d="M12 68 L20 64 L20 114 L12 114 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <path d="M88 68 L80 64 L80 114 L88 114 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 神戶港塔 -->
-          <g transform="translate(230, 96)">
-            <path d="M6 50 L12 0 L18 50 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
-            <circle cx="12" cy="4" r="5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+          <!-- [地理 2：廣島] 原爆圓頂屋 (還原圖1經典手繪拱窗與圓頂幾何線條) -->
+          <g id="spot-atomic-dome" transform="translate(195, 96)">
+            <!-- 下層建築體與拱門窗 -->
+            <rect x="0" y="24" width="30" height="20" fill="#E8DDD0" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="5" y="30" width="6" height="14" rx="2" fill="#3E3A39"/>
+            <rect x="18" y="30" width="6" height="14" rx="2" fill="#3E3A39"/>
+            <!-- 圓頂圓弧骨架 -->
+            <path d="M4 24 C4 10, 26 10, 26 24 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="15" y1="10" x2="15" y2="24" stroke="#3E3A39" stroke-width="2"/>
+            <line x1="8" y1="15" x2="22" y2="15" stroke="#3E3A39" stroke-width="2"/>
+            <line x1="15" y1="5" x2="15" y2="10" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 岡山城 -->
-          <g transform="translate(270, 95)">
-            <path d="M6 45 L10 20 L26 20 L30 45 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
-            <path d="M2 32 L34 32 L18 20 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
-            <path d="M7 20 L29 20 L18 10 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
+          <!-- [地理 3：岡山] 岡山城天守 (還原圖1黑色雙層飛簷與白壁望樓風格) -->
+          <g id="spot-okayama-castle" transform="translate(242, 80)">
+            <!-- 底層石垣 -->
+            <polygon points="4,60 36,60 32,45 8,45" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 第一層黑瓦出簷 -->
+            <path d="M2 45 L38 45 L20 33 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="11" y="33" width="18" height="12" fill="#3E3A39" stroke="#3E3A39" stroke-width="2"/>
+            <!-- 第二層頂層黑瓦入母屋頂 -->
+            <path d="M7 33 L33 33 L20 20 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="20" cy="18" r="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="1.5"/>
           </g>
 
-          <!-- 原爆圓頂屋 -->
-          <g transform="translate(325, 112)">
-            <path d="M6 32 L6 16 C6 8, 22 8, 22 16 L22 32 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
-            <path d="M14 6 L14 16 M8 11 L20 11" stroke="#3E3A39" stroke-width="2"/>
+          <!-- [地理 4：最東邊] 神戶港塔 (還原圖1經典紅鼓形細腰與頂部白色觀景台) -->
+          <g id="spot-kobe-tower" transform="translate(296, 75)">
+            <!-- 紅色雙曲面塔身 -->
+            <path d="M4 65 Q11 35 7 15 L17 15 Q13 35 20 65 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+            <line x1="8" y1="36" x2="16" y2="36" stroke="#3E3A39" stroke-width="2"/>
+            <!-- 頂部圓形觀景台與天線 -->
+            <circle cx="12" cy="12" r="6" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="12" y1="0" x2="12" y2="6" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 7. 前景左下角沙灘與小鹿 -->
-          <path d="M0 180 Q100 176 180 185 L180 240 L0 240 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          <g transform="translate(50, 172)">
-            <ellipse cx="18" cy="20" rx="15" ry="11" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
-            <circle cx="28" cy="11" r="7" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
-            <circle cx="30" cy="10" r="1.5" fill="#3E3A39"/>
-            <line x1="27" y1="4" x2="25" y2="0" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
-            <line x1="29" y1="4" x2="32" y2="0" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
-            <line x1="10" y1="29" x2="10" y2="40" stroke="#3E3A39" stroke-width="2.5"/>
-            <line x1="16" y1="29" x2="16" y2="40" stroke="#3E3A39" stroke-width="2.5"/>
-            <line x1="22" y1="29" x2="22" y2="40" stroke="#3E3A39" stroke-width="2.5"/>
-            <line x1="26" y1="29" x2="26" y2="40" stroke="#3E3A39" stroke-width="2.5"/>
-            <circle cx="12" cy="16" r="1.5" fill="#FFFFFF"/>
-            <circle cx="18" cy="18" r="1.8" fill="#FFFFFF"/>
+          <!-- 8. 前景左下角沙灘與圓滾滾宮島小鹿 (完美還原圖1比例) -->
+          <path d="M0 178 Q100 174 180 185 L180 240 L0 240 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+          <g id="deer-group" transform="translate(50, 168)">
+            <!-- 小鹿身軀 -->
+            <ellipse cx="18" cy="22" rx="16" ry="12" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 圓圓鹿頭 -->
+            <circle cx="30" cy="12" r="7.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="32" cy="11" r="1.5" fill="#3E3A39"/>
+            <!-- 鹿角與雙耳 -->
+            <line x1="29" y1="5" x2="27" y2="1" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            <line x1="31" y1="5" x2="34" y2="1" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            <!-- 細腿 -->
+            <line x1="10" y1="32" x2="10" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="16" y1="32" x2="16" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="22" y1="32" x2="22" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="26" y1="32" x2="26" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 身上的梅花白點 -->
+            <circle cx="12" cy="18" r="1.5" fill="#FFFFFF"/>
+            <circle cx="18" cy="20" r="1.8" fill="#FFFFFF"/>
           </g>
 
-          <!-- 8. 前景右下角柏油公路與白色虛線車道 -->
-          <g transform="translate(180, 182)">
-            <rect width="220" height="58" fill="#D3C9B8" stroke="#3E3A39" stroke-width="3"/>
+          <!-- 9. 前景右下角柏油公路與白色虛線 -->
+          <g id="road-surface" transform="translate(180, 180)">
+            <rect width="220" height="60" fill="#D3C9B8" stroke="#3E3A39" stroke-width="3"/>
             <line x1="15" y1="28" x2="45" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
             <line x1="75" y1="28" x2="105" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
             <line x1="135" y1="28" x2="165" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
             <line x1="195" y1="28" x2="220" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
           </g>
 
-          <!-- 9. 右下角公路上的自駕黃色小車 (全圖唯一，精確坐標 x:235, y:185) -->
-          <g transform="translate(235, 185)">
+          <!-- 10. 全圖唯一黃色自駕小車 (車輪緊貼地面，具有微顛簸行駛動畫) -->
+          <g class="anim-car-moving" id="travel-car">
+            <!-- 黃色復古車體 -->
             <path d="M4 18 L12 6 L38 6 L48 18 L58 18 C60 18, 62 20, 62 22 L62 30 C62 32, 60 33, 58 33 L2 33 C0.9 33, 0 32, 0 30 L0 22 C0 20, 2 18, 4 18 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 車窗與中柱 -->
             <path d="M15 8 L35 8 L35 18 L10 18 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
             <line x1="23" y1="8" x2="23" y2="18" stroke="#3E3A39" stroke-width="2"/>
+            <!-- 車頭燈 -->
             <circle cx="60" cy="24" r="2.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
+            <!-- 輪胎與輪轂 -->
             <circle cx="15" cy="33" r="6" fill="#3E3A39"/>
             <circle cx="15" cy="33" r="2.5" fill="#FFFFFF"/>
             <circle cx="47" cy="33" r="6" fill="#3E3A39"/>
@@ -542,15 +720,18 @@
         </svg>
       </div>
 
-      <!-- 首頁 4 大快捷入口 (純向量手繪圖標) -->
+      <!-- 首頁 4 大快捷入口 (純手繪向量圖標，絕無 Emoji) -->
       <div class="home-menu-grid">
         <div class="menu-card" onclick="switchView('view-itinerary')">
           <div class="menu-card-title">
             <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
               <rect x="3" y="4" width="18" height="18" rx="3" fill="#A8D3E6"/>
               <line x1="3" y1="10" x2="21" y2="10"/>
-              <line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/>
-              <circle cx="8" cy="14" r="1" fill="#3E3A39"/><circle cx="12" cy="14" r="1" fill="#3E3A39"/><circle cx="16" cy="14" r="1" fill="#3E3A39"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <circle cx="8" cy="14" r="1" fill="#3E3A39"/>
+              <circle cx="12" cy="14" r="1" fill="#3E3A39"/>
+              <circle cx="16" cy="14" r="1" fill="#3E3A39"/>
             </svg>
             <span>查看 7 天行程</span>
           </div>
@@ -573,7 +754,8 @@
             <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
               <rect x="5" y="7" width="14" height="14" rx="4" fill="#F2A497"/>
               <path d="M9 7 V5 A3 3 0 0 1 15 5 V7"/>
-              <line x1="5" y1="13" x2="19" y2="13"/><circle cx="12" cy="13" r="1.5" fill="#3E3A39"/>
+              <line x1="5" y1="13" x2="19" y2="13"/>
+              <circle cx="12" cy="13" r="1.5" fill="#3E3A39"/>
             </svg>
             <span>行前行李清單</span>
           </div>
@@ -585,8 +767,12 @@
             <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
               <rect x="4" y="3" width="16" height="18" rx="3" fill="#B9DAA5"/>
               <rect x="7" y="6" width="10" height="4" rx="1" fill="#FFFFFF"/>
-              <circle cx="8" cy="14" r="1" fill="#3E3A39"/><circle cx="12" cy="14" r="1" fill="#3E3A39"/><circle cx="16" cy="14" r="1" fill="#3E3A39"/>
-              <circle cx="8" cy="17" r="1" fill="#3E3A39"/><circle cx="12" cy="17" r="1" fill="#3E3A39"/><circle cx="16" cy="17" r="1" fill="#3E3A39"/>
+              <circle cx="8" cy="14" r="1" fill="#3E3A39"/>
+              <circle cx="12" cy="14" r="1" fill="#3E3A39"/>
+              <circle cx="16" cy="14" r="1" fill="#3E3A39"/>
+              <circle cx="8" cy="17" r="1" fill="#3E3A39"/>
+              <circle cx="12" cy="17" r="1" fill="#3E3A39"/>
+              <circle cx="16" cy="17" r="1" fill="#3E3A39"/>
             </svg>
             <span>日幣即時換算</span>
           </div>
@@ -608,6 +794,7 @@
       </div>
 
       <div id="day-content-d1">
+        <!-- 航班抵達 -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">09:15 - 14:45</span>
@@ -617,6 +804,7 @@
           <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
         </div>
 
+        <!-- 電車接駁 (NAVITIME App 官方 URL Scheme 精準直連) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:00</span>
@@ -625,11 +813,20 @@
           <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
           <div class="card-desc">搭乘 JR 關空快速或南海電鐵（1 站即達，車程約 5~6 分鐘）。</div>
           <div class="btn-row">
-            <a href="https://www.navitime.co.jp/transfer/searchlist?orvStationName=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&dnvStationName=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" target="_blank" rel="noopener noreferrer" class="action-btn btn-navitime">🟢 NAVITIME 班次</a>
-            <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">🚆 Yahoo 即時時刻</a>
+            <!-- NAVITIME 專用 App Scheme (完美直接呼叫 App 填入起迄站) -->
+            <a href="navitime://transit?start=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&goal=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" class="action-btn btn-navitime">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#B9DAA5"/><path d="M12 7v5l3 3"/></svg>
+              <span>NAVITIME 班次</span>
+            </a>
+            <!-- Yahoo 時刻 (手繪電車圖標) -->
+            <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="4" y="3" width="16" height="15" rx="3" fill="#FFE0E0"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="15" r="1.5" fill="#3E3A39"/><circle cx="16" cy="15" r="1.5" fill="#3E3A39"/></svg>
+              <span>Yahoo 即時時刻</span>
+            </a>
           </div>
         </div>
 
+        <!-- 臨空城取車 -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:30</span>
@@ -638,16 +835,25 @@
           <div class="card-title">ニコニコレンタカー 関西空港りんくうタウン駅前店</div>
           <div class="card-desc">核對合約、檢查車況、安裝 ETC 卡並確認開通 SEP 方案。電話：072-463-2525</div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-700')">
-            <span>📍 大阪府泉佐野市りんくう往来北1-700</span>
+            <div class="copy-chip-left">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+              <span>大阪府泉佐野市りんくう往来北1-700</span>
+            </div>
             <span class="copy-badge">複製地址</span>
           </div>
           <div class="btn-row">
-            <a href="https://maps.app.goo.gl/Up1GinnkgB7MZQkF8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ Google 地圖</a>
-            <a href="https://maps.apple/p/LE_GePstvQiJyD" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 地圖</a>
+            <a href="https://maps.app.goo.gl/Up1GinnkgB7MZQkF8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 地圖</span>
+            </a>
+            <a href="https://maps.apple/p/LE_GePstvQiJyD" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple 地圖</span>
+            </a>
           </div>
         </div>
 
-        <!-- 神戶中途休息 -->
+        <!-- 神戶中途休息 (折疊式抽屜設計) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">17:00 - 19:30</span>
@@ -657,74 +863,126 @@
           <div class="card-desc">車程約 1 小時 15 分。車輛停放三宮站前周邊停車場，點擊下方探索推薦店家：</div>
           
           <div class="accordion-group">
+            <!-- 西村咖啡 -->
             <div class="accordion-item" onclick="toggleAcc(this)">
               <div class="accordion-header">
-                <span>☕ にしむら珈琲店 三宮店 (西村咖啡)</span>
+                <div class="accordion-header-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" fill="#FFE0E0"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                  <span>にしむら珈琲店 三宮店 (西村咖啡)</span>
+                </div>
                 <span class="acc-arrow">▼</span>
               </div>
               <div class="accordion-content">
                 <p style="margin-bottom: 8px;">神戶最具代表性的老派喫茶店，充滿昭和洋食優雅氛圍與手沖香氣。</p>
                 <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区琴ノ緒町5丁目3-5')">
-                  <span>📍 兵庫県神戸市中央区琴ノ緒町5丁目3-5</span>
+                  <div class="copy-chip-left">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+                    <span>兵庫県神戸市中央区琴ノ緒町5丁目3-5</span>
+                  </div>
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/5b5TUmUa2wXvdqXe6" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
-                  <a href="https://maps.apple.com/?q=にしむら珈琲店+三宮店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                  <a href="https://maps.app.goo.gl/5b5TUmUa2wXvdqXe6" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                    <span>Google 地圖</span>
+                  </a>
+                  <a href="https://maps.apple.com/?q=にしむら珈琲店+三宮店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                    <span>Apple 地圖</span>
+                  </a>
                 </div>
               </div>
             </div>
 
+            <!-- 觀音屋 -->
             <div class="accordion-item" onclick="toggleAcc(this)">
               <div class="accordion-header">
-                <span>🧀 観音屋 三宮さんちか店 (木村拓哉推薦起司蛋糕)</span>
+                <div class="accordion-header-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="2,18 22,18 18,6 2,18" fill="#F6D27A"/><circle cx="10" cy="14" r="1.5" fill="#3E3A39"/><circle cx="15" cy="13" r="1.5" fill="#3E3A39"/></svg>
+                  <span>観音屋 三宮さんちか店 (木村拓哉推薦起司蛋糕)</span>
+                </div>
                 <span class="acc-arrow">▼</span>
               </div>
               <div class="accordion-content">
                 <p style="margin-bottom: 8px;">熱騰騰現烤的丹麥鹹甜融化起司蛋糕，位於三宮地下街（Santica）交通極為便利。</p>
                 <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街')">
-                  <span>📍 兵庫県神戸市中央区三宮町1-10-1 さんちか</span>
+                  <div class="copy-chip-left">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+                    <span>兵庫県神戸市中央区三宮町1-10-1 さんちか</span>
+                  </div>
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/hDjq9uuwg35FHodq8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
-                  <a href="https://maps.apple.com/?q=観音屋+三宮さんちか店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                  <a href="https://maps.app.goo.gl/hDjq9uuwg35FHodq8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                    <span>Google 地圖</span>
+                  </a>
+                  <a href="https://maps.apple.com/?q=観音屋+三宮さんちか店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                    <span>Apple 地圖</span>
+                  </a>
                 </div>
               </div>
             </div>
 
+            <!-- 三宮中心街 -->
             <div class="accordion-item" onclick="toggleAcc(this)">
               <div class="accordion-header">
-                <span>🛍️ 神戶三宮センター街 (三宮中心街)</span>
+                <div class="accordion-header-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="3" y="6" width="18" height="15" rx="3" fill="#A8D3E6"/><path d="M8 6V4a4 4 0 0 1 8 0v2"/></svg>
+                  <span>神戸三宮センター街 (三宮中心街)</span>
+                </div>
                 <span class="acc-arrow">▼</span>
               </div>
               <div class="accordion-content">
                 <p style="margin-bottom: 8px;">神戶最熱鬧的有蓋遮雨棚購物大街，藥妝、服飾與雜貨林立，步行即可快速抵達。</p>
                 <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区三宮町1丁目')">
-                  <span>📍 兵庫県神戸市中央区三宮町1丁目</span>
+                  <div class="copy-chip-left">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+                    <span>兵庫県神戸市中央区三宮町1丁目</span>
+                  </div>
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/KxLnrPq12BTpyRxv9" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
-                  <a href="https://maps.apple.com/?q=神戸三宮センター街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                  <a href="https://maps.app.goo.gl/KxLnrPq12BTpyRxv9" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                    <span>Google 地圖</span>
+                  </a>
+                  <a href="https://maps.apple.com/?q=神戸三宮センター街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                    <span>Apple 地圖</span>
+                  </a>
                 </div>
               </div>
             </div>
 
+            <!-- 元町商店街 -->
             <div class="accordion-item" onclick="toggleAcc(this)">
               <div class="accordion-header">
-                <span>🏮 神戶元町商店街</span>
+                <div class="accordion-header-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="6" y="4" width="12" height="16" rx="4" fill="#F2A497"/><line x1="6" y1="10" x2="18" y2="10"/><line x1="6" y1="14" x2="18" y2="14"/></svg>
+                  <span>神戸元町商店街</span>
+                </div>
                 <span class="acc-arrow">▼</span>
               </div>
               <div class="accordion-content">
                 <p style="margin-bottom: 8px;">百年老舖與神戶港歷史洋風店家聚集地，距離三宮約需步行或短程電車銜接。</p>
                 <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('兵庫県神戸市中央区元町通')">
-                  <span>📍 兵庫県神戸市中央区元町通</span>
+                  <div class="copy-chip-left">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+                    <span>兵庫県神戸市中央区元町通</span>
+                  </div>
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/S5W2McZ3RqHm1AYu5" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
-                  <a href="https://maps.apple.com/?q=神戸元町商店街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                  <a href="https://maps.app.goo.gl/S5W2McZ3RqHm1AYu5" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                    <span>Google 地圖</span>
+                  </a>
+                  <a href="https://maps.apple.com/?q=神戸元町商店街" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                    <span>Apple 地圖</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -742,30 +1000,51 @@
           
           <div class="route-choice-card" style="background: #FFF7F5; border-color: var(--coral);">
             <div class="route-choice-header">
-              <span class="route-choice-title">⚡ 方案 A：最快花錢趕路</span>
+              <span class="route-choice-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10" fill="#F2A497"/></svg>
+                <span>方案 A：最快花錢趕路</span>
+              </span>
               <span class="route-choice-tag" style="background: var(--coral); color: #fff;">自費約 1100円</span>
             </div>
             <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">鑽新神戶隧道接阪神高速 7 號，車程約 20 分鐘即可上山陽道（省下 20 分鐘市區紅綠燈）。</p>
             <div class="btn-row">
-              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ Google 最快路線</a>
-              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=スマイルホテル岡山&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 最快導航</a>
+              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                <span>Google 最快路線</span>
+              </a>
+              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=スマイルホテル岡山&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                <span>Apple 最快導航</span>
+              </a>
             </div>
           </div>
 
           <div class="route-choice-card" style="background: #FFFAF0; border-color: var(--yamabuki);">
             <div class="route-choice-header">
-              <span class="route-choice-title">💰 方案 B：全程 0円（避開收費）</span>
+              <span class="route-choice-title">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#F6D27A"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
+                <span>方案 B：全程 0円（避開收費）</span>
+              </span>
               <span class="route-choice-tag" style="background: var(--yamabuki);">SEP 全額折抵</span>
             </div>
             <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">走市區平面省道至【神戶西 IC】上山陽道，車程約 40 分鐘，全程通行費 0 円。</p>
             <div class="btn-row">
-              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">⚠️ Google 經神戶西IC</a>
-              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 先至神戶西IC</a>
+              <a href="https://www.google.com/maps/dir/?api=1&origin=神戸三宮駅&destination=スマイルホテル岡山&waypoints=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#F6D27A"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                <span>Google 經神戶西IC</span>
+              </a>
+              <a href="https://maps.apple.com/?saddr=神戸三宮駅&daddr=神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+                <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                <span>Apple 先至神戶西IC</span>
+              </a>
             </div>
           </div>
 
           <div class="alert-box">
-            <div class="alert-title">⚠️ SEP 避坑決策提醒</div>
+            <div class="alert-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1" fill="#D9534F"/></svg>
+              <span>SEP 避坑決策提醒</span>
+            </div>
             • 若精神好想省錢，請走 <b>方案 B（先開平面至神戶西 IC）</b>，上山陽道後通行費全由 SEP 買單。<br>
             • 若逛完神戶已經疲憊，建議直接選 <b>方案 A</b>，花 1,100 円省 20 分鐘與繁雜紅綠燈。
           </div>
@@ -780,28 +1059,50 @@
           <div class="card-title">スマイルホテル岡山 (Smile Hotel Okayama)</div>
           <div class="card-desc">辦理入住休息，放妥行李後步行前往消夜。</div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('岡山県岡山市北区磨屋町10-8')">
-            <span>📍 岡山県岡山市北区磨屋町10-8</span>
+            <div class="copy-chip-left">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+              <span>岡山県岡山市北区磨屋町10-8</span>
+            </div>
             <span class="copy-badge">複製地址</span>
           </div>
           <div class="btn-row" style="margin-bottom: 12px;">
-            <a href="https://maps.app.goo.gl/BKwaSSfR4bMMbHsGA" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">🗺️ Google 地圖</a>
-            <a href="https://maps.apple.com/?q=スマイルホテル岡山" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">🍏 Apple 地圖</a>
+            <a href="https://maps.app.goo.gl/BKwaSSfR4bMMbHsGA" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 地圖</span>
+            </a>
+            <a href="https://maps.apple.com/?q=スマイルホテル岡山" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple 地圖</span>
+            </a>
           </div>
 
+          <!-- 折疊消夜抽屜 -->
           <div class="accordion-item" onclick="toggleAcc(this)" style="background: #FFF5F2; border-color: var(--coral);">
             <div class="accordion-header">
-              <span style="color: #D9534F;">🍜 宵夜推薦：麵酒一照庵 岡山本店 (營業至 23:30)</span>
+              <div class="accordion-header-left">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><circle cx="12" cy="14" r="8" fill="#F6D27A"/><path d="M4 14 Q12 18 20 14"/><line x1="18" y1="4" x2="10" y2="12"/><line x1="20" y1="6" x2="12" y2="14"/></svg>
+                <span style="color: #D9534F;">宵夜推薦：麵酒一照庵 岡山本店 (營業至 23:30)</span>
+              </div>
               <span class="acc-arrow">▼</span>
             </div>
             <div class="accordion-content">
               <p style="margin-bottom: 8px;">距離飯店步行約 5~7 分鐘。以特色笠岡醬油拉麵與小酌下酒菜聞名，營業時間至 23:30，長途自駕後的暖胃首選！</p>
               <div class="copy-chip" onclick="event.stopPropagation(); navigator.clipboard.writeText('岡山県岡山市北区中山下1丁目7-16')">
-                <span>📍 岡山県岡山市北区中山下1丁目7-16</span>
+                <div class="copy-chip-left">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+                  <span>岡山県岡山市北区中山下1丁目7-16</span>
+                </div>
                 <span class="copy-badge">複製地址</span>
               </div>
               <div class="btn-row">
-                <a href="https://maps.app.goo.gl/nveZSCX7Q57im7R38" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">🗺️ Google 地圖</a>
-                <a href="https://maps.apple.com/?q=麵酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">🍏 Apple 地圖</a>
+                <a href="https://maps.app.goo.gl/nveZSCX7Q57im7R38" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                  <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                  <span>Google 地圖</span>
+                </a>
+                <a href="https://maps.apple.com/?q=麵酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap" onclick="event.stopPropagation();">
+                  <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+                  <span>Apple 地圖</span>
+                </a>
               </div>
             </div>
           </div>
@@ -897,7 +1198,7 @@
     <!-- ================= 視圖 4: 準備清單與工具 ================= -->
     <div id="view-prep" class="view-container">
       <div class="card">
-        <div class="card-title">🎒 行前必備清單 (點擊劃線保存)</div>
+        <div class="card-title">行前必備清單 (點擊劃線保存)</div>
         <div class="card-desc">自駕出發前務必逐項核對：</div>
         
         <div class="check-item" onclick="toggleCheck(this, 'c1')">
@@ -927,7 +1228,7 @@
       </div>
 
       <div class="card">
-        <div class="card-title">🧮 日幣即時換算</div>
+        <div class="card-title">日幣即時換算</div>
         <div class="card-desc">匯率以 0.21 估算（含稅/未稅隨手算）：</div>
         <div class="calc-box">
           <input type="number" id="jpy-input" class="calc-input" placeholder="輸入日圓 JPY (例: 1500)" oninput="calcTwd()">
@@ -976,7 +1277,7 @@
           d6: 'Day 6 (12/02) 神戶 ➔ 大阪',
           d7: 'Day 7 (12/03) 臨空城還車 ➔ 機場返台'
         };
-        otherTitle.textContent = (dayNames[dayKey] || dayKey.toUpperCase()) + ' 規劃中 🚗';
+        otherTitle.textContent = (dayNames[dayKey] || dayKey.toUpperCase()) + ' 規劃中';
       }
     }
 
