@@ -106,7 +106,6 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
-    /* 內容視圖管理 (SPA) */
     main {
       padding: 16px;
       max-width: 580px;
@@ -127,7 +126,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 標題與倒數膠囊 */
     .hero-title-wrap {
       text-align: center;
       margin: 8px 0 14px 0;
@@ -179,7 +177,6 @@
       font-weight: 700;
     }
 
-    /* 插圖框架 */
     .illustration-frame {
       background: #fff;
       border: var(--border-thick);
@@ -195,7 +192,6 @@
       display: block;
     }
 
-    /* 小車行駛微顛簸動畫 */
     .anim-car-moving {
       animation: drivingRide 0.8s infinite ease-in-out;
     }
@@ -211,7 +207,6 @@
       50% { transform: translateY(-3px); }
     }
 
-    /* 首頁快捷按鈕 */
     .home-menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -250,7 +245,6 @@
       color: #666;
     }
 
-    /* 行程頁 Tab */
     .day-selector {
       display: flex;
       gap: 6px;
@@ -277,7 +271,6 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
-    /* 卡片樣式 */
     .card {
       background: #fff;
       border: var(--border-thick);
@@ -325,7 +318,6 @@
       margin-bottom: 10px;
     }
 
-    /* 複製地址與動作按鈕 */
     .copy-chip {
       background: #F8F9FA;
       border: 2px dashed #B8B5B2;
@@ -390,7 +382,6 @@
     .btn-yahoo { background: #FFE0E0; }
     .btn-warn { background: var(--yamabuki); }
 
-    /* 折疊抽屜 Accordion */
     .accordion-group {
       display: flex;
       flex-direction: column;
@@ -538,7 +529,6 @@
   <!-- 頂部導航 -->
   <header>
     <div class="brand-logo" onclick="switchView('view-home')">
-      <!-- 手繪鳥居小圖標 -->
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round">
         <line x1="2" y1="5" x2="22" y2="5"/>
         <line x1="4" y1="9" x2="20" y2="9"/>
@@ -778,7 +768,7 @@
           <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
         </div>
 
-        <!-- 電車接駁 (純原生 App 直開，絕不彈出網址無效) -->
+        <!-- 電車接駁：專注使用第二款 NAVITIME 原生喚醒與 Yahoo 時刻 -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:00</span>
@@ -787,25 +777,20 @@
           <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
           <div class="card-desc">搭乘 JR 關空快速或南海電鐵（1 站即達，車程約 5~6 分鐘）。</div>
           <div class="btn-row">
-            <!-- 優先直開：左一「乗換 NAVITIME」 -->
-            <a href="navitime-transit://" class="action-btn btn-navitime">
-              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#B9DAA5"/><path d="M12 7v5l3 3"/></svg>
-              <span>乗換 NAVITIME</span>
-            </a>
-            <!-- 備用直開：左二「NAVITIME 綜合版」 -->
+            <!-- 專用純原生鏈接：直接開啟左二 NAVITIME 綜合版 App，無 JS、不跳錯 -->
             <a href="navitime://" class="action-btn btn-navitime">
-              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="4" y="4" width="16" height="16" rx="3" fill="#B9DAA5"/><path d="M9 12l2 2 4-4"/></svg>
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#B9DAA5"/><path d="M12 7v5l3 3"/></svg>
               <span>NAVITIME</span>
             </a>
-            <!-- Yahoo 時刻 (網頁版主力備援) -->
+            <!-- Yahoo 時刻 (主力網頁版) -->
             <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="4" y="3" width="16" height="15" rx="3" fill="#FFE0E0"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="15" r="1.5" fill="#3E3A39"/><circle cx="16" cy="15" r="1.5" fill="#3E3A39"/></svg>
-              <span>Yahoo 時刻</span>
+              <span>Yahoo 即時時刻</span>
             </a>
           </div>
         </div>
 
-        <!-- 臨空城取車 (標準 Google Search API 連結) -->
+        <!-- 臨空城取車 (標準 Google API 連結) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:30</span>
