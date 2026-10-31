@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>關西・山陽自駕手帳</title>
+
+  <!-- PWA 設定 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="山陽手帳">
+  <meta name="theme-color" content="#FFFCF6">
+
+  <!-- 日系字型 Zen Maru Gothic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 頂部導航 -->
+  <header>
+    <div class="brand-logo" onclick="switchView('view-home')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round">
+        <line x1="2" y1="5" x2="22" y2="5"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="7" y1="9" x2="7" y2="22"/><line x1="17" y1="9" x2="17" y2="22"/>
+      </svg>
+      <span>山陽自駕手帳</span>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-btn active" onclick="switchView('view-itinerary')" id="btn-itinerary">
+        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+        <span>行程</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('view-flights')" id="btn-flights">
+        <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <span>航班</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('view-prep')" id="btn-prep">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>準備</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 首頁 -->
+    <div id="view-home" class="view-container">
+      <div class="hero-title-wrap">
+        <h1 class="main-title">關西・瀨戶內 自駕小旅行</h1>
+        <p class="sub-title">神戶・岡山・尾道・廣島・宮島 7 日手帳</p>
+      </div>
+
+      <div class="countdown-grid">
+        <div class="count-card cd-coral"><div class="count-num" id="cd-days">--</div><div class="count-label">天</div></div>
+        <div class="count-card cd-yellow"><div class="count-num" id="cd-hours">--</div><div class="count-label">時</div></div>
+        <div class="count-card cd-water"><div class="count-num" id="cd-mins">--</div><div class="count-label">分</div></div>
+        <div class="count-card cd-bamboo"><div class="count-num" id="cd-secs">--</div><div class="count-label">秒</div></div>
+      </div>
+      <div class="countdown-note" id="countdown-text">倒數計算中...</div>
+
+      <!-- 頂部手繪插圖 (鳥居 ➔ 圓頂 ➔ 岡山城 ➔ 神戶塔 + 分叉鹿角 + 顛簸小車) -->
+      <div class="illustration-frame">
+        <svg class="main-svg" viewBox="0 0 400 240" fill="none">
+          <rect width="400" height="145" fill="#A8D3E6"/>
+          <circle cx="320" cy="55" r="23" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M220 54 Q228 38 245 42 Q258 32 272 44 Q282 48 280 58 Q280 68 266 68 L226 68 Q214 68 220 54 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+          <g class="anim-flight" transform="translate(48, 28)">
+            <line x1="-12" y1="20" x2="-2" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+            <path d="M0 16 L28 8 L36 17 L16 19 L25 28 L19 28 L12 21 L2 22 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+          </g>
+          <path d="M-10 145 Q70 100 150 135 Q230 95 320 140 Q360 120 410 145 L410 155 L-10 155 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+          <rect y="140" width="400" height="48" fill="#5DB7DE" stroke="#3E3A39" stroke-width="3"/>
+          
+          <!-- 地標 1：宮島大鳥居 -->
+          <g transform="translate(60, 48)">
+            <path d="M0 10 C25 2, 75 2, 100 10 L98 22 C75 16, 25 16, 2 22 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="20" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <rect x="70" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <line x1="12" y1="52" x2="88" y2="52" stroke="#3E3A39" stroke-width="3.5"/>
+            <rect x="44" y="30" width="12" height="22" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+          <!-- 地標 2：廣島原爆圓頂屋 -->
+          <g transform="translate(195, 96)">
+            <rect x="0" y="24" width="30" height="20" fill="#E8DDD0" stroke="#3E3A39" stroke-width="2.5"/>
+            <path d="M4 24 C4 10, 26 10, 26 24 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="15" y1="5" x2="15" y2="10" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+          <!-- 地標 3：岡山城天守 -->
+          <g transform="translate(242, 80)">
+            <polygon points="4,60 36,60 32,45 8,45" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
+            <path d="M2 45 L38 45 L20 33 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="11" y="33" width="18" height="12" fill="#3E3A39" stroke="#3E3A39" stroke-width="2"/>
+            <path d="M7 33 L33 33 L20 20 Z" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+          <!-- 地標 4：神戶港塔 -->
+          <g transform="translate(296, 75)">
+            <path d="M4 65 Q11 35 7 15 L17 15 Q13 35 20 65 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="6" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="12" y1="0" x2="12" y2="6" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+
+          <!-- 前景沙灘與立體分叉角小鹿 -->
+          <path d="M0 178 Q100 174 180 185 L180 240 L0 240 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+          <g transform="translate(50, 168)">
+            <ellipse cx="18" cy="22" rx="16" ry="12" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="30" cy="12" r="7.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="32" cy="11" r="1.5" fill="#3E3A39"/>
+            <!-- 手繪立體分叉鹿角 -->
+            <path d="M28 5 L24 -2 M26 2 L22 0" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M31 5 L35 -3 M33 2 L37 1" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="25" cy="8" rx="2.5" ry="1.5" fill="#F2A497" stroke="#3E3A39" stroke-width="1.8" transform="rotate(-30 25 8)"/>
+            <line x1="10" y1="32" x2="10" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="16" y1="32" x2="16" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="22" y1="32" x2="22" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+            <line x1="26" y1="32" x2="26" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+
+          <!-- 柏油路面與顛簸行駛小車 -->
+          <g transform="translate(180, 180)">
+            <rect width="220" height="60" fill="#D3C9B8" stroke="#3E3A39" stroke-width="3"/>
+            <line x1="15" y1="28" x2="45" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            <line x1="75" y1="28" x2="105" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            <line x1="135" y1="28" x2="165" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            <line x1="195" y1="28" x2="220" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g class="anim-car-moving">
+            <path d="M4 18 L12 6 L38 6 L48 18 L58 18 L58 30 L2 30 L0 22 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+            <path d="M15 8 L35 8 L35 18 L10 18 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
+            <circle cx="15" cy="30" r="5" fill="#3E3A39"/><circle cx="15" cy="30" r="2" fill="#FFFFFF"/>
+            <circle cx="47" cy="30" r="5" fill="#3E3A39"/><circle cx="47" cy="30" r="2" fill="#FFFFFF"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="home-menu-grid">
+        <div class="menu-card" onclick="switchView('view-itinerary')">
+          <div class="menu-card-title">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="18" rx="3" fill="#A8D3E6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/>
+            </svg>
+            <span>查看 7 天行程</span>
+          </div>
+          <div class="menu-card-desc">每日時間軸、避坑導航</div>
+        </div>
+
+        <div class="menu-card" onclick="switchView('view-flights')">
+          <div class="menu-card-title">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
+              <path d="M2 16 L22 16 L19 20 L5 20 Z" fill="#F6D27A"/><path d="M4 14 L12 4 L14 4 L12 14 L18 14 L20 11 L21 11 L20 16 L2 16 Z" fill="#F2A497"/>
+            </svg>
+            <span>機票航班資訊</span>
+          </div>
+          <div class="menu-card-desc">國泰 CX564 ⇄ CX565</div>
+        </div>
+
+        <div class="menu-card" onclick="switchView('view-prep')">
+          <div class="menu-card-title">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
+              <rect x="5" y="7" width="14" height="14" rx="4" fill="#F2A497"/><path d="M9 7 V5 A3 3 0 0 1 15 5 V7"/>
+            </svg>
+            <span>行前行李清單</span>
+          </div>
+          <div class="menu-card-desc">護照、駕照日文譯本、SEP</div>
+        </div>
+
+        <div class="menu-card" onclick="switchView('view-prep')">
+          <div class="menu-card-title">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
+              <rect x="4" y="3" width="16" height="18" rx="3" fill="#B9DAA5"/><rect x="7" y="6" width="10" height="4" rx="1" fill="#FFFFFF"/>
+            </svg>
+            <span>日幣即時換算</span>
+          </div>
+          <div class="menu-card-desc">自駕隨身匯率小工具</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 行程頁面：動態由 app.js 渲染 -->
+    <div id="view-itinerary" class="view-container active">
+      <div class="day-selector" id="day-selector-bar">
+        <!-- 由 app.js 動態生成 Day 1 ~ Day 7 按鈕 -->
+      </div>
+      <div id="itinerary-cards-container">
+        <!-- 由 app.js 動態渲染當天行程卡片 -->
+      </div>
+    </div>
+
+    <!-- 航班資訊 -->
+    <div id="view-flights" class="view-container">
+      <div class="card" style="border-top: 8px solid var(--coral);">
+        <div class="card-header-bar"><span class="tag tag-flight">去程機票・已確認</span><span style="font-size: 0.8rem; font-weight: 900;">國泰航空 CX564</span></div>
+        <div class="flight-route-box">
+          <div><div class="flight-city">TPE</div><div class="flight-sub">桃園 T1</div><div class="flight-time">11:15</div></div>
+          <div class="flight-line-wrap">
+            <svg viewBox="0 0 110 32" class="flight-svg-line">
+              <line x1="2" y1="16" x2="28" y2="16" stroke-dasharray="4 4"/>
+              <g transform="translate(32, 6)">
+                <path d="M4 14 C15 13, 30 11, 40 10 C44 9.5, 46 12, 42 14 C32 17, 15 18, 4 17 Z" fill="#FFFFFF"/>
+                <path d="M4 14 L0 2 L8 5 L6 14 Z" fill="#F2A497"/><path d="M18 13 L26 2 L33 4 L23 14 Z" fill="#F6D27A"/>
+              </g>
+              <line x1="82" y1="16" x2="108" y2="16" stroke-dasharray="4 4"/>
+            </svg>
+          </div>
+          <div><div class="flight-city">KIX</div><div class="flight-sub">關西 T1</div><div class="flight-time">14:45</div></div>
+        </div>
+        <div class="card-desc">• 出發日期：<b>2026/11/27 (五)</b><br>• 報到時間：<b>09:15</b>（桃機第一航廈）<br>• 飛行時間：約 2 小時 30 分</div>
+      </div>
+
+      <div class="card" style="border-top: 8px solid var(--water);">
+        <div class="card-header-bar"><span class="tag" style="background: var(--water);">回程機票・已確認</span><span style="font-size: 0.8rem; font-weight: 900;">國泰航空 CX565</span></div>
+        <div class="flight-route-box">
+          <div><div class="flight-city">KIX</div><div class="flight-sub">關西 T1</div></div>
+          <div class="flight-line-wrap">
+            <svg viewBox="0 0 110 32" class="flight-svg-line">
+              <line x1="2" y1="16" x2="28" y2="16" stroke-dasharray="4 4"/>
+              <g transform="translate(32, 6)">
+                <path d="M4 14 C15 13, 30 11, 40 10 C44 9.5, 46 12, 42 14 C32 17, 15 18, 4 17 Z" fill="#FFFFFF"/>
+                <path d="M4 14 L0 2 L8 5 L6 14 Z" fill="#A8D3E6"/><path d="M18 13 L26 2 L33 4 L23 14 Z" fill="#F6D27A"/>
+              </g>
+              <line x1="82" y1="16" x2="108" y2="16" stroke-dasharray="4 4"/>
+            </svg>
+          </div>
+          <div><div class="flight-city">TPE</div><div class="flight-sub">桃園 T1</div></div>
+        </div>
+        <div class="card-desc">• 回程日期：<b>2026/12/03 (四)</b><br>• 航班號碼：<b>CX565</b><br>• 提醒：當天請預留臨空城還車與轉乘至關西機場的完整時間。</div>
+      </div>
+    </div>
+
+    <!-- 準備清單與匯率工具 -->
+    <div id="view-prep" class="view-container">
+      <div class="card">
+        <div class="card-title">行前必備清單 (點擊劃線保存)</div>
+        <div class="card-desc">自駕出發前務必逐項核對：</div>
+        <div class="check-item" onclick="toggleCheck(this, 'c1')"><div class="check-box" id="c1"></div><span>護照正本（效期 6 個月以上）</span></div>
+        <div class="check-item" onclick="toggleCheck(this, 'c2')"><div class="check-box" id="c2"></div><span>台灣汽車駕照 正本</span></div>
+        <div class="check-item" onclick="toggleCheck(this, 'c3')"><div class="check-box" id="c3"></div><span>駕照日文譯本 正本（監理所辦理）</span></div>
+        <div class="check-item" onclick="toggleCheck(this, 'c4')"><div class="check-box" id="c4"></div><span>租車預約單與 SEP 憑證確認信</span></div>
+        <div class="check-item" onclick="toggleCheck(this, 'c5')"><div class="check-box" id="c5"></div><span>日本上網 eSIM / SIM 卡開通</span></div>
+        <div class="check-item" onclick="toggleCheck(this, 'c6')"><div class="check-box" id="c6"></div><span>Visit Japan Web 入境 QR Code 填寫</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">日幣即時換算</div>
+        <div class="card-desc">匯率以 0.21 估算（含稅/未稅隨手算）：</div>
+        <div class="calc-box">
+          <input type="number" id="jpy-input" class="calc-input" placeholder="輸入日圓 JPY (例: 1500)" oninput="calcTwd()">
+        </div>
+        <div id="twd-result" style="margin-top: 10px; font-weight: 900; font-size: 1.1rem; color: var(--coral);">約新台幣：NT$ 0</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 底部手繪便籤 Drawer (100% 依據模擬圖，純向量無 Emoji) -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeMemo()"></div>
+  <div class="memo-drawer" id="memo-drawer">
+    <div class="drawer-drag-bar"></div>
+    <div class="drawer-header">
+      <span class="drawer-tag">散策便籤</span>
+      <button class="drawer-close-btn" onclick="closeMemo()">✕</button>
+    </div>
+    <div class="drawer-title" id="drawer-title">地點名稱</div>
+    <div class="drawer-desc" id="drawer-desc">特色短評</div>
+
+    <div class="copy-chip" onclick="copyDrawerAddr()">
+      <div class="copy-chip-left">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+        <span id="drawer-addr">兵庫県神戸市中央区...</span>
+      </div>
+      <span class="copy-badge">複製地址</span>
+    </div>
+
+    <div class="btn-row" style="margin-top: 10px;">
+      <a href="#" id="drawer-btn-gmap" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+        <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+        <span>Google 地圖</span>
+      </a>
+      <a href="#" id="drawer-btn-amap" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+        <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+        <span>Apple 地圖</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
