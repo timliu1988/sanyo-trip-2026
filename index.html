@@ -106,7 +106,6 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
-    /* 內容視圖管理 (SPA) */
     main {
       padding: 16px;
       max-width: 580px;
@@ -127,7 +126,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 標題與倒數膠囊 */
     .hero-title-wrap {
       text-align: center;
       margin: 8px 0 14px 0;
@@ -179,7 +177,6 @@
       font-weight: 700;
     }
 
-    /* 插圖框架 */
     .illustration-frame {
       background: #fff;
       border: var(--border-thick);
@@ -195,7 +192,6 @@
       display: block;
     }
 
-    /* 小車行駛微顛簸動畫 */
     .anim-car-moving {
       animation: drivingRide 0.8s infinite ease-in-out;
     }
@@ -211,7 +207,6 @@
       50% { transform: translateY(-3px); }
     }
 
-    /* 首頁快捷按鈕 */
     .home-menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -250,7 +245,6 @@
       color: #666;
     }
 
-    /* 行程頁 Tab */
     .day-selector {
       display: flex;
       gap: 6px;
@@ -277,7 +271,6 @@
       box-shadow: 1px 1px 0px var(--ink);
     }
 
-    /* 卡片樣式 */
     .card {
       background: #fff;
       border: var(--border-thick);
@@ -325,7 +318,6 @@
       margin-bottom: 10px;
     }
 
-    /* 複製地址與動作按鈕 */
     .copy-chip {
       background: #F8F9FA;
       border: 2px dashed #B8B5B2;
@@ -390,7 +382,6 @@
     .btn-yahoo { background: #FFE0E0; }
     .btn-warn { background: var(--yamabuki); }
 
-    /* 折疊抽屜 Accordion */
     .accordion-group {
       display: flex;
       flex-direction: column;
@@ -441,7 +432,6 @@
       padding-top: 10px;
     }
 
-    /* 路線決策專用卡片排版 */
     .route-choice-card {
       background: #FFFFFF;
       border: 2px solid var(--ink);
@@ -470,7 +460,6 @@
       border: 1px solid var(--ink);
     }
 
-    /* 避坑警示 */
     .alert-box {
       background: #FFF3CD;
       border: 2px solid var(--ink);
@@ -490,7 +479,6 @@
       gap: 4px;
     }
 
-    /* 備忘清單 */
     .check-item {
       display: flex;
       align-items: center;
@@ -520,7 +508,6 @@
       font-size: 0.8rem;
     }
 
-    /* 貨幣計算機 */
     .calc-box {
       display: flex;
       gap: 8px;
@@ -542,7 +529,6 @@
   <!-- 頂部導航 -->
   <header>
     <div class="brand-logo" onclick="switchView('view-home')">
-      <!-- 手繪鳥居小圖標 -->
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round">
         <line x1="2" y1="5" x2="22" y2="5"/>
         <line x1="4" y1="9" x2="20" y2="9"/>
@@ -575,7 +561,6 @@
         <p class="sub-title">神戶・岡山・尾道・廣島・宮島 7 日手帳</p>
       </div>
 
-      <!-- 四格倒數膠囊 -->
       <div class="countdown-grid">
         <div class="count-card cd-coral">
           <div class="count-num" id="cd-days">--</div>
@@ -596,35 +581,26 @@
       </div>
       <div class="countdown-note" id="countdown-text">距離 2026/11/27 (五) 降落關西機場還有 -- 天</div>
 
-      <!-- ================= 核心 SVG 主視覺插圖 (完全還原手繪線條＋真實地理位置排列＋分叉鹿角＋右下動態小車) ================= -->
+      <!-- 主插圖：地標由西向東嚴格排序 + 分叉鹿角 + 右下小車顛簸動畫 -->
       <div class="illustration-frame">
         <svg class="main-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- 1. 天空背景 -->
           <rect width="400" height="145" fill="#A8D3E6"/>
           
-          <!-- 2. 太陽 (墨黑粗邊) -->
           <circle cx="320" cy="55" r="23" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          
-          <!-- 3. 白雲 -->
           <path d="M220 54 Q228 38 245 42 Q258 32 272 44 Q282 48 280 58 Q280 68 266 68 L226 68 Q214 68 220 54 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
 
-          <!-- 4. 左上角客機 (帶手繪噴射尾流) -->
           <g class="anim-flight" transform="translate(48, 28)">
             <line x1="-12" y1="20" x2="-2" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
             <path d="M0 16 L28 8 L36 17 L16 19 L25 28 L19 28 L12 21 L2 22 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
           </g>
 
-          <!-- 5. 遠景青山 -->
           <path d="M-10 145 Q70 100 150 135 Q230 95 320 140 Q360 120 410 145 L410 155 L-10 155 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
 
-          <!-- 6. 瀨戶內海 -->
           <rect y="140" width="400" height="48" fill="#5DB7DE" stroke="#3E3A39" stroke-width="3"/>
           <path d="M45 155 Q60 150 75 155" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
           <path d="M208 152 Q223 147 238 152" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
 
-          <!-- ================= 7. 沿岸地標 (按真實地理位置：西 ➔ 東 嚴格排列) ================= -->
-          
-          <!-- [地理 1：最西邊] 宮島大鳥居 (雙層粗樑、方塊額束與斜撐柱細節) -->
+          <!-- 地理位置 1：宮島大鳥居 (最西) -->
           <g id="spot-torii" transform="translate(60, 48)">
             <path d="M0 10 C25 2, 75 2, 100 10 L98 22 C75 16, 25 16, 2 22 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
             <path d="M6 22 L94 22 L92 30 L8 30 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
@@ -636,7 +612,7 @@
             <path d="M88 68 L80 64 L80 114 L88 114 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- [地理 2：廣島] 原爆圓頂屋 (拱窗與圓頂幾何線條) -->
+          <!-- 地理位置 2：廣島原爆圓頂屋 -->
           <g id="spot-atomic-dome" transform="translate(195, 96)">
             <rect x="0" y="24" width="30" height="20" fill="#E8DDD0" stroke="#3E3A39" stroke-width="2.5"/>
             <rect x="5" y="30" width="6" height="14" rx="2" fill="#3E3A39"/>
@@ -647,7 +623,7 @@
             <line x1="15" y1="5" x2="15" y2="10" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- [地理 3：岡山] 岡山城天守 (黑色雙層飛簷與白壁望樓風格) -->
+          <!-- 地理位置 3：岡山城天守 -->
           <g id="spot-okayama-castle" transform="translate(242, 80)">
             <polygon points="4,60 36,60 32,45 8,45" fill="#3E3A39" stroke="#3E3A39" stroke-width="2.5"/>
             <path d="M2 45 L38 45 L20 33 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
@@ -656,7 +632,7 @@
             <circle cx="20" cy="18" r="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="1.5"/>
           </g>
 
-          <!-- [地理 4：最東邊] 神戶港塔 (經典紅鼓形細腰與頂部觀景台) -->
+          <!-- 地理位置 4：神戶港塔 (最東) -->
           <g id="spot-kobe-tower" transform="translate(296, 75)">
             <path d="M4 65 Q11 35 7 15 L17 15 Q13 35 20 65 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
             <line x1="8" y1="36" x2="16" y2="36" stroke="#3E3A39" stroke-width="2"/>
@@ -664,35 +640,27 @@
             <line x1="12" y1="0" x2="12" y2="6" stroke="#3E3A39" stroke-width="2.5"/>
           </g>
 
-          <!-- 8. 前景左下角沙灘與圓滾滾宮島小鹿 (分叉鹿角升級版) -->
+          <!-- 前景左下角沙灘與立體分叉角小鹿 -->
           <path d="M0 178 Q100 174 180 185 L180 240 L0 240 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
           <g id="deer-group" transform="translate(50, 168)">
-            <!-- 身軀 -->
             <ellipse cx="18" cy="22" rx="16" ry="12" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 圓圓頭部 -->
             <circle cx="30" cy="12" r="7.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
             <circle cx="32" cy="11" r="1.5" fill="#3E3A39"/>
             
-            <!-- 手繪立體分叉鹿角 (左右兩枝樹狀分叉) -->
-            <!-- 左鹿角主幹與分枝 -->
+            <!-- 手繪立體分叉角 -->
             <path d="M28 5 L24 -2 M26 2 L22 0" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
-            <!-- 右鹿角主幹與分枝 -->
             <path d="M31 5 L35 -3 M33 2 L37 1" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
-            
-            <!-- 小耳朵 -->
             <ellipse cx="25" cy="8" rx="2.5" ry="1.5" fill="#F2A497" stroke="#3E3A39" stroke-width="1.8" transform="rotate(-30 25 8)"/>
             
-            <!-- 細腿 -->
             <line x1="10" y1="32" x2="10" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
             <line x1="16" y1="32" x2="16" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
             <line x1="22" y1="32" x2="22" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
             <line x1="26" y1="32" x2="26" y2="44" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 梅花鹿白斑點 -->
             <circle cx="12" cy="18" r="1.5" fill="#FFFFFF"/>
             <circle cx="18" cy="20" r="1.8" fill="#FFFFFF"/>
           </g>
 
-          <!-- 9. 前景右下角柏油公路與車道虛線 -->
+          <!-- 前景右下角柏油公路 -->
           <g id="road-surface" transform="translate(180, 180)">
             <rect width="220" height="60" fill="#D3C9B8" stroke="#3E3A39" stroke-width="3"/>
             <line x1="15" y1="28" x2="45" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
@@ -701,16 +669,12 @@
             <line x1="195" y1="28" x2="220" y2="28" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
           </g>
 
-          <!-- 10. 全圖唯一自駕黃色小車 (車輪緊貼地面，具有微顛簸行駛動畫) -->
+          <!-- 右下角行駛自駕黃色小車 -->
           <g class="anim-car-moving" id="travel-car">
-            <!-- 黃色車體 -->
             <path d="M4 18 L12 6 L38 6 L48 18 L58 18 C60 18, 62 20, 62 22 L62 30 C62 32, 60 33, 58 33 L2 33 C0.9 33, 0 32, 0 30 L0 22 C0 20, 2 18, 4 18 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 車窗與中柱 -->
             <path d="M15 8 L35 8 L35 18 L10 18 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
             <line x1="23" y1="8" x2="23" y2="18" stroke="#3E3A39" stroke-width="2"/>
-            <!-- 車頭燈 -->
             <circle cx="60" cy="24" r="2.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
-            <!-- 輪胎與輪轂 -->
             <circle cx="15" cy="33" r="6" fill="#3E3A39"/>
             <circle cx="15" cy="33" r="2.5" fill="#FFFFFF"/>
             <circle cx="47" cy="33" r="6" fill="#3E3A39"/>
@@ -719,7 +683,7 @@
         </svg>
       </div>
 
-      <!-- 首頁 4 大快捷入口 (純手繪向量圖標，絕無 Emoji) -->
+      <!-- 首頁 4 大快捷入口 -->
       <div class="home-menu-grid">
         <div class="menu-card" onclick="switchView('view-itinerary')">
           <div class="menu-card-title">
@@ -750,7 +714,8 @@
             <svg class="menu-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.2" stroke-linecap="round">
               <rect x="5" y="7" width="14" height="14" rx="4" fill="#F2A497"/>
               <path d="M9 7 V5 A3 3 0 0 1 15 5 V7"/>
-              <line x1="5" y1="13" x2="19" y2="13"/><circle cx="12" cy="13" r="1.5" fill="#3E3A39"/>
+              <line x1="5" y1="13" x2="19" y2="13"/>
+              <circle cx="12" cy="13" r="1.5" fill="#3E3A39"/>
             </svg>
             <span>行前行李清單</span>
           </div>
@@ -795,7 +760,7 @@
           <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
         </div>
 
-        <!-- 電車接駁 (NAVITIME 智慧雙備援直開) -->
+        <!-- 電車接駁 (NAVITIME Universal Link 杜絕網址無效) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:00</span>
@@ -804,8 +769,8 @@
           <div class="card-title">関西空港 ➔ りんくうタウン (臨空城)</div>
           <div class="card-desc">搭乘 JR 關空快速或南海電鐵（1 站即達，車程約 5~6 分鐘）。</div>
           <div class="btn-row">
-            <!-- 呼叫 JS openNavitime() 徹底解決 Safari 網址無效彈窗 -->
-            <a href="javascript:void(0)" onclick="openNavitime()" class="action-btn btn-navitime">
+            <!-- 官方 Universal Link：裝 App 者自動喚醒 App 帶入起迄站，沒裝開網頁，永不彈窗報錯 -->
+            <a href="https://www.navitime.co.jp/transfer/searchlist?orvStationName=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&dnvStationName=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3" target="_blank" rel="noopener noreferrer" class="action-btn btn-navitime">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#B9DAA5"/><path d="M12 7v5l3 3"/></svg>
               <span>NAVITIME 班次</span>
             </a>
@@ -817,7 +782,7 @@
           </div>
         </div>
 
-        <!-- 臨空城取車 -->
+        <!-- 臨空城取車 (修復 Google 官方標準 API 連結) -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">15:30</span>
@@ -833,18 +798,19 @@
             <span class="copy-badge">複製地址</span>
           </div>
           <div class="btn-row">
-            <a href="https://maps.app.goo.gl/Up1GinnkgB7MZQkF8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <!-- 採用 Google Maps Search API，手機 App 100% 支援不跳錯 -->
+            <a href="https://www.google.com/maps/search/?api=1&query=ニコニコレンタカー+関西空港りんくうタウン駅前店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
               <span>Google 地圖</span>
             </a>
-            <a href="https://maps.apple/p/LE_GePstvQiJyD" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <a href="https://maps.apple.com/?q=ニコニコレンタカー+関西空港りんくうタウン駅前店" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
               <span>Apple 地圖</span>
             </a>
           </div>
         </div>
 
-        <!-- 神戶中途休息 (折疊式抽屜設計) -->
+        <!-- 神戶中途休息 -->
         <div class="card">
           <div class="card-header-bar">
             <span class="card-time">17:00 - 19:30</span>
@@ -873,7 +839,7 @@
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/5b5TUmUa2wXvdqXe6" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                  <a href="https://www.google.com/maps/search/?api=1&query=にしむら珈琲店+三宮店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                     <span>Google 地圖</span>
                   </a>
@@ -904,7 +870,7 @@
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/hDjq9uuwg35FHodq8" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                  <a href="https://www.google.com/maps/search/?api=1&query=観音屋+三宮さんちか店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                     <span>Google 地圖</span>
                   </a>
@@ -935,7 +901,7 @@
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/KxLnrPq12BTpyRxv9" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                  <a href="https://www.google.com/maps/search/?api=1&query=神戸三宮センター街" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                     <span>Google 地圖</span>
                   </a>
@@ -966,7 +932,7 @@
                   <span class="copy-badge">複製地址</span>
                 </div>
                 <div class="btn-row">
-                  <a href="https://maps.app.goo.gl/S5W2McZ3RqHm1AYu5" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                  <a href="https://www.google.com/maps/search/?api=1&query=神戸元町商店街" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                     <span>Google 地圖</span>
                   </a>
@@ -1057,7 +1023,7 @@
             <span class="copy-badge">複製地址</span>
           </div>
           <div class="btn-row" style="margin-bottom: 12px;">
-            <a href="https://maps.app.goo.gl/BKwaSSfR4bMMbHsGA" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <a href="https://www.google.com/maps/search/?api=1&query=スマイルホテル岡山" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
               <span>Google 地圖</span>
             </a>
@@ -1086,7 +1052,7 @@
                 <span class="copy-badge">複製地址</span>
               </div>
               <div class="btn-row">
-                <a href="https://maps.app.goo.gl/nveZSCX7Q57im7R38" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
+                <a href="https://www.google.com/maps/search/?api=1&query=麵酒一照庵+岡山本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap" onclick="event.stopPropagation();">
                   <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
                   <span>Google 地圖</span>
                 </a>
@@ -1103,7 +1069,7 @@
       <!-- Day 2 ~ 7 預留頁面 -->
       <div id="day-content-other" style="display: none;">
         <div class="card" style="text-align: center; padding: 40px 16px;">
-          <p style="font-size: 1.1rem; font-weight: 900; margin-bottom: 6px;" id="other-day-title">Day 2 規劃中 🚗</p>
+          <p style="font-size: 1.1rem; font-weight: 900; margin-bottom: 6px;" id="other-day-title">Day 2 規劃中</p>
           <p style="font-size: 0.82rem; color: #666;">行程構想拍板後隨時為你補齊！</p>
         </div>
       </div>
@@ -1232,18 +1198,6 @@
   </main>
 
   <script>
-    // NAVITIME 智慧雙重備援（喚醒 App 優先，失敗平滑切換網頁版，杜絕 Safari 網址無效彈窗）
-    function openNavitime() {
-      const appUrl = "navitime-transit://search?start=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&goal=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3";
-      const webUrl = "https://www.navitime.co.jp/transfer/searchlist?orvStationName=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&dnvStationName=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3";
-      
-      window.location.href = appUrl;
-      setTimeout(() => {
-        if (document.hidden || document.webkitHidden) return;
-        window.open(webUrl, '_blank');
-      }, 1500);
-    }
-
     function switchView(viewId) {
       document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
