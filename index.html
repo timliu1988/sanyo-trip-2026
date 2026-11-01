@@ -73,14 +73,30 @@
           <path d="M-10 145 Q70 100 150 135 Q230 95 320 140 Q360 120 410 145 L410 155 L-10 155 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
           <rect y="140" width="400" height="48" fill="#5DB7DE" stroke="#3E3A39" stroke-width="3"/>
           
-          <!-- 地標 1：宮島大鳥居 -->
-          <g transform="translate(60, 48)">
-            <path d="M0 10 C25 2, 75 2, 100 10 L98 22 C75 16, 25 16, 2 22 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
-            <rect x="20" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <rect x="70" y="30" width="10" height="84" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            <line x1="12" y1="52" x2="88" y2="52" stroke="#3E3A39" stroke-width="3.5"/>
-            <rect x="44" y="30" width="12" height="22" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
-          </g>
+          <!-- 地標 1：宮島嚴島神社・海上大鳥居 (修復比例與接合) -->
+		  <g id="spot-torii" transform="translate(58, 42)">
+		  <!-- 左右四根輔助底座與袖柱 (兩部鳥居特色) -->
+		  <path d="M 8 72 L 18 68 L 18 116 L 8 116 Z" fill="#E88B7D" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+		  <path d="M 82 72 L 72 68 L 72 116 L 82 116 Z" fill="#E88B7D" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+  
+		  <!-- 兩根粗壯主立柱 -->
+		  <rect x="22" y="28" width="10" height="90" fill="#F2A497" stroke="#3E3A39" stroke-width="2.8"/>
+		  <rect x="58" y="28" width="10" height="90" fill="#F2A497" stroke="#3E3A39" stroke-width="2.8"/>
+
+	  	  <!-- 下層貫樑 (橫穿兩根立柱) -->
+		  <rect x="12" y="50" width="66" height="7" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+
+		  <!-- 中央橫匾額 (日系金色牌匾) -->
+		  <rect x="40" y="28" width="10" height="22" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.2"/>
+
+		  <!-- 上層島木 (承接頂層) -->
+		  <rect x="8" y="21" width="74" height="7" rx="1.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+
+		  <!-- 頂部笠木 (優雅微翹大弧度飛簷，黑瓦收邊完整密合) -->
+		  <path d="M 2 12 Q 45 4, 88 12 L 86 21 Q 45 15, 4 21 Z" fill="#E88B7D" stroke="#3E3A39" stroke-width="2.8" stroke-linejoin="round"/>
+		  <!-- 頂部黑邊壓頂瓦 -->
+		  <path d="M 0 11 Q 45 2, 90 11 L 88 14 Q 45 6, 2 14 Z" fill="#3E3A39"/>
+		  </g>
           <!-- 地標 2：廣島原爆圓頂屋 -->
           <g transform="translate(195, 96)">
             <rect x="0" y="24" width="30" height="20" fill="#E8DDD0" stroke="#3E3A39" stroke-width="2.5"/>
