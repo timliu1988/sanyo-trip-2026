@@ -1,8 +1,8 @@
 // ==================== 行程資料庫 (未來擴充只需在此新增物件) ====================
 const ITINERARY_DATA = {
-  d1: {
-    title: "Day 1 (11/27)",
-    contentHtml: `
+    d1: {
+        title: "Day 1 (11/27)",
+        contentHtml: `
       <!-- 航班抵達 -->
       <div class="card">
         <div class="card-header-bar">
@@ -306,11 +306,11 @@ const ITINERARY_DATA = {
           </div>
           <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">不管人在神戸哪裡，先沿市區免費平面開往【神戸西 IC】上山陽道，全程通行費 0 円。</p>
           <div class="btn-row">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=兵庫県神戸市西区+神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#F6D27A"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
               <span>Google 導向神戸西IC</span>
             </a>
-            <a href="https://maps.apple.com/?daddr=神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <a href="https://maps.apple.com/?daddr=兵庫県神戸市西区+神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
               <span>Apple 導向神戸西IC</span>
             </a>
@@ -370,13 +370,31 @@ const ITINERARY_DATA = {
         </div>
       </div>
     `
-  },
-  d2: { title: "Day 2 (11/28)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 2 岡山 ➔ 倉敷 ➔ 尾道 規劃中</p></div>` },
-  d3: { title: "Day 3 (11/29)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>` },
-  d4: { title: "Day 4 (11/30)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>` },
-  d5: { title: "Day 5 (12/01)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>` },
-  d6: { title: "Day 6 (12/02)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>` },
-  d7: { title: "Day 7 (12/03)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 7 臨空城還車 ➔ 機場返台 規劃中</p></div>` }
+    },
+    d2: {
+        title: "Day 2 (11/28)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 2 岡山 ➔ 倉敷 ➔ 尾道 規劃中</p></div>`
+    },
+    d3: {
+        title: "Day 3 (11/29)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>`
+    },
+    d4: {
+        title: "Day 4 (11/30)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>`
+    },
+    d5: {
+        title: "Day 5 (12/01)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>`
+    },
+    d6: {
+        title: "Day 6 (12/02)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>`
+    },
+    d7: {
+        title: "Day 7 (12/03)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 7 臨空城還車 ➔ 機場返台 規劃中</p></div>`
+    }
 };
 
 // ==================== 頁面渲染與互動控制 ====================
@@ -385,129 +403,141 @@ let currentDay = 'd1';
 
 // 初始化渲染 Day 按鈕列
 function initDaySelector() {
-  const bar = document.getElementById('day-selector-bar');
-  bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
+    const bar = document.getElementById('day-selector-bar');
+    bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
     <button class="day-btn ${key === currentDay ? 'active' : ''}" onclick="switchDay('${key}')">
       ${ITINERARY_DATA[key].title}
     </button>
   `).join('');
-  renderItinerary();
+    renderItinerary();
 }
 
 // 切換天數
 function switchDay(dayKey) {
-  currentDay = dayKey;
-  document.querySelectorAll('.day-btn').forEach((btn, index) => {
-    btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
-  });
-  renderItinerary();
+    currentDay = dayKey;
+    document.querySelectorAll('.day-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
+    });
+    renderItinerary();
 }
 
 // 渲染當前天數卡片
 function renderItinerary() {
-  const container = document.getElementById('itinerary-cards-container');
-  container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    const container = document.getElementById('itinerary-cards-container');
+    container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 商圈折疊
 function toggleZone(headerEl) {
-  headerEl.parentElement.classList.toggle('open');
+    headerEl.parentElement.classList.toggle('open');
 }
 
 // 底部手繪便籤 Drawer 控制 (無 Emoji、標準 API)
 let currentDrawerAddr = '';
 function openMemo(name, addr, desc, searchKey) {
-  document.getElementById('drawer-title').textContent = name;
-  document.getElementById('drawer-desc').textContent = desc;
-  document.getElementById('drawer-addr').textContent = addr;
-  currentDrawerAddr = addr;
+    document.getElementById('drawer-title').textContent = name;
+    document.getElementById('drawer-desc').textContent = desc;
+    document.getElementById('drawer-addr').textContent = addr;
+    currentDrawerAddr = addr;
 
-  document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${searchKey || encodeURIComponent(name)}`;
-  document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${searchKey || encodeURIComponent(name)}`;
+    document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${searchKey || encodeURIComponent(name)}`;
+    document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${searchKey || encodeURIComponent(name)}`;
 
-  document.getElementById('drawer-backdrop').classList.add('show');
-  document.getElementById('memo-drawer').classList.add('open');
+    document.getElementById('drawer-backdrop').classList.add('show');
+    document.getElementById('memo-drawer').classList.add('open');
 }
 
 function closeMemo() {
-  document.getElementById('drawer-backdrop').classList.remove('show');
-  document.getElementById('memo-drawer').classList.remove('open');
+    document.getElementById('drawer-backdrop').classList.remove('show');
+    document.getElementById('memo-drawer').classList.remove('open');
 }
 
 function copyDrawerAddr() {
-  if (currentDrawerAddr) {
-    navigator.clipboard.writeText(currentDrawerAddr);
-    const badge = document.querySelector('.memo-drawer .copy-badge');
-    const oldText = badge.textContent;
-    badge.textContent = '已複製！';
-    setTimeout(() => { badge.textContent = oldText; }, 1500);
-  }
+    if (currentDrawerAddr) {
+        navigator.clipboard.writeText(currentDrawerAddr);
+        const badge = document.querySelector('.memo-drawer .copy-badge');
+        const oldText = badge.textContent;
+        badge.textContent = '已複製！';
+        setTimeout(() => {
+            badge.textContent = oldText;
+        }, 1500);
+    }
 }
 
 // 主視圖切換 (SPA)
 function switchView(viewId) {
-  document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
 
-  const target = document.getElementById(viewId);
-  if (target) target.classList.add('active');
+    const target = document.getElementById(viewId);
+    if (target)
+        target.classList.add('active');
 
-  if (viewId === 'view-itinerary') document.getElementById('btn-itinerary').classList.add('active');
-  if (viewId === 'view-flights') document.getElementById('btn-flights').classList.add('active');
-  if (viewId === 'view-prep') document.getElementById('btn-prep').classList.add('active');
+    if (viewId === 'view-itinerary')
+        document.getElementById('btn-itinerary').classList.add('active');
+    if (viewId === 'view-flights')
+        document.getElementById('btn-flights').classList.add('active');
+    if (viewId === 'view-prep')
+        document.getElementById('btn-prep').classList.add('active');
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 倒數計時器
 function updateCountdown() {
-  const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
-  const now = new Date().getTime();
-  const diff = targetDate - now;
+    const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
+    const now = new Date().getTime();
+    const diff = targetDate - now;
 
-  if (diff > 0) {
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('cd-days').textContent = days;
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
-    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
-    document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
-  }
+        document.getElementById('cd-days').textContent = days;
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+        document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
+    }
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // 備忘勾選持久化
 function toggleCheck(item, key) {
-  item.classList.toggle('done');
-  const isDone = item.classList.contains('done');
-  const box = document.getElementById(key);
-  box.textContent = isDone ? '✓' : '';
-  localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
+    item.classList.toggle('done');
+    const isDone = item.classList.contains('done');
+    const box = document.getElementById(key);
+    box.textContent = isDone ? '✓' : '';
+    localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
 }
 
 // 日幣換算
 function calcTwd() {
-  const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
-  const twd = Math.round(jpy * 0.21);
-  document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
+    const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
+    const twd = Math.round(jpy * 0.21);
+    document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
 }
 
 // 頁面載入執行
 window.addEventListener('DOMContentLoaded', () => {
-  initDaySelector();
-  ['c1','c2','c3','c4','c5','c6'].forEach(key => {
-    if (localStorage.getItem('checklist_' + key) === '1') {
-      const box = document.getElementById(key);
-      if (box) {
-        box.textContent = '✓';
-        box.parentElement.classList.add('done');
-      }
-    }
-  });
+    initDaySelector();
+    ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].forEach(key => {
+        if (localStorage.getItem('checklist_' + key) === '1') {
+            const box = document.getElementById(key);
+            if (box) {
+                box.textContent = '✓';
+                box.parentElement.classList.add('done');
+            }
+        }
+    });
 });
