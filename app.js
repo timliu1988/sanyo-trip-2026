@@ -109,48 +109,54 @@ const ITINERARY_DATA = {
               </div>
 
               <!-- 手繪散策虛線步道 (完全依據模擬圖，所有節點都是手繪卡片、皆可點選) -->
-              <div class="visual-trail-card">
-                <div class="visual-trail-title">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
-                  <span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
-                </div>
-                <svg class="interactive-trail-svg" viewBox="0 0 340 245" fill="none">
-                  <!-- 彎曲虛線小路 -->
-                  <path d="M 50 180 C 130 180, 80 120, 200 90 C 230 80, 270 30, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
-                  <!-- 手繪樹 -->
-                  <g transform="translate(18, 185)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
-                  <g transform="translate(285, 120)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
-                  <!-- 散步小人 -->
-                  <g transform="translate(50, 145)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
-                  <g transform="translate(195, 130)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+				<div class="visual-trail-card">
+				  <div class="visual-trail-title">
+					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+					<span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
+				  </div>
+				  
+				  <svg class="interactive-trail-svg" viewBox="0 0 340 240" fill="none">
+					<!-- 手繪彎曲虛線小徑 -->
+					<path d="M 60 175 C 130 175, 80 120, 200 95 C 230 85, 270 40, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
+					
+					<!-- 手繪路樹 -->
+					<g transform="translate(16, 175)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+					<g transform="translate(285, 115)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
 
-                  <!-- 節點 1：觀音屋 (手繪卡片樣式) -->
-                  <g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 モザイク2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！', '觀音屋+ハーバーランド店')" transform="translate(15, 15)">
-                    <rect width="145" height="58" rx="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="72" y="24" text-anchor="middle" font-size="13" font-weight="900" fill="#D9534F">観音屋</text>
-                    <text x="72" y="38" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
-                    <text x="72" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#888">(熱起司蛋糕)</text>
-                  </g>
-                  <text x="80" y="90" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
+					<!-- 散步小人 1 & 2 -->
+					<g transform="translate(50, 140)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+					<g transform="translate(190, 125)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
 
-                  <!-- 節點 2：西村咖啡 (手繪卡片樣式，不再只是乾淨文字) -->
-                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戶洋風老舖分店，手沖咖啡香濃郁。', 'にしむら珈琲店+ハーバーランド店')" transform="translate(190, 60)">
-                    <rect width="140" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="70" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
-                    <text x="70" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#666">ハーバーランド店</text>
-                    <text x="70" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#888">(カルメニ 1F)</text>
-                  </g>
-                  <text x="150" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+					<!-- 節點 1：觀音屋 (文字統一為質感黑墨色) -->
+					<g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 モザイク2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！', '觀音屋+ハーバーランド店')" transform="translate(15, 15)">
+					  <rect width="145" height="56" rx="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+					  <text x="72" y="24" text-anchor="middle" font-size="12.5" font-weight="900" fill="#3E3A39">観音屋</text>
+					  <text x="72" y="38" text-anchor="middle" font-size="10.5" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
+					  <text x="72" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#777">(熱起司蛋糕)</text>
+					</g>
+					<!-- 徒歩 2分 (避開卡片邊界) -->
+					<text x="75" y="88" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
 
-                  <!-- 節點 3：BE KOBE 紀念碑 (手繪卡片樣式) -->
-                  <g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戶港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+モニュメント')" transform="translate(170, 165)">
-                    <rect width="160" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="80" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">メリケンパーク</text>
-                    <text x="80" y="38" text-anchor="middle" font-size="11" font-weight="900" fill="#5DB7DE">BE KOBE モニュメント</text>
-                  </g>
-                  <text x="160" y="195" font-size="11" font-weight="900" fill="#3E3A39">徒歩 8分</text>
-                </svg>
-              </div>
+					<!-- 節點 2：西村咖啡 (卡片寬度精準包覆) -->
+					<g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戶洋風老舖分店，手沖咖啡香濃郁。', 'にしむら珈琲店+ハーバーランド店')" transform="translate(180, 58)">
+					  <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+					  <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
+					  <text x="72" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
+					  <text x="72" y="47" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(カルメニ 1F)</text>
+					</g>
+					<!-- 徒歩 3分 -->
+					<text x="135" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+
+					<!-- 節點 3：BE KOBE (文字統一為純黑墨色) -->
+					<g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戶港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+モニュメント')" transform="translate(160, 168)">
+					  <rect width="165" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+					  <text x="82" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
+					  <text x="82" y="38" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
+					</g>
+					<!-- 徒歩 8分：移至 BE KOBE 卡片正上方，徹底避免任何重疊 -->
+					<text x="165" y="158" font-size="11" font-weight="900" fill="#3E3A39">徒歩 8分</text>
+				  </svg>
+				</div>
             </div>
           </div>
 
