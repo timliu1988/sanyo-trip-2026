@@ -1,15 +1,15 @@
-// ==================== 行程資料庫 (未來擴充只需在此新增物件) ====================
+// ==================== 行程資料庫 ====================
 const ITINERARY_DATA = {
-    d1: {
-        title: "Day 1 (11/27)",
-        contentHtml: `
+  d1: {
+    title: "Day 1 (11/27)",
+    contentHtml: `
       <!-- 航班抵達 -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">09:15 - 14:45</span>
           <span class="tag tag-flight">航班出發</span>
         </div>
-        <div class="card-title">桃園機場 (TPE) T1 ➔ 関西空港 (KIX) T1 </div>
+        <div class="card-title">桃園機場 (TPE) T1 ➔ 関西空港 (KIX) T1</div>
         <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
       </div>
 
@@ -60,14 +60,14 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 神戸中途散策 (完全依據第 2、3 張模擬圖實作) -->
+      <!-- 神戸中途散策 -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">17:00 - 19:30</span>
           <span class="tag tag-must">中途放風</span>
         </div>
         <div class="card-title">神戸中途散策・スポット</div>
-        <div class="card-desc">依停車位置選擇探索商圈。點擊步道上的手繪節點卡片，底部立即滑出日文地址與導航便籤：</div>
+        <div class="card-desc">依停車位置選擇探索商圈。點擊步道上的節點卡片，底部立即滑出日文地址與地圖便籤：</div>
         
         <div class="zone-accordion">
           <!-- 商圈 1：港區 -->
@@ -80,7 +80,7 @@ const ITINERARY_DATA = {
               <span class="zone-arrow">▼</span>
             </div>
             <div class="zone-content">
-              <!-- 母地標 (含手繪摩天輪) -->
+              <!-- 母地標 -->
               <div class="parent-spot-card">
                 <div class="parent-spot-header">
                   <svg class="parent-spot-icon" viewBox="0 0 50 50" fill="none">
@@ -108,59 +108,59 @@ const ITINERARY_DATA = {
                 </div>
               </div>
 
-<!-- 手繪散策虛線步道 (含觀音屋、西村咖啡、Snoopy神戸店、BE KOBE) -->
+              <!-- 手繪散策步道 (港區) -->
               <div class="visual-trail-card">
                 <div class="visual-trail-title">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
                   <span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
                 </div>
                 
-                <svg class="interactive-trail-svg" viewBox="0 0 340 300" fill="none">
-                  <!-- 手繪彎曲虛線小徑 -->
-                  <path d="M 60 175 C 130 175, 80 120, 200 95 C 230 85, 270 40, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
-                  <path d="M 160 220 L 220 250" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
+                <svg class="interactive-trail-svg" viewBox="0 0 340 310" fill="none">
+                  <!-- 連貫虛線路徑 -->
+                  <path d="M 85 85 C 85 105, 245 40, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+                  <path d="M 245 135 C 245 155, 245 160, 245 175" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+                  <path d="M 245 250 C 245 265, 170 250, 170 260" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
                   
-                  <!-- 手繪路樹 -->
-                  <g transform="translate(16, 175)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
-                  <g transform="translate(285, 115)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+                  <!-- 路樹裝飾 -->
+                  <g transform="translate(14, 185)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+                  <g transform="translate(290, 20)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
 
                   <!-- 散步小人 -->
-                  <g transform="translate(50, 140)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
-                  <g transform="translate(190, 125)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+                  <g transform="translate(130, 95)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
 
                   <!-- 節點 1：觀音屋 -->
-                  <g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 モザイク2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！', '兵庫県神戸市中央区東川崎町1-6-1+観音屋')" transform="translate(15, 15)">
-                    <rect width="145" height="56" rx="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="72" y="24" text-anchor="middle" font-size="12.5" font-weight="900" fill="#3E3A39">観音屋</text>
-                    <text x="72" y="38" text-anchor="middle" font-size="10.5" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
-                    <text x="72" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#777">(熱起司蛋糕)</text>
+                  <g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 umieモザイク 2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！電話：078-360-1537', '観音屋+ハーバーランド店')" transform="translate(12, 12)">
+                    <rect width="146" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="73" y="22" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">観音屋</text>
+                    <text x="73" y="35" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
+                    <text x="73" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(熱起司蛋糕)</text>
+                    <text x="73" y="69" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
                   </g>
-                  <text x="75" y="88" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
 
                   <!-- 節點 2：西村咖啡 -->
-                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戸洋風老舖分店，手沖咖啡香濃郁。', '兵庫県神戸市中央区東川崎町1丁目5-7+にしむら珈琲店')" transform="translate(180, 58)">
-                    <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
-                    <text x="72" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
-                    <text x="72" y="47" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(カルメニ 1F)</text>
+                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戸洋風老舖分店，手沖咖啡香濃郁。電話：078-362-6220', 'にしむら珈琲店+ハーバーランド店')" transform="translate(172, 60)">
+                    <rect width="146" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="73" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
+                    <text x="73" y="35" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
+                    <text x="73" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(カルメニ 1F)</text>
+                    <text x="73" y="69" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
                   </g>
-                  <text x="135" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
 
-                  <!-- 節點 3：官方正名「スヌーピータウンショップ 神戸店 (umie モザイク2階)」 -->
-                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戸店', '兵庫県神戸市中央区東川崎町1-6-1 神戸ハーバーランドumie モザイク2階', '港區摩天輪旁！史努比周邊專賣店，電話：078-360-6788。', '兵庫県神戸市中央区東川崎町1-6-1+スヌーピータウンショップ神戸店')" transform="translate(155, 145)">
-                    <rect width="170" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="85" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">Snoopy Town 神戸店</text>
-                    <text x="85" y="38" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5DB7DE">(umie モザイク 2階)</text>
+                  <!-- 節點 3：Snoopy Town 神戶店 (MOSAIC 2F) -->
+                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戸店', '兵庫県神戸市中央区東川崎町1-6-1 umieモザイク 2F', 'umie MOSAIC 2樓，近摩天輪！各式史努比限定周邊與雜貨專門店。電話：078-360-6788', 'スヌーピータウンショップ+神戸店')" transform="translate(162, 150)">
+                    <rect width="166" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="83" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">Snoopy Town 神戸店</text>
+                    <text x="83" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">umie モザイク 2階</text>
+                    <text x="83" y="47" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(摩天輪旁專賣店)</text>
+                    <text x="83" y="69" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
                   </g>
-                  <text x="90" y="210" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
 
                   <!-- 節點 4：BE KOBE -->
-                  <g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戸港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', '兵庫県神戸市中央区波止場町2-2+BE+KOBE')" transform="translate(155, 230)">
-                    <rect width="170" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-                    <text x="85" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
-                    <text x="85" y="38" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
+                  <g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2 メリケンパーク内', '神戸港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+メリケンパーク')" transform="translate(85, 240)">
+                    <rect width="170" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="85" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
+                    <text x="85" y="37" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
                   </g>
-                  <text x="160" y="220" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
                 </svg>
               </div>
             </div>
@@ -191,32 +191,46 @@ const ITINERARY_DATA = {
                 </div>
               </div>
 
+              <!-- 手繪散策步道 (三宮・元町) -->
               <div class="visual-trail-card">
                 <div class="visual-trail-title">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
                   <span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
                 </div>
-                <svg class="interactive-trail-svg" viewBox="0 0 340 210" fill="none">
-                  <path d="M 40 40 Q 180 30, 220 90 T 80 170" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
-                  <g class="trail-clickable" onclick="openMemo('本神戸肉 森谷商店 元町本店', '兵庫県神戸市中央区元町通1丁目7-2', '神戸排隊人氣王！現炸金黃酥脆牛肉可樂餅與碎肉排。', '森谷商店+元町本店')" transform="translate(10, 15)">
-                    <rect width="140" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="70" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">本神戸肉 森谷商店</text>
-                    <text x="70" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#D9534F">(排隊金黃牛肉可樂餅)</text>
+                <svg class="interactive-trail-svg" viewBox="0 0 340 220" fill="none">
+                  <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+                  <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+                  <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+                  <!-- 節點 1：森谷商店 -->
+                  <g class="trail-clickable" onclick="openMemo('本神戸肉 森谷商店 元町本店', '兵庫県神戸市中央区元町通1丁目7-2', '神戸排隊人氣王！現炸金黃酥脆牛肉可樂餅與碎肉排。電話：078-391-4129', '森谷商店+元町本店')" transform="translate(10, 15)">
+                    <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">本神戸肉 森谷商店</text>
+                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(排隊金黃牛肉可樂餅)</text>
+                    <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
                   </g>
-				  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 三宮店', '兵庫県神戸市中央区三宮町1-6-18 エイツビル2F', '三宮商圈專賣店！各式史努比限定雜貨與文具，電話：078-332-7701。', '兵庫県神戸市中央区三宮町1-6-18+スヌーピータウンショップ三宮店')" transform="translate(180, 70)">
-                    <rect width="150" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 三宮店</text>
-                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#5DB7DE">(エイツビル 2F)</text>
+
+                  <!-- 節點 2：Snoopy Town 三宮店 -->
+                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 三宮店', '兵庫県神戸市中央区三宮町1-6-18 エイツビル2F', '三宮商圈專賣店！各式史努比限定雜貨與文具。電話：078-332-7701', 'スヌーピータウンショップ+三宮店')" transform="translate(170, 30)">
+                    <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+                    <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 三宮店</text>
+                    <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(エイツビル 2F)</text>
+                    <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
                   </g>
-                  <g class="trail-clickable" onclick="openMemo('観音屋 三宮さんちか店', '兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街', '木村拓哉推薦的現烤起司蛋糕，位於站前地下街極為順路。', '観音屋+三宮さんちか店')" transform="translate(15, 140)">
-                    <rect width="140" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="70" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">観音屋 さんちか店</text>
-                    <text x="70" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#888">(三宮站地下街 7番街)</text>
+
+                  <!-- 節點 3：にしむら珈琲店 三宮店 -->
+                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 三宮店', '兵庫県神戸市中央区琴ノ緒町5丁目3-5', 'JR三宮站北口昭和洋風喫茶，招牌手沖與濃醇維也納咖啡。電話：078-241-2777', 'にしむら珈琲店+三宮店')" transform="translate(170, 135)">
+                    <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+                    <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">にしむら珈琲店 三宮店</text>
+                    <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(JR三宮站北口昭和老舖)</text>
+                    <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
                   </g>
-                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 三宮店', '兵庫県神戸市中央区琴ノ緒町5丁目3-5', 'JR三宮站北口昭和洋風喫茶，招牌手沖與濃醇維也納咖啡。', 'にしむら珈琲店+三宮店')" transform="translate(180, 145)">
-                    <rect width="145" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="72" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">にしむら珈琲店 三宮店</text>
-                    <text x="72" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#888">(JR三宮站北口昭和老舖)</text>
+
+                  <!-- 節點 4：觀音屋 さんちか店 -->
+                  <g class="trail-clickable" onclick="openMemo('観音屋 さんちか店', '兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街', '木村拓哉推薦的現烤起司蛋糕，位於站前地下街極為順路。電話：078-391-1710', '観音屋+さんちか店')" transform="translate(10, 135)">
+                    <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">観音屋 さんちか店</text>
+                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(三宮站地下街 7番街)</text>
                   </g>
                 </svg>
               </div>
@@ -235,7 +249,7 @@ const ITINERARY_DATA = {
             <div class="zone-content">
               <div class="parent-spot-card">
                 <div class="parent-spot-name">PEANUTS HOTEL (神戸北野)</div>
-                <div class="parent-spot-sub">花生漫畫主題飯店，1 樓設有主題 Cafe 與外帶紀念品專屬區。</div>
+                <div class="parent-spot-sub">花生漫畫主題飯店，1 樓設有主題 Cafe 與外帶紀念品專屬區。電話：078-200-5810</div>
                 <div class="btn-row">
                   <a href="https://www.google.com/maps/search/?api=1&query=PEANUTS+HOTEL" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
@@ -248,22 +262,24 @@ const ITINERARY_DATA = {
                 </div>
               </div>
 
+              <!-- 手繪散策步道 (北野) -->
               <div class="visual-trail-card">
                 <div class="visual-trail-title">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
                   <span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
                 </div>
                 <svg class="interactive-trail-svg" viewBox="0 0 340 100" fill="none">
-                  <path d="M 50 50 L 290 50" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
-                  <g transform="translate(145, 25)">
+                  <path d="M 30 50 L 150 50" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+                  <g transform="translate(80, 25)">
                     <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
                     <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
                   </g>
-                  <text x="145" y="75" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
-                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 中山手本店', '兵庫県神戸市中央区中山手通1丁目26-3', '日本第一家會員制咖啡喫茶本店，如歐洲中世紀木造城堡般優雅。', 'にしむら珈琲店+中山手本店')" transform="translate(180, 25)">
-                    <rect width="150" height="46" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
-                    <text x="75" y="35" text-anchor="middle" font-size="9" font-weight="800" fill="#888">中山手本店(創始城堡店)</text>
+                  
+                  <g class="trail-clickable" onclick="openMemo('神戸にしむら珈琲店 中山手本店', '兵庫県神戸市中央区中山手通1丁目26-3', '日本第一家會員制咖啡喫茶本店，如歐洲中世紀木造城堡般優雅。電話：078-221-1872', '神戸にしむら珈琲店+中山手本店')" transform="translate(160, 25)">
+                    <rect width="165" height="46" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+                    <text x="82" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
+                    <text x="82" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">中山手本店 (城堡老舖)</text>
+                    <text x="82" y="60" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
                   </g>
                 </svg>
               </div>
@@ -272,7 +288,7 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 往岡山導航決策 (目前 GPS 位置出發) -->
+      <!-- 往岡山導航決策 (修復神戶西IC定錨) -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">19:40 - 22:00</span>
@@ -369,38 +385,176 @@ const ITINERARY_DATA = {
             <text x="30" y="24" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
             <g class="trail-clickable" onclick="openMemo('麵酒一照庵 岡山本店', '岡山県岡山市北区中山下1丁目7-16', '飯店步行約 5~7 分鐘。以特色笠岡醬油拉麵與小酌下酒菜聞名，營業時間至 23:30，長途自駕後的暖胃首選！', '麵酒一照庵+岡山本店')" transform="translate(110, 10)">
               <rect width="210" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="105" y="22" text-anchor="middle" font-size="12" font-weight="900" fill="#D9534F">麵酒一照庵 岡山本店</text>
-              <text x="105" y="38" text-anchor="middle" font-size="9.5" font-weight="800" fill="#666">笠岡醬油拉麵・營業至 23:30</text>
+              <text x="105" y="22" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">麵酒一照庵 岡山本店</text>
+              <text x="105" y="38" text-anchor="middle" font-size="9.5" font-weight="800" fill="#777">笠岡醬油拉麵・營業至 23:30</text>
             </g>
           </svg>
         </div>
       </div>
     `
-    },
-    d2: {
-        title: "Day 2 (11/28)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 2 岡山 ➔ 倉敷 ➔ 尾道 規劃中</p></div>`
-    },
-    d3: {
-        title: "Day 3 (11/29)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>`
-    },
-    d4: {
-        title: "Day 4 (11/30)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>`
-    },
-    d5: {
-        title: "Day 5 (12/01)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>`
-    },
-    d6: {
-        title: "Day 6 (12/02)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>`
-    },
-    d7: {
-        title: "Day 7 (12/03)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 7 臨空城還車 ➔ 機場返台 規劃中</p></div>`
-    }
+  },
+  d2: { title: "Day 2 (11/28)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 2 岡山 ➔ 倉敷 ➔ 尾道 規劃中</p></div>` },
+  d3: { title: "Day 3 (11/29)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>` },
+  d4: { title: "Day 4 (11/30)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>` },
+  d5: { title: "Day 5 (12/01)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>` },
+  d6: { title: "Day 6 (12/02)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>` },
+  d7: {
+    title: "Day 7 (12/03)",
+    contentHtml: `
+      <!-- 早餐輕食 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">08:30 - 10:00</span>
+          <span class="tag tag-train">朝食・喫茶</span>
+        </div>
+        <div class="card-title">梅田站前晨間咖啡與輕食</div>
+        <div class="card-desc">早晨在梅田悠閒享受現烤麵包與手沖咖啡，為採買行程儲備體力。</div>
+        <div class="visual-trail-card" style="background: #FFFCF7;">
+          <div class="trail-label" style="font-size: 0.75rem; font-weight: 900; color: #888; margin-bottom: 4px;">梅北廣場周邊咖啡推薦</div>
+          <div style="font-size: 0.82rem; line-height: 1.6; padding: 4px;">
+            • <b>THE CITY BAKERY グランフロント大阪</b> (梅北広場 B1F・招牌椒鹽可頌)<br>
+            • <b>GARB MONAQUE</b> (梅北広場 1F・大片落地窗景觀、Q彈湯種吐司套餐)
+          </div>
+        </div>
+      </div>
+
+      <!-- 梅田排隊伴手禮・手繪散策步道 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">10:00 - 12:45</span>
+          <span class="tag tag-must">最後採買</span>
+        </div>
+        <div class="card-title">梅田排隊人氣伴手禮・散策路線</div>
+        <div class="card-desc">依地下連通道順路動線規劃，點擊步道上的店家卡片可查看日文地址與導航便籤：</div>
+
+        <!-- 母地標卡片 -->
+        <div class="parent-spot-card">
+          <div class="parent-spot-name">阪神梅田本店 ＆ グランフロント大阪</div>
+          <div class="parent-spot-sub">大阪甜點一級戰區，匯集日本超難買的夢幻限定排隊點心。</div>
+          <div class="btn-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=阪神梅田本店" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 阪神梅田</span>
+            </a>
+            <a href="https://maps.apple.com/?q=グランフロント大阪" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple Grand Front</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 手繪步道 SVG -->
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>NEIGHBORHOOD SWEETS ROUTE (點擊節點看便籤)</span>
+          </div>
+          
+          <svg class="interactive-trail-svg" viewBox="0 0 340 245" fill="none">
+            <!-- 手繪彎曲虛線小路 -->
+            <path d="M 50 180 C 130 180, 80 120, 200 90 C 230 80, 270 30, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
+            
+            <!-- 手繪樹 -->
+            <g transform="translate(18, 185)">
+              <rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/>
+            </g>
+            <g transform="translate(285, 120)">
+              <rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/>
+            </g>
+
+            <!-- 散步小人 -->
+            <g transform="translate(50, 145)">
+              <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(195, 130)">
+              <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 節點 1：BRULEE MERIZE (阪神梅田 B1F) -->
+            <g class="trail-clickable" onclick="openMemo('BRULEE MERIZE 阪神梅田本店', '大阪府大阪市北区梅田1丁目13-13 阪神梅田本店 B1F', '東京超人氣焦糖烤布蕾專賣！金黃酥脆塔皮包覆濃郁布蕾卡士達與苦甜焦糖醬。', 'BRULEE+MERIZE+阪神梅田本店')" transform="translate(15, 15)">
+              <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+              <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BRULEE MERIZE</text>
+              <text x="72" y="35" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">阪神梅田本店 B1F</text>
+              <text x="72" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(黃金流心布蕾塔)</text>
+              <text x="72" y="68" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
+            </g>
+
+            <!-- 節點 2：DROOLY (阪神梅田 B1F 同層) -->
+            <g class="trail-clickable" onclick="openMemo('DROOLY 阪神梅田本店', '大阪府大阪市北区梅田1丁目13-13 阪神梅田本店 B1F', '全日本唯一常設店！小熊包裝超可愛，藍紋起司搭配優質蜂蜜夾心餅乾與費南雪，鹹甜濃郁極致！', 'DROOLY+阪神梅田本店')" transform="translate(180, 60)">
+              <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+              <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">DROOLY 阪神梅田</text>
+              <text x="72" y="35" text-anchor="middle" font-size="9.5" font-weight="800" fill="#3E3A39">全國唯一常設門市</text>
+              <text x="72" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(蜂蜜藍紋起司費南雪)</text>
+              <text x="72" y="68" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 7分</text>
+            </g>
+
+            <!-- 節點 3：治一郎 (Grand Front 大阪 南館 B1F) -->
+            <g class="trail-clickable" onclick="openMemo('治一郎 グランフロント大阪店', '大阪府大阪市北区大深町4-20 グランフロント大阪 南館B1F', '日本殿堂級年輪蛋糕！24層極致濕潤綿密，完全不需要配水就化在嘴裡，布丁也極度濃醇。', '治一郎+グランフロント大阪店')" transform="translate(170, 165)">
+              <rect width="160" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+              <text x="80" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">治一郎 グランフロント</text>
+              <text x="80" y="35" text-anchor="middle" font-size="9.5" font-weight="800" fill="#3E3A39">南館 B1F</text>
+              <text x="80" y="46" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(極致濕潤24層年輪)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 前往還車 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">13:00 - 14:30</span>
+          <span class="tag tag-car">自駕還車</span>
+        </div>
+        <div class="card-title">大阪市區 ➔ りんくうタウン (臨空城)</div>
+        <div class="card-desc">
+          • <b>13:00</b> 梅田出發：走阪神高速 1 號環狀線 ➔ 4 號灣岸線南下（車程約 45~55 分鐘）。<br>
+          • 抵達前於臨空城周邊加油站加滿油，保留油單備查。<br>
+          • <b>14:30 前</b> 於租車門市完成還車手續，檢查隨身行李與結算 ETC。
+        </div>
+        <div class="btn-row" style="margin-bottom: 10px;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=ニコニコレンタカー+関西空港りんくうタウン駅前店&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 導航還車點</span>
+          </a>
+          <a href="https://maps.apple.com/?daddr=ニコニコレンタカー+関西空港りんくうタウン駅前店&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 導航還車點</span>
+          </a>
+        </div>
+        <!-- 還車後短程電車接駁 (NAVITIME 原生喚醒) -->
+        <div style="font-size: 0.78rem; font-weight: 800; color: #666; margin-bottom: 6px;">還車後搭乘電車至關西機場 (1 站直達)：</div>
+        <div class="btn-row">
+          <a href="navitime://" class="action-btn btn-navitime">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#B9DAA5"/><path d="M12 7v5l3 3"/></svg>
+            <span>NAVITIME</span>
+          </a>
+          <a href="https://transit.yahoo.co.jp/search/result?from=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&to=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="4" y="3" width="16" height="15" rx="3" fill="#FFE0E0"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="15" r="1.5" fill="#3E3A39"/><circle cx="16" cy="15" r="1.5" fill="#3E3A39"/></svg>
+            <span>Yahoo!路線情報</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 免稅店與出境 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">14:45 - 16:15</span>
+          <span class="tag tag-flight">返台登機</span>
+        </div>
+        <div class="card-title">KIX Duty Free 免稅購物 ＆ 登機返台</div>
+        <div class="card-desc">
+          • 國泰航空 CX565 (16:15 KIX ➔ 18:30 TPE)。<br>
+          • 關西機場 T1 辦理報到手續與託運行李。<br>
+          • 把握安檢後 KIX Duty Free 免稅店最後補貨（Royce 生巧克力、日本地酒等）。<br>
+          • <b>15:45</b> 抵達登機門準備登機。
+        </div>
+      </div>
+    `
+  }
 };
 
 // ==================== 頁面渲染與互動控制 ====================
@@ -409,141 +563,130 @@ let currentDay = 'd1';
 
 // 初始化渲染 Day 按鈕列
 function initDaySelector() {
-    const bar = document.getElementById('day-selector-bar');
-    bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
+  const bar = document.getElementById('day-selector-bar');
+  bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
     <button class="day-btn ${key === currentDay ? 'active' : ''}" onclick="switchDay('${key}')">
       ${ITINERARY_DATA[key].title}
     </button>
   `).join('');
-    renderItinerary();
+  renderItinerary();
 }
 
 // 切換天數
 function switchDay(dayKey) {
-    currentDay = dayKey;
-    document.querySelectorAll('.day-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
-    });
-    renderItinerary();
+  currentDay = dayKey;
+  document.querySelectorAll('.day-btn').forEach((btn, index) => {
+    btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
+  });
+  renderItinerary();
 }
 
 // 渲染當前天數卡片
 function renderItinerary() {
-    const container = document.getElementById('itinerary-cards-container');
-    container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+  const container = document.getElementById('itinerary-cards-container');
+  container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 商圈折疊
 function toggleZone(headerEl) {
-    headerEl.parentElement.classList.toggle('open');
+  headerEl.parentElement.classList.toggle('open');
 }
 
-// 底部手繪便籤 Drawer 控制 (無 Emoji、標準 API)
+// 底部手繪便籤 Drawer 控制 (無 Emoji、標準地標搜尋 API)
 let currentDrawerAddr = '';
 function openMemo(name, addr, desc, searchKey) {
-    document.getElementById('drawer-title').textContent = name;
-    document.getElementById('drawer-desc').textContent = desc;
-    document.getElementById('drawer-addr').textContent = addr;
-    currentDrawerAddr = addr;
+  document.getElementById('drawer-title').textContent = name;
+  document.getElementById('drawer-desc').textContent = desc;
+  document.getElementById('drawer-addr').textContent = addr;
+  currentDrawerAddr = addr;
 
-    document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${searchKey || encodeURIComponent(name)}`;
-    document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${searchKey || encodeURIComponent(name)}`;
+  const queryParam = encodeURIComponent(searchKey || name);
+  document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${queryParam}`;
+  document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${queryParam}`;
 
-    document.getElementById('drawer-backdrop').classList.add('show');
-    document.getElementById('memo-drawer').classList.add('open');
+  document.getElementById('drawer-backdrop').classList.add('show');
+  document.getElementById('memo-drawer').classList.add('open');
 }
 
 function closeMemo() {
-    document.getElementById('drawer-backdrop').classList.remove('show');
-    document.getElementById('memo-drawer').classList.remove('open');
+  document.getElementById('drawer-backdrop').classList.remove('show');
+  document.getElementById('memo-drawer').classList.remove('open');
 }
 
 function copyDrawerAddr() {
-    if (currentDrawerAddr) {
-        navigator.clipboard.writeText(currentDrawerAddr);
-        const badge = document.querySelector('.memo-drawer .copy-badge');
-        const oldText = badge.textContent;
-        badge.textContent = '已複製！';
-        setTimeout(() => {
-            badge.textContent = oldText;
-        }, 1500);
-    }
+  if (currentDrawerAddr) {
+    navigator.clipboard.writeText(currentDrawerAddr);
+    const badge = document.querySelector('.memo-drawer .copy-badge');
+    const oldText = badge.textContent;
+    badge.textContent = '已複製！';
+    setTimeout(() => { badge.textContent = oldText; }, 1500);
+  }
 }
 
 // 主視圖切換 (SPA)
 function switchView(viewId) {
-    document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
 
-    const target = document.getElementById(viewId);
-    if (target)
-        target.classList.add('active');
+  const target = document.getElementById(viewId);
+  if (target) target.classList.add('active');
 
-    if (viewId === 'view-itinerary')
-        document.getElementById('btn-itinerary').classList.add('active');
-    if (viewId === 'view-flights')
-        document.getElementById('btn-flights').classList.add('active');
-    if (viewId === 'view-prep')
-        document.getElementById('btn-prep').classList.add('active');
+  if (viewId === 'view-itinerary') document.getElementById('btn-itinerary').classList.add('active');
+  if (viewId === 'view-flights') document.getElementById('btn-flights').classList.add('active');
+  if (viewId === 'view-prep') document.getElementById('btn-prep').classList.add('active');
 
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 倒數計時器
 function updateCountdown() {
-    const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
-    const now = new Date().getTime();
-    const diff = targetDate - now;
+  const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
+  const now = new Date().getTime();
+  const diff = targetDate - now;
 
-    if (diff > 0) {
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById('cd-days').textContent = days;
-        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
-        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
-        document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
-    }
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
+  }
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // 備忘勾選持久化
 function toggleCheck(item, key) {
-    item.classList.toggle('done');
-    const isDone = item.classList.contains('done');
-    const box = document.getElementById(key);
-    box.textContent = isDone ? '✓' : '';
-    localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
+  item.classList.toggle('done');
+  const isDone = item.classList.contains('done');
+  const box = document.getElementById(key);
+  box.textContent = isDone ? '✓' : '';
+  localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
 }
 
 // 日幣換算
 function calcTwd() {
-    const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
-    const twd = Math.round(jpy * 0.21);
-    document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
+  const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
+  const twd = Math.round(jpy * 0.21);
+  document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
 }
 
 // 頁面載入執行
 window.addEventListener('DOMContentLoaded', () => {
-    initDaySelector();
-    ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].forEach(key => {
-        if (localStorage.getItem('checklist_' + key) === '1') {
-            const box = document.getElementById(key);
-            if (box) {
-                box.textContent = '✓';
-                box.parentElement.classList.add('done');
-            }
-        }
-    });
+  initDaySelector();
+  ['c1','c2','c3','c4','c5','c6'].forEach(key => {
+    if (localStorage.getItem('checklist_' + key) === '1') {
+      const box = document.getElementById(key);
+      if (box) {
+        box.textContent = '✓';
+        box.parentElement.classList.add('done');
+      }
+    }
+  });
 });
