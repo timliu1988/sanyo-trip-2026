@@ -9,7 +9,7 @@ const ITINERARY_DATA = {
           <span class="card-time">09:15 - 14:45</span>
           <span class="tag tag-flight">航班出發</span>
         </div>
-        <div class="card-title">桃園機場 T1 報到 ➔ 降落関西空港 (KIX)</div>
+        <div class="card-title">桃園機場 (TPE) T1 ➔ 関西空港 (KIX) T1 </div>
         <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
       </div>
 
@@ -66,7 +66,7 @@ const ITINERARY_DATA = {
           <span class="card-time">17:00 - 19:30</span>
           <span class="tag tag-must">中途放風</span>
         </div>
-        <div class="card-title">神戶中途散策・スポット</div>
+        <div class="card-title">神戸中途散策・スポット</div>
         <div class="card-desc">依停車位置選擇探索商圈。點擊步道上的手繪節點卡片，底部立即滑出日文地址與導航便籤：</div>
         
         <div class="zone-accordion">
