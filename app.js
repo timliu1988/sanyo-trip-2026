@@ -108,55 +108,61 @@ const ITINERARY_DATA = {
                 </div>
               </div>
 
-              <!-- 手繪散策虛線步道 (完全依據模擬圖，所有節點都是手繪卡片、皆可點選) -->
-				<div class="visual-trail-card">
-				  <div class="visual-trail-title">
-					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
-					<span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
-				  </div>
-				  
-				  <svg class="interactive-trail-svg" viewBox="0 0 340 240" fill="none">
-					<!-- 手繪彎曲虛線小徑 -->
-					<path d="M 60 175 C 130 175, 80 120, 200 95 C 230 85, 270 40, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
-					
-					<!-- 手繪路樹 -->
-					<g transform="translate(16, 175)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
-					<g transform="translate(285, 115)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+<!-- 手繪散策虛線步道 (含觀音屋、西村咖啡、Snoopy神戸店、BE KOBE) -->
+              <div class="visual-trail-card">
+                <div class="visual-trail-title">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+                  <span>NEIGHBORHOOD WALKING ROUTE (點擊節點看便籤)</span>
+                </div>
+                
+                <svg class="interactive-trail-svg" viewBox="0 0 340 300" fill="none">
+                  <!-- 手繪彎曲虛線小徑 -->
+                  <path d="M 60 175 C 130 175, 80 120, 200 95 C 230 85, 270 40, 240 10" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
+                  <path d="M 160 220 L 220 250" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
+                  
+                  <!-- 手繪路樹 -->
+                  <g transform="translate(16, 175)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+                  <g transform="translate(285, 115)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
 
-					<!-- 散步小人 1 & 2 -->
-					<g transform="translate(50, 140)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
-					<g transform="translate(190, 125)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+                  <!-- 散步小人 -->
+                  <g transform="translate(50, 140)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+                  <g transform="translate(190, 125)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
 
-					<!-- 節點 1：觀音屋 (文字統一為質感黑墨色) -->
-					<g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 モザイク2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！', '觀音屋+ハーバーランド店')" transform="translate(15, 15)">
-					  <rect width="145" height="56" rx="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-					  <text x="72" y="24" text-anchor="middle" font-size="12.5" font-weight="900" fill="#3E3A39">観音屋</text>
-					  <text x="72" y="38" text-anchor="middle" font-size="10.5" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
-					  <text x="72" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#777">(熱起司蛋糕)</text>
-					</g>
-					<!-- 徒歩 2分 (避開卡片邊界) -->
-					<text x="75" y="88" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
+                  <!-- 節點 1：觀音屋 -->
+                  <g class="trail-clickable" onclick="openMemo('観音屋 ハーバーランド店', '兵庫県神戸市中央区東川崎町1-6-1 モザイク2F', '現烤丹麥鹹甜融化起司蛋糕，面海觀景首選！', '兵庫県神戸市中央区東川崎町1-6-1+観音屋')" transform="translate(15, 15)">
+                    <rect width="145" height="56" rx="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="72" y="24" text-anchor="middle" font-size="12.5" font-weight="900" fill="#3E3A39">観音屋</text>
+                    <text x="72" y="38" text-anchor="middle" font-size="10.5" font-weight="900" fill="#3E3A39">ハーバーランド店</text>
+                    <text x="72" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#777">(熱起司蛋糕)</text>
+                  </g>
+                  <text x="75" y="88" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
 
-					<!-- 節點 2：西村咖啡 (卡片寬度精準包覆) -->
-					<g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戸洋風老舖分店，手沖咖啡香濃郁。', 'にしむら珈琲店+ハーバーランド店')" transform="translate(180, 58)">
-					  <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-					  <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
-					  <text x="72" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
-					  <text x="72" y="47" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(カルメニ 1F)</text>
-					</g>
-					<!-- 徒歩 3分 -->
-					<text x="135" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+                  <!-- 節點 2：西村咖啡 -->
+                  <g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戸洋風老舖分店，手沖咖啡香濃郁。', '兵庫県神戸市中央区東川崎町1丁目5-7+にしむら珈琲店')" transform="translate(180, 58)">
+                    <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
+                    <text x="72" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
+                    <text x="72" y="47" text-anchor="middle" font-size="8.5" font-weight="700" fill="#777">(カルメニ 1F)</text>
+                  </g>
+                  <text x="135" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
 
-					<!-- 節點 3：BE KOBE (文字統一為純黑墨色) -->
-					<g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戸港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+モニュメント')" transform="translate(160, 168)">
-					  <rect width="165" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-					  <text x="82" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
-					  <text x="82" y="38" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
-					</g>
-					<!-- 徒歩 8分：移至 BE KOBE 卡片正上方，徹底避免任何重疊 -->
-					<text x="165" y="158" font-size="11" font-weight="900" fill="#3E3A39">徒歩 8分</text>
-				  </svg>
-				</div>
+                  <!-- 節點 3：官方正名「スヌーピータウンショップ 神戸店 (umie モザイク2階)」 -->
+                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戸店', '兵庫県神戸市中央区東川崎町1-6-1 神戸ハーバーランドumie モザイク2階', '港區摩天輪旁！史努比周邊專賣店，電話：078-360-6788。', '兵庫県神戸市中央区東川崎町1-6-1+スヌーピータウンショップ神戸店')" transform="translate(155, 145)">
+                    <rect width="170" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="85" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">Snoopy Town 神戸店</text>
+                    <text x="85" y="38" text-anchor="middle" font-size="9.5" font-weight="800" fill="#5DB7DE">(umie モザイク 2階)</text>
+                  </g>
+                  <text x="90" y="210" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
+
+                  <!-- 節點 4：BE KOBE -->
+                  <g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戸港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', '兵庫県神戸市中央区波止場町2-2+BE+KOBE')" transform="translate(155, 230)">
+                    <rect width="170" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+                    <text x="85" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
+                    <text x="85" y="38" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
+                  </g>
+                  <text x="160" y="220" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
+                </svg>
+              </div>
             </div>
           </div>
 
@@ -197,10 +203,10 @@ const ITINERARY_DATA = {
                     <text x="70" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">本神戸肉 森谷商店</text>
                     <text x="70" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#D9534F">(排隊金黃牛肉可樂餅)</text>
                   </g>
-                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戸店', '兵庫県神戸市中央区小野柄通8丁目1-8 神戸阪急本館8F', '神戸限定水手風 Snoopy 專屬周邊、娃娃與文具。', 'スヌーピータウンショップ+神戸店')" transform="translate(180, 70)">
+				  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 三宮店', '兵庫県神戸市中央区三宮町1-6-18 エイツビル2F', '三宮商圈專賣店！各式史努比限定雜貨與文具，電話：078-332-7701。', '兵庫県神戸市中央区三宮町1-6-18+スヌーピータウンショップ三宮店')" transform="translate(180, 70)">
                     <rect width="150" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 神戸店</text>
-                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#5DB7DE">(神戸阪急本館 8F)</text>
+                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 三宮店</text>
+                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#5DB7DE">(エイツビル 2F)</text>
                   </g>
                   <g class="trail-clickable" onclick="openMemo('観音屋 三宮さんちか店', '兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街', '木村拓哉推薦的現烤起司蛋糕，位於站前地下街極為順路。', '観音屋+三宮さんちか店')" transform="translate(15, 140)">
                     <rect width="140" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
