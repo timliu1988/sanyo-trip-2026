@@ -60,7 +60,7 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 神戶中途散策 (完全依據第 2、3 張模擬圖實作) -->
+      <!-- 神戸中途散策 (完全依據第 2、3 張模擬圖實作) -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">17:00 - 19:30</span>
@@ -95,7 +95,7 @@ const ITINERARY_DATA = {
                     <div style="font-size: 0.74rem; color: #888;">兵庫県神戸市中央区東川崎町1-6-2</div>
                   </div>
                 </div>
-                <div class="parent-spot-sub">1 樓商場免門票，現烤果醬爺爺麵包店與神戶限定雜貨。</div>
+                <div class="parent-spot-sub">1 樓商場免門票，現烤果醬爺爺麵包店與神戸限定雜貨。</div>
                 <div class="btn-row">
                   <a href="https://www.google.com/maps/search/?api=1&query=神戸アンパンマンこどもミュージアム＆モール" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
                     <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
@@ -138,7 +138,7 @@ const ITINERARY_DATA = {
 					<text x="75" y="88" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
 
 					<!-- 節點 2：西村咖啡 (卡片寬度精準包覆) -->
-					<g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戶洋風老舖分店，手沖咖啡香濃郁。', 'にしむら珈琲店+ハーバーランド店')" transform="translate(180, 58)">
+					<g class="trail-clickable" onclick="openMemo('にしむら珈琲店 ハーバーランド店', '兵庫県神戸市中央区東川崎町1丁目5-7 カルメニ1F', '紅磚外觀神戸洋風老舖分店，手沖咖啡香濃郁。', 'にしむら珈琲店+ハーバーランド店')" transform="translate(180, 58)">
 					  <rect width="145" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
 					  <text x="72" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">にしむら珈琲店</text>
 					  <text x="72" y="36" text-anchor="middle" font-size="10" font-weight="800" fill="#3E3A39">ハーバーランド店</text>
@@ -148,7 +148,7 @@ const ITINERARY_DATA = {
 					<text x="135" y="120" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
 
 					<!-- 節點 3：BE KOBE (文字統一為純黑墨色) -->
-					<g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戶港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+モニュメント')" transform="translate(160, 168)">
+					<g class="trail-clickable" onclick="openMemo('メリケンパーク「BE KOBE」モニュメント', '兵庫県神戸市中央区波止場町2-2', '神戸港海景地標拍照點，夜晚港塔與海洋館點燈絕美。', 'BE+KOBE+モニュメント')" transform="translate(160, 168)">
 					  <rect width="165" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
 					  <text x="82" y="22" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">メリケンパーク</text>
 					  <text x="82" y="38" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">BE KOBE モニュメント</text>
@@ -171,7 +171,7 @@ const ITINERARY_DATA = {
             </div>
             <div class="zone-content">
               <div class="parent-spot-card">
-                <div class="parent-spot-name">神戸三宮センター街 ＆ 神戶元町商店街</div>
+                <div class="parent-spot-name">神戸三宮センター街 ＆ 神戸元町商店街</div>
                 <div class="parent-spot-sub">三宮至元町最具代表性的連綿有蓋拱廊街，藥妝、百貨與老舖林立。</div>
                 <div class="btn-row">
                   <a href="https://www.google.com/maps/search/?api=1&query=神戸三宮センター街" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
@@ -192,15 +192,15 @@ const ITINERARY_DATA = {
                 </div>
                 <svg class="interactive-trail-svg" viewBox="0 0 340 210" fill="none">
                   <path d="M 40 40 Q 180 30, 220 90 T 80 170" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5" fill="none"/>
-                  <g class="trail-clickable" onclick="openMemo('本神戸肉 森谷商店 元町本店', '兵庫県神戸市中央区元町通1丁目7-2', '神戶排隊人氣王！現炸金黃酥脆牛肉可樂餅與碎肉排。', '森谷商店+元町本店')" transform="translate(10, 15)">
+                  <g class="trail-clickable" onclick="openMemo('本神戸肉 森谷商店 元町本店', '兵庫県神戸市中央区元町通1丁目7-2', '神戸排隊人氣王！現炸金黃酥脆牛肉可樂餅與碎肉排。', '森谷商店+元町本店')" transform="translate(10, 15)">
                     <rect width="140" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
                     <text x="70" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">本神戸肉 森谷商店</text>
                     <text x="70" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#D9534F">(排隊金黃牛肉可樂餅)</text>
                   </g>
-                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戶店', '兵庫県神戸市中央区小野柄通8丁目1-8 神戶阪急本館8F', '神戶限定水手風 Snoopy 專屬周邊、娃娃與文具。', 'スヌーピータウンショップ+神戸店')" transform="translate(180, 70)">
+                  <g class="trail-clickable" onclick="openMemo('スヌーピータウンショップ 神戸店', '兵庫県神戸市中央区小野柄通8丁目1-8 神戸阪急本館8F', '神戸限定水手風 Snoopy 專屬周邊、娃娃與文具。', 'スヌーピータウンショップ+神戸店')" transform="translate(180, 70)">
                     <rect width="150" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 神戶店</text>
-                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#5DB7DE">(神戶阪急本館 8F)</text>
+                    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Snoopy Town 神戸店</text>
+                    <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#5DB7DE">(神戸阪急本館 8F)</text>
                   </g>
                   <g class="trail-clickable" onclick="openMemo('観音屋 三宮さんちか店', '兵庫県神戸市中央区三宮町1丁目10-1 さんちか7番街', '木村拓哉推薦的現烤起司蛋糕，位於站前地下街極為順路。', '観音屋+三宮さんちか店')" transform="translate(15, 140)">
                     <rect width="140" height="42" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
@@ -272,7 +272,7 @@ const ITINERARY_DATA = {
           <span class="card-time">19:40 - 22:00</span>
           <span class="tag tag-car">高速長途</span>
         </div>
-        <div class="card-title">神戶市區 ➔ 岡山站前</div>
+        <div class="card-title">神戸市區 ➔ 岡山站前</div>
         <div class="card-desc">在市區逛完後，依當下精神與時間選擇直奔飯店或走 SEP 免費路線（導航自動以當前位置出發）：</div>
         
         <div class="route-choice-card" style="background: #FFF7F5; border-color: var(--coral);">
@@ -283,7 +283,7 @@ const ITINERARY_DATA = {
             </span>
             <span class="route-choice-tag" style="background: var(--coral); color: #fff;">自費約 1100円</span>
           </div>
-          <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">鑽新神戶隧道接阪神高速 7 號，約 20 分鐘直上山陽道（省下 20 分鐘市區繁複紅綠燈）。</p>
+          <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">鑽新神戸隧道接阪神高速 7 號，約 20 分鐘直上山陽道（省下 20 分鐘市區繁複紅綠燈）。</p>
           <div class="btn-row">
             <a href="https://www.google.com/maps/dir/?api=1&destination=スマイルホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
@@ -300,19 +300,19 @@ const ITINERARY_DATA = {
           <div class="route-choice-header">
             <span class="route-choice-title">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#F6D27A"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
-              <span>方案 B：SEP 0円（先開往神戶西 IC）</span>
+              <span>方案 B：SEP 0円（先開往神戸西 IC）</span>
             </span>
             <span class="route-choice-tag" style="background: var(--yamabuki);">SEP 全額折抵</span>
           </div>
-          <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">不管人在神戶哪裡，先沿市區免費平面開往【神戶西 IC】上山陽道，全程通行費 0 円。</p>
+          <p style="font-size: 0.78rem; color: #666; margin-bottom: 8px;">不管人在神戸哪裡，先沿市區免費平面開往【神戸西 IC】上山陽道，全程通行費 0 円。</p>
           <div class="btn-row">
             <a href="https://www.google.com/maps/dir/?api=1&destination=神戸西IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#F6D27A"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-              <span>Google 導向神戶西IC</span>
+              <span>Google 導向神戸西IC</span>
             </a>
             <a href="https://maps.apple.com/?daddr=神戸西IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
               <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
-              <span>Apple 導向神戶西IC</span>
+              <span>Apple 導向神戸西IC</span>
             </a>
           </div>
         </div>
@@ -322,8 +322,8 @@ const ITINERARY_DATA = {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1" fill="#D9534F"/></svg>
             <span>SEP 避坑決策提醒</span>
           </div>
-          • 想省錢請走 <b>方案 B（先開平面至神戶西 IC）</b>，上山陽道後通行費全由 SEP 買單。<br>
-          • 若逛完神戶已經疲憊，直接選 <b>方案 A</b>，花 1,100 円省 20 分鐘與繁雜紅綠燈。
+          • 想省錢請走 <b>方案 B（先開平面至神戸西 IC）</b>，上山陽道後通行費全由 SEP 買單。<br>
+          • 若逛完神戸已經疲憊，直接選 <b>方案 A</b>，花 1,100 円省 20 分鐘與繁雜紅綠燈。
         </div>
       </div>
 
@@ -375,7 +375,7 @@ const ITINERARY_DATA = {
   d3: { title: "Day 3 (11/29)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>` },
   d4: { title: "Day 4 (11/30)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>` },
   d5: { title: "Day 5 (12/01)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>` },
-  d6: { title: "Day 6 (12/02)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戶 ➔ 大阪 規劃中</p></div>` },
+  d6: { title: "Day 6 (12/02)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>` },
   d7: { title: "Day 7 (12/03)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 7 臨空城還車 ➔ 機場返台 規劃中</p></div>` }
 };
 
