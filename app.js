@@ -9,7 +9,7 @@ const ITINERARY_DATA = {
           <span class="card-time">09:15 - 14:45</span>
           <span class="tag tag-flight">航班出發</span>
         </div>
-        <div class="card-title">桃園 T1 報到 ➔ 降落關西機場 (KIX)</div>
+        <div class="card-title">桃園機場 T1 報到 ➔ 降落関西空港 (KIX)</div>
         <div class="card-desc">國泰航空 CX564 (11:15 - 14:45)。入境領行李、開通網卡，備妥護照與國際駕照（日文譯本）。</div>
       </div>
 
@@ -28,7 +28,7 @@ const ITINERARY_DATA = {
           </a>
           <a href="https://transit.yahoo.co.jp/search/result?from=%E9%96%A2%E8%A5%BF%E7%A9%BA%E6%B8%AF&to=%E3%82%8A%E3%82%93%E3%81%8F%E3%81%86%E3%82%BF%E3%82%A6%E3%83%B3&type=1" target="_blank" rel="noopener noreferrer" class="action-btn btn-yahoo">
             <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="4" y="3" width="16" height="15" rx="3" fill="#FFE0E0"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8" cy="15" r="1.5" fill="#3E3A39"/><circle cx="16" cy="15" r="1.5" fill="#3E3A39"/></svg>
-            <span>Yahoo 即時時刻</span>
+            <span>Yahoo!路線情報</span>
           </a>
         </div>
       </div>
@@ -40,11 +40,11 @@ const ITINERARY_DATA = {
           <span class="tag tag-car">自駕取車</span>
         </div>
         <div class="card-title">ニコニコレンタカー 関西空港りんくうタウン駅前店</div>
-        <div class="card-desc">核對合約、檢查車況、安裝 ETC 卡並確認開通 SEP 方案。電話：072-463-2525</div>
-        <div class="copy-chip" onclick="navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-700')">
+        <div class="card-desc">核對合約、檢查車況、安裝 ETC 卡並確認開通 SEP 方案。電話：072-429-9085</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('大阪府泉佐野市りんくう往来北1-834')">
           <div class="copy-chip-left">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
-            <span>大阪府泉佐野市りんくう往来北1-700</span>
+            <span>大阪府泉佐野市りんくう往来北1-834</span>
           </div>
           <span class="copy-badge">複製地址</span>
         </div>
@@ -92,7 +92,7 @@ const ITINERARY_DATA = {
                   </svg>
                   <div>
                     <div class="parent-spot-name">神戸アンパンマンこどもミュージアム＆モール</div>
-                    <div style="font-size: 0.74rem; color: #888;">兵庫県神戸市中央区東川崎町1-6-1</div>
+                    <div style="font-size: 0.74rem; color: #888;">兵庫県神戸市中央区東川崎町1-6-2</div>
                   </div>
                 </div>
                 <div class="parent-spot-sub">1 樓商場免門票，現烤果醬爺爺麵包店與神戶限定雜貨。</div>
