@@ -1,8 +1,8 @@
 // ==================== 行程資料庫 ====================
 const ITINERARY_DATA = {
-  d1: {
-    title: "Day 1 (11/27)",
-    contentHtml: `
+    d1: {
+        title: "Day 1 (11/27)",
+        contentHtml: `
       <!-- 航班抵達 -->
       <div class="card">
         <div class="card-header-bar">
@@ -392,15 +392,261 @@ const ITINERARY_DATA = {
         </div>
       </div>
     `
-  },
-  d2: { title: "Day 2 (11/28)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 2 岡山 ➔ 倉敷 ➔ 尾道 規劃中</p></div>` },
-  d3: { title: "Day 3 (11/29)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>` },
-  d4: { title: "Day 4 (11/30)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>` },
-  d5: { title: "Day 5 (12/01)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>` },
-  d6: { title: "Day 6 (12/02)", contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>` },
-  d7: {
-    title: "Day 7 (12/03)",
-    contentHtml: `
+    },
+    d2: {
+        title: "Day 2 (11/28)",
+        contentHtml: `
+      <!-- 吉備津神社 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">10:00 - 11:15</span>
+          <span class="tag tag-car">晨間自駕</span>
+        </div>
+        <div class="card-title">岡山出發 ➔ 吉備津神社</div>
+        <div class="card-desc">10:00 從飯店出發（車程約 25 分）。參拜國寶本殿，漫步 400 公尺壯麗木造長迴廊（桃太郎傳說原型神社），設有免費大型停車場。</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('岡山県岡山市北区吉備津931')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>岡山県岡山市北区吉備津931</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
+        <div class="btn-row">
+          <a href="https://www.google.com/maps/search/?api=1&query=吉備津神社" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 地圖</span>
+          </a>
+          <a href="https://maps.apple.com/?q=吉備津神社" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 地圖</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 倉敷美觀地區 (白天散策) -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">11:40 - 14:15</span>
+          <span class="tag tag-must">日間老街</span>
+        </div>
+        <div class="card-title">倉敷美觀地區・白壁老街散策</div>
+        <div class="card-desc">車停【倉敷市營中央停車場】（地下平面，首小時 300円 / 後續 100円半小時）。白天約 2.5 小時含午餐、採買布丁與 Snoopy，並登阿智神社俯瞰全景。</div>
+        
+        <!-- 停車場母卡片 -->
+        <div class="parent-spot-card">
+          <div class="parent-spot-header">
+            <svg class="parent-spot-icon" viewBox="0 0 50 50" fill="none">
+              <rect x="8" y="8" width="34" height="34" rx="8" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+              <text x="25" y="33" text-anchor="middle" font-size="22" font-weight="900" fill="#3E3A39">P</text>
+            </svg>
+            <div>
+              <div class="parent-spot-name">倉敷市営中央駐車場</div>
+              <div style="font-size: 0.74rem; color: #888;">岡山県倉敷市中央2-6-1（美觀入口正對面）</div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=倉敷市営中央駐車場" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 停車場</span>
+            </a>
+            <a href="https://maps.apple.com/?q=倉敷市営中央駐車場" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple 停車場</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 倉敷手繪步道 -->
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>KURASHIKI BIKAN ROUTE (點擊節點看便籤)</span>
+          </div>
+          
+          <svg class="interactive-trail-svg" viewBox="0 0 340 225" fill="none">
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 散步小人 -->
+            <g transform="translate(145, 95)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+
+            <!-- 節點 1：倉敷美觀地區 -->
+            <g class="trail-clickable" onclick="openMemo('倉敷美観地区（柳並木・白壁老街）', '岡山県倉敷市本町', '柳樹運河與江戶白壁倉庫群，推薦順買有鄰庵微笑布丁。', '倉敷美観地区')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">倉敷美観地区</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(白壁運河・布丁採買)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
+            </g>
+
+            <!-- 節點 2：SNOOPY Chocolat 倉敷 -->
+            <g class="trail-clickable" onclick="openMemo('SNOOPY Chocolat 倉敷', '岡山県倉敷市本町5-3', '倉敷限定丹寧藍主題史努比巧克力與周邊專賣店！', 'SNOOPY+Chocolat+倉敷')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">SNOOPY Chocolat</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(倉敷限定丹寧史努比)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 2分</text>
+            </g>
+
+            <!-- 節點 3：倉敷牛仔街 -->
+            <g class="trail-clickable" onclick="openMemo('倉敷デニムストリート（倉敷牛仔街）', '岡山県倉敷市中央1-10-11', '日本丹寧聖地兒島發源品牌集結，藍色丹寧霜淇淋與包子必看。', '倉敷デニムストリート')" transform="translate(170, 135)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">倉敷デニムストリート</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(日本丹寧牛仔街)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
+            </g>
+
+            <!-- 節點 4：阿智神社 -->
+            <g class="trail-clickable" onclick="openMemo('阿智神社', '岡山県倉敷市本町12-1', '位於鶴形山頂，由美觀老街步行石階直達，可俯瞰整片倉敷黑瓦屋頂全景與購買花纏守。', '阿智神社')" transform="translate(10, 135)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">阿智神社</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(鶴形山俯瞰美觀全景)</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="alert-box" style="margin-top: 10px;">
+          <div class="alert-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1" fill="#D9534F"/></svg>
+            <span>時間卡點提醒：14:15 準時南下</span>
+          </div>
+          • 11 月底太陽 <b>16:50 落日</b>，且難波牧場 <b>17:00 打烊</b>，最晚 14:15 需從倉敷開車出發（車程約 40 分鐘）。
+        </div>
+      </div>
+
+      <!-- 下津井・瀨戶大橋海線追夕陽 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">14:55 - 17:05</span>
+          <span class="tag tag-car">海線絕景</span>
+        </div>
+        <div class="card-title">下津井漁港 ➔ 瀨戶大橋夕陽百選</div>
+        <div class="card-desc">沿瀨戶內海海岸線自駕串聯四大景點（彼此車程僅 3~5 分鐘），點擊方塊查看詳情與地圖：</div>
+
+        <!-- 自駕海線手繪步道 -->
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>SETO BRIDGE COASTAL ROUTE (點擊節點看便籤)</span>
+          </div>
+          
+          <svg class="interactive-trail-svg" viewBox="0 0 340 230" fill="none">
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 路樹裝飾 -->
+            <g transform="translate(142, 95)"><rect x="13" y="18" width="4" height="12" fill="#8C8885" stroke="#3E3A39" stroke-width="2"/><path d="M5 20 C2 5, 28 5, 25 20 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.2"/></g>
+
+            <!-- 節點 1：難波牧場 -->
+            <g class="trail-clickable" onclick="openMemo('難波牧場アイス屋さん（SeaSideFarm）', '岡山県倉敷市下津井5-2388-11', '14:55-15:35｜牧場現榨生乳義式冰淇淋，海景露天座位超療癒（11月營業至17:00）。', '難波牧場アイス屋さん')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">難波牧場 冰淇淋店</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(15:30前抵達吃冰)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 4分</text>
+            </g>
+
+            <!-- 節點 2：むかし下津井回船問屋 -->
+            <g class="trail-clickable" onclick="openMemo('むかし下津井回船問屋', '岡山県倉敷市下津井1丁目7-23', '機動順遊點｜江戶至明治時代北前船繁榮商行古民家，免費參觀並設有免費停車場（營業 09:00-17:00）。', 'むかし下津井回船問屋')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">むかし下津井回船問屋</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(江戶北前船古商行聚落)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 3分</text>
+            </g>
+
+            <!-- 節點 3：田土浦公園 -->
+            <g class="trail-clickable" onclick="openMemo('田土浦公園（瀬戸大橋正下方防波堤）', '岡山県倉敷市下津井田之浦1-1', '15:40-16:05｜近距離仰望瀨戶大橋巨型鋼樑結構，路邊可暫停，手機 0.5x 仰角拍出震撼構圖。', '田土浦公園')" transform="translate(170, 135)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">田土浦公園</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(大橋鋼骨正下方 0.5x仰拍)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 4分</text>
+            </g>
+
+            <!-- 節點 4：鷲羽山第二展望台 -->
+            <g class="trail-clickable" onclick="openMemo('鷲羽山第二展望台', '岡山県倉敷市下津井田之浦', '16:15-17:05｜日本夕陽百選名所！開車直達免費停車場，欣賞 16:50 夕陽與瀨戶大橋餘暉。', '鷲羽山第二展望台')" transform="translate(10, 135)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">鷲羽山第二展望台</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(16:50 夕陽百選名所)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 折返倉敷看夜景與味噌豬排晚餐 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">18:00 - 20:15</span>
+          <span class="tag tag-must">點燈＆晚餐</span>
+        </div>
+        <div class="card-title">折返倉敷美觀夜間點燈 ➔ 梅之木味噌豬排</div>
+        <div class="card-desc">
+          • <b>17:15 - 17:55</b>：順路北上開回【倉敷市營中央停車場】。<br>
+          • <b>18:00 - 19:15</b>：悠閒散步於人潮散去後的倉敷川夜間點燈與水上白壁倒影。<br>
+          • <b>19:15 - 20:15</b>：步行前往美觀地區北側享用名店晚餐（營業至 20:20）。
+        </div>
+
+        <div class="visual-trail-card" style="background: #FFF7F5; border-color: var(--coral);">
+          <div class="visual-trail-title" style="color: #D9534F;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><circle cx="12" cy="14" r="8" fill="#F6D27A"/><path d="M4 14 Q12 18 20 14"/></svg>
+            <span>倉敷晚餐推薦 (點擊開地址與地圖)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 75" fill="none">
+            <path d="M 20 35 L 320 35" stroke="#3E3A39" stroke-width="2" stroke-dasharray="4 4"/>
+            <g class="trail-clickable" onclick="openMemo('味噌かつ 梅の木', '岡山県倉敷市阿智2-19-3', '美觀地區北側名店！無油炸健康做法搭配秘製濃醇味噌醬，營業至 20:20。', '味噌かつ+梅の木+倉敷')" transform="translate(65, 10)">
+              <rect width="210" height="52" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="105" y="22" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">味噌かつ 梅の木 (梅之木味噌豬排)</text>
+              <text x="105" y="38" text-anchor="middle" font-size="9.5" font-weight="800" fill="#777">美觀地區北側・營業至 20:20</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 夜奔福山住宿 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">20:30 - 21:15</span>
+          <span class="tag tag-hotel">住宿 Check-in</span>
+        </div>
+        <div class="card-title">倉敷 IC ➔ 福山站前大和 Roynet 飯店</div>
+        <div class="card-desc">由【倉敷 IC】上山陽自動車道向西直達【福山東 IC】（SEP 100% 全額涵蓋通行費），入住福山站前飯店。</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県福山市三之丸町1-1')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>広島県福山市三之丸町1-1</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
+        <div class="btn-row">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=ダイワロイネットホテル福山駅前&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 目前位置直達</span>
+          </a>
+          <a href="https://maps.apple.com/?daddr=ダイワロイネットホテル福山駅前&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 目前位置直達</span>
+          </a>
+        </div>
+      </div>
+    `
+    },
+    d3: {
+        title: "Day 3 (11/29)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>`
+    },
+    d4: {
+        title: "Day 4 (11/30)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>`
+    },
+    d5: {
+        title: "Day 5 (12/01)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>`
+    },
+    d6: {
+        title: "Day 6 (12/02)",
+        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 6 神戸 ➔ 大阪 規劃中</p></div>`
+    },
+    d7: {
+        title: "Day 7 (12/03)",
+        contentHtml: `
       <!-- 早餐輕食 -->
       <div class="card">
         <div class="card-header-bar">
@@ -554,7 +800,7 @@ const ITINERARY_DATA = {
         </div>
       </div>
     `
-  }
+    }
 };
 
 // ==================== 頁面渲染與互動控制 ====================
@@ -563,130 +809,142 @@ let currentDay = 'd1';
 
 // 初始化渲染 Day 按鈕列
 function initDaySelector() {
-  const bar = document.getElementById('day-selector-bar');
-  bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
+    const bar = document.getElementById('day-selector-bar');
+    bar.innerHTML = Object.keys(ITINERARY_DATA).map(key => `
     <button class="day-btn ${key === currentDay ? 'active' : ''}" onclick="switchDay('${key}')">
       ${ITINERARY_DATA[key].title}
     </button>
   `).join('');
-  renderItinerary();
+    renderItinerary();
 }
 
 // 切換天數
 function switchDay(dayKey) {
-  currentDay = dayKey;
-  document.querySelectorAll('.day-btn').forEach((btn, index) => {
-    btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
-  });
-  renderItinerary();
+    currentDay = dayKey;
+    document.querySelectorAll('.day-btn').forEach((btn, index) => {
+        btn.classList.toggle('active', Object.keys(ITINERARY_DATA)[index] === dayKey);
+    });
+    renderItinerary();
 }
 
 // 渲染當前天數卡片
 function renderItinerary() {
-  const container = document.getElementById('itinerary-cards-container');
-  container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    const container = document.getElementById('itinerary-cards-container');
+    container.innerHTML = ITINERARY_DATA[currentDay].contentHtml;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 商圈折疊
 function toggleZone(headerEl) {
-  headerEl.parentElement.classList.toggle('open');
+    headerEl.parentElement.classList.toggle('open');
 }
 
 // 底部手繪便籤 Drawer 控制 (無 Emoji、標準地標搜尋 API)
 let currentDrawerAddr = '';
 function openMemo(name, addr, desc, searchKey) {
-  document.getElementById('drawer-title').textContent = name;
-  document.getElementById('drawer-desc').textContent = desc;
-  document.getElementById('drawer-addr').textContent = addr;
-  currentDrawerAddr = addr;
+    document.getElementById('drawer-title').textContent = name;
+    document.getElementById('drawer-desc').textContent = desc;
+    document.getElementById('drawer-addr').textContent = addr;
+    currentDrawerAddr = addr;
 
-  const queryParam = encodeURIComponent(searchKey || name);
-  document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${queryParam}`;
-  document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${queryParam}`;
+    const queryParam = encodeURIComponent(searchKey || name);
+    document.getElementById('drawer-btn-gmap').href = `https://www.google.com/maps/search/?api=1&query=${queryParam}`;
+    document.getElementById('drawer-btn-amap').href = `https://maps.apple.com/?q=${queryParam}`;
 
-  document.getElementById('drawer-backdrop').classList.add('show');
-  document.getElementById('memo-drawer').classList.add('open');
+    document.getElementById('drawer-backdrop').classList.add('show');
+    document.getElementById('memo-drawer').classList.add('open');
 }
 
 function closeMemo() {
-  document.getElementById('drawer-backdrop').classList.remove('show');
-  document.getElementById('memo-drawer').classList.remove('open');
+    document.getElementById('drawer-backdrop').classList.remove('show');
+    document.getElementById('memo-drawer').classList.remove('open');
 }
 
 function copyDrawerAddr() {
-  if (currentDrawerAddr) {
-    navigator.clipboard.writeText(currentDrawerAddr);
-    const badge = document.querySelector('.memo-drawer .copy-badge');
-    const oldText = badge.textContent;
-    badge.textContent = '已複製！';
-    setTimeout(() => { badge.textContent = oldText; }, 1500);
-  }
+    if (currentDrawerAddr) {
+        navigator.clipboard.writeText(currentDrawerAddr);
+        const badge = document.querySelector('.memo-drawer .copy-badge');
+        const oldText = badge.textContent;
+        badge.textContent = '已複製！';
+        setTimeout(() => {
+            badge.textContent = oldText;
+        }, 1500);
+    }
 }
 
 // 主視圖切換 (SPA)
 function switchView(viewId) {
-  document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
 
-  const target = document.getElementById(viewId);
-  if (target) target.classList.add('active');
+    const target = document.getElementById(viewId);
+    if (target)
+        target.classList.add('active');
 
-  if (viewId === 'view-itinerary') document.getElementById('btn-itinerary').classList.add('active');
-  if (viewId === 'view-flights') document.getElementById('btn-flights').classList.add('active');
-  if (viewId === 'view-prep') document.getElementById('btn-prep').classList.add('active');
+    if (viewId === 'view-itinerary')
+        document.getElementById('btn-itinerary').classList.add('active');
+    if (viewId === 'view-flights')
+        document.getElementById('btn-flights').classList.add('active');
+    if (viewId === 'view-prep')
+        document.getElementById('btn-prep').classList.add('active');
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 倒數計時器
 function updateCountdown() {
-  const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
-  const now = new Date().getTime();
-  const diff = targetDate - now;
+    const targetDate = new Date('2026-11-27T14:45:00+09:00').getTime();
+    const now = new Date().getTime();
+    const diff = targetDate - now;
 
-  if (diff > 0) {
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('cd-days').textContent = days;
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
-    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
-    document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
-  }
+        document.getElementById('cd-days').textContent = days;
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+        document.getElementById('countdown-text').textContent = `距離 2026/11/27 (五) 降落關西機場還有 ${days} 天`;
+    }
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // 備忘勾選持久化
 function toggleCheck(item, key) {
-  item.classList.toggle('done');
-  const isDone = item.classList.contains('done');
-  const box = document.getElementById(key);
-  box.textContent = isDone ? '✓' : '';
-  localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
+    item.classList.toggle('done');
+    const isDone = item.classList.contains('done');
+    const box = document.getElementById(key);
+    box.textContent = isDone ? '✓' : '';
+    localStorage.setItem('checklist_' + key, isDone ? '1' : '0');
 }
 
 // 日幣換算
 function calcTwd() {
-  const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
-  const twd = Math.round(jpy * 0.21);
-  document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
+    const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
+    const twd = Math.round(jpy * 0.21);
+    document.getElementById('twd-result').textContent = `約新台幣：NT$ ${twd.toLocaleString()}`;
 }
 
 // 頁面載入執行
 window.addEventListener('DOMContentLoaded', () => {
-  initDaySelector();
-  ['c1','c2','c3','c4','c5','c6'].forEach(key => {
-    if (localStorage.getItem('checklist_' + key) === '1') {
-      const box = document.getElementById(key);
-      if (box) {
-        box.textContent = '✓';
-        box.parentElement.classList.add('done');
-      }
-    }
-  });
+    initDaySelector();
+    ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].forEach(key => {
+        if (localStorage.getItem('checklist_' + key) === '1') {
+            const box = document.getElementById(key);
+            if (box) {
+                box.textContent = '✓';
+                box.parentElement.classList.add('done');
+            }
+        }
+    });
 });
