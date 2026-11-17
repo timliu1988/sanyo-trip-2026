@@ -718,87 +718,106 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 尾道本通商店街・拉麵清單與散策步道 -->
+<!-- 尾道本通商店街・完整美食清單與散策步道 -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">14:00 - 18:00</span>
-          <span class="tag tag-must">山城＆拉麵</span>
+          <span class="card-time">13:30 - 18:00</span>
+          <span class="tag tag-must">山城＆美食</span>
         </div>
-        <div class="card-title">尾道本通商店街・拉麵清單 ＆ 千光寺散策</div>
+        <div class="card-title">尾道本通商店街・拉麵＆尾道燒 ＆ 千光寺散策</div>
         <div class="card-desc">
-          • <b>尾道拉麵 List</b>：Borracho（-16:00 排隊店）、Tatsumi（-18:00 排隊店）、中華拉麵 朱（-17:00）、Shoya（-17:00）。<br>
+          • <b>《秘密のケンミンSHOW》推薦</b>：尾道拉麵 千兩（14:30前）、村上お好み焼き 尾道燒（週日至15:00）。<br>
+          • <b>尾道拉麵 List</b>：Borracho（-16:00）、Tatsumi（-18:00）、中華拉麵 朱（-17:00）、Shoya（-17:00）。<br>
           • <b>散策與採買</b>：17:00 前買 lemon’n spice 檸檬飲、搭纜車登千光寺公園，18:00 前至尾道ええもんや買伴手禮。點擊下方任意節點開啟地圖便籤：
         </div>
 
-        <!-- 尾道全景點手繪步道 SVG (已修復單引號轉義問題，全部皆可點擊) -->
+        <!-- 尾道全景點手繪步道 SVG (完整收錄 9 個節點，全部皆可點擊) -->
         <div class="visual-trail-card">
           <div class="visual-trail-title">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
-            <span>ONOMICHI RAMEN & WALK ROUTE (點擊節點看便籤)</span>
+            <span>ONOMICHI FOOD & WALK ROUTE (點擊節點看便籤)</span>
           </div>
           
-          <svg class="interactive-trail-svg" viewBox="0 0 340 410" fill="none">
+          <svg class="interactive-trail-svg" viewBox="0 0 340 505" fill="none">
             <!-- 連貫虛線路徑 -->
             <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 85 205 C 85 225, 245 225, 245 245" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 170 265 C 130 265, 120 265, 85 265" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
-            <path d="M 85 305 C 85 325, 170 325, 170 342" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 85 305 C 85 325, 245 325, 245 345" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 170 365 C 130 365, 120 365, 85 365" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 85 405 C 85 425, 170 425, 170 442" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
 
             <!-- 散步小人 -->
             <g transform="translate(145, 95)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
 
-            <!-- 節點 1：lemon'n spice (已修復單引號，100% 可點擊) -->
-            <g class="trail-clickable" onclick="openMemo('lemon’n spice 尾道本店', '広島県尾道市土堂1-4-22', '瀨戶內無農藥檸檬特色飲品專賣店！週日營業 10:00–17:00，建議進商店街前先買。電話：0848-24-3303', 'lemon%27n+spice+尾道')" transform="translate(10, 15)">
+            <!-- 節點 1：尾道拉麵 千兩 -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 千両（尾道拉麵 千兩）', '広島県尾道市土堂1-1-10', '【秘密のケンミンSHOW】40年町中華老店，拉麵配炒飯炸雞。週日午間至 14:30，務必提早入店！', '尾道ラーメン+千両')" transform="translate(10, 15)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">lemon’n spice</text>
-              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(週日至17:00・檸檬飲)</text>
-              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">尾道拉麵 千兩</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(週日至14:30・老店)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
             </g>
 
-            <!-- 節點 2：Borracho (排隊店 -16:00) -->
-            <g class="trail-clickable" onclick="openMemo('尾道中華そば ボラーチョ (Borracho)', '広島県尾道市土堂1-4-14', '尾道本通商店街人氣排隊名店！營業時間 11:00–16:00（週四休），就在 lemon’n spice 隔壁。', 'Borracho+尾道')" transform="translate(170, 30)">
+            <!-- 節點 2：村上お好み焼き (尾道燒) -->
+            <g class="trail-clickable" onclick="openMemo('村上お好み焼き（尾道燒）', '広島県尾道市久保2-1-14', '【秘密のケンミンSHOW】雞胗＋炸魷魚天婦羅尾道燒，僅六日營業（週日至 15:00）。', '村上お好み焼き+尾道')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">村上お好み焼き</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(雞胗尾道燒・至15:00)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
+            </g>
+
+            <!-- 節點 3：Borracho (排隊店 -16:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道中華そば ボラーチョ (Borracho)', '広島県尾道市土堂1-4-14', '尾道本通商店街人氣排隊名店！營業時間 11:00–16:00（週四休）。', 'Borracho+尾道')" transform="translate(170, 135)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Borracho (排隊店)</text>
               <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(尾道拉麵・營業至16:00)</text>
-              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
             </g>
 
-            <!-- 節點 3：Tatsumi (排隊店 -18:00) -->
-            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 壱番館 / たつみ (Tatsumi)', '広島県尾道市土堂1-12-13', '高人氣排隊拉麵店！週六日營業 10:00–18:00，下午時段也能吃到熱騰騰尾道拉麵。', 'Tatsumi+尾道')" transform="translate(170, 135)">
+            <!-- 節點 4：lemon'n spice -->
+            <g class="trail-clickable" onclick="openMemo('lemon’n spice 尾道本店', '広島県尾道市土堂1-4-22', '瀨戶內無農藥檸檬特色飲品專賣店！週日營業 10:00–17:00，就在 Borracho 隔壁。', 'lemon%27n+spice+尾道')" transform="translate(10, 135)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">lemon’n spice</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(週日至17:00・檸檬飲)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+            </g>
+
+            <!-- 節點 5：Tatsumi (排隊店 -18:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 壱番館 / たつみ (Tatsumi)', '広島県尾道市土堂1-12-13', '高人氣排隊拉麵店！週六日營業 10:00–18:00，下午時段也能吃到熱騰騰尾道拉麵。', 'Tatsumi+尾道')" transform="translate(170, 235)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Tatsumi (排隊店)</text>
               <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(尾道拉麵・週日至18:00)</text>
               <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
             </g>
 
-            <!-- 節點 4：中華拉麵 朱 (-17:00) -->
-            <g class="trail-clickable" onclick="openMemo('中華そば 朱（中華拉麵 朱）', '広島県尾道市十四日元町6-16', '承襲傳奇老店「朱華園」風味的經典醬油拉麵與背脂，營業 11:00–17:00。', '中華そば+朱+尾道')" transform="translate(10, 135)">
+            <!-- 節點 6：中華拉麵 朱 (-17:00) -->
+            <g class="trail-clickable" onclick="openMemo('中華そば 朱（中華拉麵 朱）', '広島県尾道市十四日元町6-16', '承襲傳奇老店「朱華園」風味的經典醬油拉麵與背脂，營業 11:00–17:00。', '中華そば+朱+尾道')" transform="translate(10, 235)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">中華拉麵 朱</text>
               <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(經典朱華園系・至17:00)</text>
               <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
             </g>
 
-            <!-- 節點 5：Shoya (-17:00) -->
-            <g class="trail-clickable" onclick="openMemo('尾道ラーメン しょうや (Shoya)', '広島県尾道市十四日元町5-13', '濃郁小魚乾高湯搭配背脂尾道拉麵，營業 10:00–17:00，就在「朱」旁邊。', '尾道ラーメン+しょうや')" transform="translate(170, 235)">
+            <!-- 節點 7：Shoya (-17:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン しょうや (Shoya)', '広島県尾道市十四日元町5-13', '濃郁小魚乾高湯搭配背脂尾道拉麵，營業 10:00–17:00，就在「朱」旁邊。', '尾道ラーメン+しょうや')" transform="translate(170, 335)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Shoya (しょうや)</text>
               <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(魚介背脂拉麵・至17:00)</text>
               <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
             </g>
 
-            <!-- 節點 6：千光寺公園 -->
-            <g class="trail-clickable" onclick="openMemo('千光寺公園（千光寺山纜車）', '広島県尾道市西土堂町19-1', '搭千光寺山纜車登頂俯瞰尾道水道與向島絕景，下山可順道漫步文學之道與貓之細道。', '千光寺公園')" transform="translate(10, 235)">
+            <!-- 節點 8：千光寺公園 -->
+            <g class="trail-clickable" onclick="openMemo('千光寺公園（千光寺山纜車）', '広島県尾道市西土堂町19-1', '搭千光寺山纜車登頂俯瞰尾道水道與向島絕景，下山可順道漫步文學之道與貓之細道。', '千光寺公園')" transform="translate(10, 335)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">千光寺公園</text>
               <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(纜車俯瞰尾道水道全景)</text>
               <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
             </g>
 
-            <!-- 節點 7：尾道ええもんや (物產店 -18:00) -->
-            <g class="trail-clickable" onclick="openMemo('尾道ええもんや（物產伴手禮店）', '広島県尾道市東御所町4-2', '匯集尾道在地柑橘點心、拉麵禮盒與精選物產，營業 10:00–18:00。', '尾道ええもんや')" transform="translate(85, 342)">
+            <!-- 節點 9：尾道ええもんや (物產店 -18:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ええもんや（物產伴手禮店）', '広島県尾道市東御所町4-2', '匯集尾道在地柑橘點心、拉麵禮盒與精選物產，營業 10:00–18:00。', '尾道ええもんや')" transform="translate(85, 442)">
               <rect width="170" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
               <text x="85" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">尾道ええもんや</text>
               <text x="85" y="37" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(物產店・營業至 18:00)</text>
