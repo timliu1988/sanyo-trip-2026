@@ -634,11 +634,11 @@ const ITINERARY_DATA = {
       <!-- 上午彈性雙寺巡禮 -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">09:30 - 12:50</span>
+          <span class="card-time">10:00 - 13:30</span>
           <span class="tag tag-car">彈性雙寺</span>
         </div>
-        <div class="card-title">福山出發 ➔ 雙寺楓葉巡禮（視楓況彈性調整）</div>
-        <div class="card-desc">依出發前官網楓況決定停留組合，靈活掌握進尾道的時間節奏：</div>
+        <div class="card-title">福山出發 ➔ 楓葉巡禮（視紅葉狀況彈性調整）</div>
+        <div class="card-desc">出發前先看官網紅葉狀況；若已過見頃，可直接省去雙寺，直接前往尾道千光寺與商店街：</div>
 
         <!-- 選項 1：神勝寺 -->
         <div class="parent-spot-card" style="margin-bottom: 10px;">
@@ -654,9 +654,7 @@ const ITINERARY_DATA = {
             </div>
           </div>
           <div class="parent-spot-sub">
-            • <b>09:30 - 09:55</b> 福山退房開山路約 25 分鐘（免費路段）。<br>
-            • <b>10:00 - 11:00</b> 10:00 開門直接趕 <b>10:10–10:40《洸庭》首場</b>，隨後拍水池紅葉（2026/12/31 轉型前最後楓葉季，境內無餐飲）。<br>
-            • 若決定跳過神勝寺，可改 <b>09:45</b> 從福山直接出發去今高野山。
+            • 福山出發車程約 25 分鐘（免費山路）。10:00 開門直接趕 <b>10:10–10:40《洸庭》首場</b>，隨後拍水池紅葉（境內無餐飲）。
           </div>
           <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県福山市沼隈町上山南91')">
             <div class="copy-chip-left">
@@ -692,9 +690,7 @@ const ITINERARY_DATA = {
             </div>
           </div>
           <div class="parent-spot-sub">
-            • <b>11:00 - 12:00</b> 走尾道自動車道（世羅 IC 下，免費路段），車程約 60 分鐘。<br>
-            • <b>12:00 - 12:50</b> 拍攝神之橋紅葉、觀音堂前楓樹與落葉紅毯（免費停車場）。結束後沿國道 184 號南下進尾道（約 35~40 分）。<br>
-            • 若官網顯示落葉已過見頃，可直接省去此段，11:00 從神勝寺開 25 分鐘直達尾道。
+            • 拍攝神之橋紅葉與觀音堂楓毯（免費停車場）。結束後沿國道 184 號南下進尾道（車程約 40 分鐘）。
           </div>
           <div style="margin-bottom: 8px;">
             <a href="https://www.imakouya.nss55.net/momiji.php" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn" style="width: 100%; justify-content: center;">
@@ -722,107 +718,132 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 尾道午餐與千光寺散策 -->
+      <!-- 尾道本通商店街・拉麵清單與散策步道 -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">13:30 - 17:30</span>
-          <span class="tag tag-must">山城＆美食</span>
+          <span class="card-time">14:00 - 18:00</span>
+          <span class="tag tag-must">山城＆拉麵</span>
         </div>
-        <div class="card-title">尾道美食二選一 ＆ 千光寺・商店街散策</div>
+        <div class="card-title">尾道本通商店街・拉麵清單 ＆ 千光寺散策</div>
         <div class="card-desc">
-          • <b>13:30 - 14:30 午餐</b>：《秘密のケンミンSHOW》推薦在地老店（免排觀光名店長龍）。<br>
-          • <b>14:30 - 17:30 散策</b>：搭纜車登千光寺公園俯瞰尾道水道，留意店家打烊時間先買檸檬飲與伴手禮！
+          • <b>尾道拉麵 List</b>：Borracho（-16:00 排隊店）、Tatsumi（-18:00 排隊店）、中華拉麵 朱（-17:00）、Shoya（-17:00）。<br>
+          • <b>散策與採買</b>：17:00 前買 lemon’n spice 檸檬飲、搭纜車登千光寺公園，18:00 前至尾道ええもんや買伴手禮。點擊下方任意節點開啟地圖便籤：
         </div>
 
-        <!-- 尾道手繪步道 SVG -->
+        <!-- 尾道全景點手繪步道 SVG (已修復單引號轉義問題，全部皆可點擊) -->
         <div class="visual-trail-card">
           <div class="visual-trail-title">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
-            <span>ONOMICHI FOOD & WALK ROUTE (點擊節點看便籤)</span>
+            <span>ONOMICHI RAMEN & WALK ROUTE (點擊節點看便籤)</span>
           </div>
           
-          <svg class="interactive-trail-svg" viewBox="0 0 340 315" fill="none">
+          <svg class="interactive-trail-svg" viewBox="0 0 340 410" fill="none">
             <!-- 連貫虛線路徑 -->
             <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
-            <path d="M 85 205 C 85 225, 170 225, 170 245" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 85 205 C 85 225, 245 225, 245 245" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 170 265 C 130 265, 120 265, 85 265" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 85 305 C 85 325, 170 325, 170 342" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
 
             <!-- 散步小人 -->
             <g transform="translate(145, 95)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
 
-            <!-- 節點 1：尾道拉麵 千兩 -->
-            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 千両（尾道拉麵 千兩）', '広島県尾道市土堂1-1-10', '【秘密のケンミンSHOW】40年町中華老店，招牌醬油拉麵配炒飯炸雞。務必 14:30 前入店避免撞下午休！', '尾道ラーメン+千両')" transform="translate(10, 15)">
+            <!-- 節點 1：lemon'n spice (已修復單引號，100% 可點擊) -->
+            <g class="trail-clickable" onclick="openMemo('lemon’n spice 尾道本店', '広島県尾道市土堂1-4-22', '瀨戶內無農藥檸檬特色飲品專賣店！週日營業 10:00–17:00，建議進商店街前先買。電話：0848-24-3303', 'lemon%27n+spice+尾道')" transform="translate(10, 15)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">尾道拉麵 千兩</text>
-              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(14:30前入店・拉麵炒飯)</text>
-              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">午餐選項 A</text>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">lemon’n spice</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(週日至17:00・檸檬飲)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
             </g>
 
-            <!-- 節點 2：村上お好み焼き -->
-            <g class="trail-clickable" onclick="openMemo('村上お好み焼き（尾道燒）', '広島県尾道市久保2-1-14', '【秘密のケンミンSHOW】特色「雞胗＋炸魷魚天婦羅」尾道燒！僅六日營業（週日至 15:00）。', '村上お好み焼き+尾道')" transform="translate(170, 30)">
+            <!-- 節點 2：Borracho (排隊店 -16:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道中華そば ボラーチョ (Borracho)', '広島県尾道市土堂1-4-14', '尾道本通商店街人氣排隊名店！營業時間 11:00–16:00（週四休），就在 lemon’n spice 隔壁。', 'Borracho+尾道')" transform="translate(170, 30)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">村上お好み焼き</text>
-              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(雞胗尾道燒・週日至15:00)</text>
-              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">午餐選項 B</text>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Borracho (排隊店)</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(尾道拉麵・營業至16:00)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
             </g>
 
-            <!-- 節點 3：lemon'n spice -->
-            <g class="trail-clickable" onclick="openMemo('lemon\'n spice 尾道本店', '広島県尾道市土堂1-4-22', '瀨戶內海無農藥檸檬特色飲品專賣店！週日營業至 17:00，建議下午散策前先買。', 'lemon\'n+spice+尾道')" transform="translate(170, 135)">
+            <!-- 節點 3：Tatsumi (排隊店 -18:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 壱番館 / たつみ (Tatsumi)', '広島県尾道市土堂1-12-13', '高人氣排隊拉麵店！週六日營業 10:00–18:00，下午時段也能吃到熱騰騰尾道拉麵。', 'Tatsumi+尾道')" transform="translate(170, 135)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">lemon'n spice 尾道</text>
-              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(17:00打烊・瀨戶內檸檬飲)</text>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Tatsumi (排隊店)</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(尾道拉麵・週日至18:00)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 4分</text>
+            </g>
+
+            <!-- 節點 4：中華拉麵 朱 (-17:00) -->
+            <g class="trail-clickable" onclick="openMemo('中華そば 朱（中華拉麵 朱）', '広島県尾道市十四日元町6-16', '承襲傳奇老店「朱華園」風味的經典醬油拉麵與背脂，營業 11:00–17:00。', '中華そば+朱+尾道')" transform="translate(10, 135)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">中華拉麵 朱</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(經典朱華園系・至17:00)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 1分</text>
+            </g>
+
+            <!-- 節點 5：Shoya (-17:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン しょうや (Shoya)', '広島県尾道市十四日元町5-13', '濃郁小魚乾高湯搭配背脂尾道拉麵，營業 10:00–17:00，就在「朱」旁邊。', '尾道ラーメン+しょうや')" transform="translate(170, 235)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">Shoya (しょうや)</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(魚介背脂拉麵・至17:00)</text>
               <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
             </g>
 
-            <!-- 節點 4：千光寺公園 -->
-            <g class="trail-clickable" onclick="openMemo('千光寺公園（千光寺山纜車）', '広島県尾道市西土堂町19-1', '搭千光寺山纜車登頂俯瞰尾道水道與向島絕景，下山可順道漫步文學之道與貓之細道。', '千光寺公園')" transform="translate(10, 135)">
+            <!-- 節點 6：千光寺公園 -->
+            <g class="trail-clickable" onclick="openMemo('千光寺公園（千光寺山纜車）', '広島県尾道市西土堂町19-1', '搭千光寺山纜車登頂俯瞰尾道水道與向島絕景，下山可順道漫步文學之道與貓之細道。', '千光寺公園')" transform="translate(10, 235)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">千光寺公園</text>
               <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(纜車俯瞰尾道水道全景)</text>
               <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
             </g>
 
-            <!-- 節點 5：尾道ええもんや -->
-            <g class="trail-clickable" onclick="openMemo('尾道ええもんや', '広島県尾道市東御所町4-2', '匯集尾道在地柑橘點心、拉麵伴手禮與精選物產，營業至 18:00。', '尾道ええもんや')" transform="translate(85, 242)">
+            <!-- 節點 7：尾道ええもんや (物產店 -18:00) -->
+            <g class="trail-clickable" onclick="openMemo('尾道ええもんや（物產伴手禮店）', '広島県尾道市東御所町4-2', '匯集尾道在地柑橘點心、拉麵禮盒與精選物產，營業 10:00–18:00。', '尾道ええもんや')" transform="translate(85, 342)">
               <rect width="170" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
               <text x="85" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">尾道ええもんや</text>
-              <text x="85" y="37" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(18:00打烊・在地伴手禮)</text>
+              <text x="85" y="37" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(物產店・營業至 18:00)</text>
             </g>
           </svg>
         </div>
       </div>
 
-      <!-- 尾道前往廣島市區 -->
+      <!-- 尾道前往廣島住宿 (連續入住 2 晚) -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">17:45 - 19:15</span>
-          <span class="tag tag-car">高速移動</span>
+          <span class="card-time">18:15 - 20:00</span>
+          <span class="tag tag-hotel">連住 2 晚</span>
         </div>
-        <div class="card-title">尾道市區 ➔ 廣島市區飯店 Check-in</div>
-        <div class="card-desc">由【尾道 IC】上山陽自動車道向西行駛至【廣島 IC】（SEP 100% 全額涵蓋），車程約 1.5 小時。抵達市區飯店停妥車、放好行李後立即前往流川／藥研堀商圈。</div>
+        <div class="card-title">尾道 ➔ 維瑟爾廣島和平大道飯店 Check-in</div>
+        <div class="card-desc">由【尾道 IC】上山陽自動車道向西行駛至【廣島 IC】（SEP 100% 全額涵蓋），車程約 1.5 小時，預計 20:00 抵達辦理入住（11/29–11/30 連住兩晚）。</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県広島市中区宝町5-37')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>広島県広島市中区宝町5-37</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
         <div class="btn-row">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=広島IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=ベッセルホテル広島平和大通り&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
             <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-            <span>Google 導向廣島IC</span>
+            <span>Google 目前位置直達</span>
           </a>
-          <a href="https://maps.apple.com/?daddr=広島IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+          <a href="https://maps.apple.com/?daddr=ベッセルホテル広島平和大通り&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
             <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
-            <span>Apple 導向廣島IC</span>
+            <span>Apple 目前位置直達</span>
           </a>
         </div>
       </div>
 
-      <!-- 廣島晚餐與深夜採買 -->
+      <!-- 廣島消夜與深夜採買 -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">19:30 - 21:00+</span>
-          <span class="tag tag-must">廣島夜生活</span>
+          <span class="card-time">20:15 - 22:00+</span>
+          <span class="tag tag-must">消夜＆採買</span>
         </div>
-        <div class="card-title">廣島燒 八昌（藥研堀店）➔ 唐吉訶德採買</div>
+        <div class="card-title">消夜：廣島燒 八昌（藥研堀店）➔ 唐吉訶德</div>
         <div class="card-desc">
-          • <b>19:30 - 21:00</b> 放好行李立刻步行前往【八昌 藥研堀店】享用正宗雙蛋黃廣島燒（週日營業至 21:00）。<br>
-          • <b>21:00 以後</b> 步行 5 分鐘至【唐吉訶德 廣島八丁堀店】（營業至凌晨 05:00）慢慢補貨。
+          • <b>20:15</b> 放好行李立刻步行前往【八昌 藥研堀店】享用正宗雙蛋黃廣島燒（週日營業至 21:00，由飯店步行約 10 分鐘）。<br>
+          • <b>21:00 以後</b> 步行 5 分鐘至【唐吉訶德 廣島八丁堀店】（營業至凌晨 05:00）慢慢採買補貨。
         </div>
 
         <div class="visual-trail-card" style="background: #FFF7F5; border-color: var(--coral);">
@@ -838,7 +859,7 @@ const ITINERARY_DATA = {
             </g>
 
             <!-- 節點 1：八昌 藥研堀店 -->
-            <g class="trail-clickable" onclick="openMemo('お好み焼き 八昌（藥研堀店）', '広島県広島市中区薬研堀10-6', '【秘密のケンミンSHOW】八昌系總本山正宗雙蛋黃廣島燒！週日營業至 21:00，建議抵達廣島先衝這家。', 'お好み焼き+八昌+薬研堀')" transform="translate(10, 20)">
+            <g class="trail-clickable" onclick="openMemo('お好み焼き 八昌（藥研堀店）', '広島県広島市中区薬研堀10-6', '【秘密のケンミンSHOW】八昌系總本山正宗雙蛋黃廣島燒！週日營業至 21:00，建議抵達飯店先衝這家。', 'お好み焼き+八昌+薬研堀')" transform="translate(10, 20)">
               <rect width="145" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
               <text x="72" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">八昌（藥研堀店）</text>
               <text x="72" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(雙蛋黃廣島燒・至21:00)</text>
@@ -868,7 +889,33 @@ const ITINERARY_DATA = {
     },
     d4: {
         title: "Day 4 (11/30)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 4 廣島 ➔ 宮島 規劃中</p></div>`
+        contentHtml: `
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">續住廣島</span>
+          <span class="tag tag-hotel">連續住宿</span>
+        </div>
+        <div class="card-title">住宿：維瑟爾廣島和平大道飯店（第 2 晚）</div>
+        <div class="card-desc">Day 4 廣島 ➔ 宮島 行程規劃中（晚間返回同一間飯店續住，免搬行李）。</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県広島市中区宝町5-37')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>広島県広島市中区宝町5-37</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
+        <div class="btn-row">
+          <a href="https://www.google.com/maps/search/?api=1&query=ベッセルホテル広島平和大通り" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 地圖</span>
+          </a>
+          <a href="https://maps.apple.com/?q=ベッセルホテル広島平和大通り" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 地圖</span>
+          </a>
+        </div>
+      </div>
+    `
     },
     d5: {
         title: "Day 5 (12/01)",
