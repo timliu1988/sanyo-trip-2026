@@ -630,7 +630,241 @@ const ITINERARY_DATA = {
     },
     d3: {
         title: "Day 3 (11/29)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 3 尾道 ➔ 廣島 規劃中</p></div>`
+        contentHtml: `
+      <!-- 上午彈性雙寺巡禮 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">09:30 - 12:50</span>
+          <span class="tag tag-car">彈性雙寺</span>
+        </div>
+        <div class="card-title">福山出發 ➔ 雙寺楓葉巡禮（視楓況彈性調整）</div>
+        <div class="card-desc">依出發前官網楓況決定停留組合，靈活掌握進尾道的時間節奏：</div>
+
+        <!-- 選項 1：神勝寺 -->
+        <div class="parent-spot-card" style="margin-bottom: 10px;">
+          <div class="parent-spot-header">
+            <svg class="parent-spot-icon" viewBox="0 0 50 50" fill="none">
+              <path d="M10 38 Q25 14 40 38 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+              <line x1="6" y1="38" x2="44" y2="38" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="34" cy="16" r="5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+            </svg>
+            <div>
+              <div class="parent-spot-name">【選項 1】神勝寺 禅と庭のミュージアム</div>
+              <div style="font-size: 0.74rem; color: #888;">広島県福山市沼隈町上山南91</div>
+            </div>
+          </div>
+          <div class="parent-spot-sub">
+            • <b>09:30 - 09:55</b> 福山退房開山路約 25 分鐘（免費路段）。<br>
+            • <b>10:00 - 11:00</b> 10:00 開門直接趕 <b>10:10–10:40《洸庭》首場</b>，隨後拍水池紅葉（2026/12/31 轉型前最後楓葉季，境內無餐飲）。<br>
+            • 若決定跳過神勝寺，可改 <b>09:45</b> 從福山直接出發去今高野山。
+          </div>
+          <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県福山市沼隈町上山南91')">
+            <div class="copy-chip-left">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+              <span>広島県福山市沼隈町上山南91</span>
+            </div>
+            <span class="copy-badge">複製地址</span>
+          </div>
+          <div class="btn-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=神勝寺+禅と庭のミュージアム" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 地圖</span>
+            </a>
+            <a href="https://maps.apple.com/?q=神勝寺+禅と庭のミュージアム" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple 地圖</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 選項 2：今高野山 龍華寺 -->
+        <div class="parent-spot-card">
+          <div class="parent-spot-header">
+            <svg class="parent-spot-icon" viewBox="0 0 50 50" fill="none">
+              <path d="M8 34 Q25 18 42 34" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+              <path d="M12 38 Q25 24 38 38" stroke="#F2A497" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="16" y1="26" x2="16" y2="36" stroke="#3E3A39" stroke-width="2"/>
+              <line x1="34" y1="26" x2="34" y2="36" stroke="#3E3A39" stroke-width="2"/>
+            </svg>
+            <div>
+              <div class="parent-spot-name">【選項 2】今高野山 龍華寺（世羅町）</div>
+              <div style="font-size: 0.74rem; color: #888;">広島県世羅郡世羅町甲山152</div>
+            </div>
+          </div>
+          <div class="parent-spot-sub">
+            • <b>11:00 - 12:00</b> 走尾道自動車道（世羅 IC 下，免費路段），車程約 60 分鐘。<br>
+            • <b>12:00 - 12:50</b> 拍攝神之橋紅葉、觀音堂前楓樹與落葉紅毯（免費停車場）。結束後沿國道 184 號南下進尾道（約 35~40 分）。<br>
+            • 若官網顯示落葉已過見頃，可直接省去此段，11:00 從神勝寺開 25 分鐘直達尾道。
+          </div>
+          <div style="margin-bottom: 8px;">
+            <a href="https://www.imakouya.nss55.net/momiji.php" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn" style="width: 100%; justify-content: center;">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z" fill="#F2A497"/></svg>
+              <span>查看每日紅葉最新情況 (官方速報)</span>
+            </a>
+          </div>
+          <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県世羅郡世羅町甲山152')">
+            <div class="copy-chip-left">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+              <span>広島県世羅郡世羅町甲山152</span>
+            </div>
+            <span class="copy-badge">複製地址</span>
+          </div>
+          <div class="btn-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=今高野山+龍華寺" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+              <span>Google 地圖</span>
+            </a>
+            <a href="https://maps.apple.com/?q=今高野山+龍華寺" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+              <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+              <span>Apple 地圖</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 尾道午餐與千光寺散策 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">13:30 - 17:30</span>
+          <span class="tag tag-must">山城＆美食</span>
+        </div>
+        <div class="card-title">尾道美食二選一 ＆ 千光寺・商店街散策</div>
+        <div class="card-desc">
+          • <b>13:30 - 14:30 午餐</b>：《秘密のケンミンSHOW》推薦在地老店（免排觀光名店長龍）。<br>
+          • <b>14:30 - 17:30 散策</b>：搭纜車登千光寺公園俯瞰尾道水道，留意店家打烊時間先買檸檬飲與伴手禮！
+        </div>
+
+        <!-- 尾道手繪步道 SVG -->
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>ONOMICHI FOOD & WALK ROUTE (點擊節點看便籤)</span>
+          </div>
+          
+          <svg class="interactive-trail-svg" viewBox="0 0 340 315" fill="none">
+            <!-- 連貫虛線路徑 -->
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 245 130, 245 145" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 170 165 C 130 165, 120 165, 85 165" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 85 205 C 85 225, 170 225, 170 245" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 散步小人 -->
+            <g transform="translate(145, 95)"><circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/><path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></g>
+
+            <!-- 節點 1：尾道拉麵 千兩 -->
+            <g class="trail-clickable" onclick="openMemo('尾道ラーメン 千両（尾道拉麵 千兩）', '広島県尾道市土堂1-1-10', '【秘密のケンミンSHOW】40年町中華老店，招牌醬油拉麵配炒飯炸雞。務必 14:30 前入店避免撞下午休！', '尾道ラーメン+千両')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">尾道拉麵 千兩</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(14:30前入店・拉麵炒飯)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">午餐選項 A</text>
+            </g>
+
+            <!-- 節點 2：村上お好み焼き -->
+            <g class="trail-clickable" onclick="openMemo('村上お好み焼き（尾道燒）', '広島県尾道市久保2-1-14', '【秘密のケンミンSHOW】特色「雞胗＋炸魷魚天婦羅」尾道燒！僅六日營業（週日至 15:00）。', '村上お好み焼き+尾道')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">村上お好み焼き</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(雞胗尾道燒・週日至15:00)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">午餐選項 B</text>
+            </g>
+
+            <!-- 節點 3：lemon'n spice -->
+            <g class="trail-clickable" onclick="openMemo('lemon\'n spice 尾道本店', '広島県尾道市土堂1-4-22', '瀨戶內海無農藥檸檬特色飲品專賣店！週日營業至 17:00，建議下午散策前先買。', 'lemon\'n+spice+尾道')" transform="translate(170, 135)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">lemon'n spice 尾道</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(17:00打烊・瀨戶內檸檬飲)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
+            </g>
+
+            <!-- 節點 4：千光寺公園 -->
+            <g class="trail-clickable" onclick="openMemo('千光寺公園（千光寺山纜車）', '広島県尾道市西土堂町19-1', '搭千光寺山纜車登頂俯瞰尾道水道與向島絕景，下山可順道漫步文學之道與貓之細道。', '千光寺公園')" transform="translate(10, 135)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">千光寺公園</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(纜車俯瞰尾道水道全景)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
+            </g>
+
+            <!-- 節點 5：尾道ええもんや -->
+            <g class="trail-clickable" onclick="openMemo('尾道ええもんや', '広島県尾道市東御所町4-2', '匯集尾道在地柑橘點心、拉麵伴手禮與精選物產，營業至 18:00。', '尾道ええもんや')" transform="translate(85, 242)">
+              <rect width="170" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+              <text x="85" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">尾道ええもんや</text>
+              <text x="85" y="37" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(18:00打烊・在地伴手禮)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 尾道前往廣島市區 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">17:45 - 19:15</span>
+          <span class="tag tag-car">高速移動</span>
+        </div>
+        <div class="card-title">尾道市區 ➔ 廣島市區飯店 Check-in</div>
+        <div class="card-desc">由【尾道 IC】上山陽自動車道向西行駛至【廣島 IC】（SEP 100% 全額涵蓋），車程約 1.5 小時。抵達市區飯店停妥車、放好行李後立即前往流川／藥研堀商圈。</div>
+        <div class="btn-row">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=広島IC&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 導向廣島IC</span>
+          </a>
+          <a href="https://maps.apple.com/?daddr=広島IC&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 導向廣島IC</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 廣島晚餐與深夜採買 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">19:30 - 21:00+</span>
+          <span class="tag tag-must">廣島夜生活</span>
+        </div>
+        <div class="card-title">廣島燒 八昌（藥研堀店）➔ 唐吉訶德採買</div>
+        <div class="card-desc">
+          • <b>19:30 - 21:00</b> 放好行李立刻步行前往【八昌 藥研堀店】享用正宗雙蛋黃廣島燒（週日營業至 21:00）。<br>
+          • <b>21:00 以後</b> 步行 5 分鐘至【唐吉訶德 廣島八丁堀店】（營業至凌晨 05:00）慢慢補貨。
+        </div>
+
+        <div class="visual-trail-card" style="background: #FFF7F5; border-color: var(--coral);">
+          <div class="visual-trail-title" style="color: #D9534F;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><circle cx="12" cy="14" r="8" fill="#F6D27A"/><path d="M4 14 Q12 18 20 14"/></svg>
+            <span>廣島流川・八丁堀夜間步行 (點擊看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 110" fill="none">
+            <path d="M 85 50 L 250 50" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <g transform="translate(158, 22)">
+              <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 節點 1：八昌 藥研堀店 -->
+            <g class="trail-clickable" onclick="openMemo('お好み焼き 八昌（藥研堀店）', '広島県広島市中区薬研堀10-6', '【秘密のケンミンSHOW】八昌系總本山正宗雙蛋黃廣島燒！週日營業至 21:00，建議抵達廣島先衝這家。', 'お好み焼き+八昌+薬研堀')" transform="translate(10, 20)">
+              <rect width="145" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="72" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">八昌（藥研堀店）</text>
+              <text x="72" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(雙蛋黃廣島燒・至21:00)</text>
+              <text x="72" y="66" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
+            </g>
+
+            <!-- 節點 2：唐吉訶德 八丁堀店 -->
+            <g class="trail-clickable" onclick="openMemo('ドン・キホーテ 広島八丁堀店（唐吉訶德）', '広島県広島市中区新天地5-3', '營業至凌晨 05:00！就在八昌步行 5 分鐘距離，吃完廣島燒再悠閒採買藥妝零食。', 'ドン・キホーテ+広島八丁堀店')" transform="translate(180, 20)">
+              <rect width="150" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">唐吉訶德 八丁堀店</text>
+              <text x="75" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(營業至凌晨 05:00)</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 週日公休美食備忘 -->
+        <div class="alert-box" style="margin-top: 10px;">
+          <div class="alert-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1" fill="#D9534F"/></svg>
+            <span>《秘密のケンミンSHOW》週日公休避坑備忘（改排 11/30 週一）</span>
+          </div>
+          • <b>鐵板燒 中ちゃん（海膽菠菜名店）</b>：広島県広島市中区弥生町6-7（週日公休，改排週一晚餐）。<br>
+          • <b>中華そば くにまつ 八丁堀本店（廣島無湯擔擔麵）</b>：広島県広島市中区八丁堀8-10（週日公休，改排週一）。
+        </div>
+      </div>
+    `
     },
     d4: {
         title: "Day 4 (11/30)",
