@@ -909,36 +909,337 @@ const ITINERARY_DATA = {
     d4: {
         title: "Day 4 (11/30)",
         contentHtml: `
+      <!-- 吳市軍港巡禮 -->
       <div class="card">
         <div class="card-header-bar">
-          <span class="card-time">續住廣島</span>
-          <span class="tag tag-hotel">連續住宿</span>
+          <span class="card-time">09:30 - 12:00</span>
+          <span class="tag tag-car">軍港自駕</span>
         </div>
-        <div class="card-title">住宿：維瑟爾廣島和平大道飯店（第 2 晚）</div>
-        <div class="card-desc">Day 4 廣島 ➔ 宮島 行程規劃中（晚間返回同一間飯店續住，免搬行李）。</div>
-        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県広島市中区宝町5-37')">
+        <div class="card-title">廣島出發 ➔ 吳市海事歷史科學館（大和博物館）＆ 鐵鯨館</div>
+        <div class="card-desc">
+          • <b>09:30 - 10:10</b> 從維瑟爾廣島和平大道飯店出發，走廣島吳道路（クレアライン），車程約 35~40 分鐘（獨立收費道路，非 SEP 範圍，單程約 730 円）。<br>
+          • <b>10:10 - 12:00</b> 參觀 1/10 大和號戰艦模型與馬路正對面的退役真實潛水艇【鐵鯨館】。車停【大和博物館停車場】或對面【youme Town 吳】。
+        </div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県呉市宝町5-20')">
           <div class="copy-chip-left">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
-            <span>広島県広島市中区宝町5-37</span>
+            <span>広島県呉市宝町5-20</span>
           </div>
           <span class="copy-badge">複製地址</span>
         </div>
         <div class="btn-row">
-          <a href="https://www.google.com/maps/search/?api=1&query=ベッセルホテル広島平和大通り" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+          <a href="https://www.google.com/maps/search/?api=1&query=大和ミュージアム" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
             <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-            <span>Google 地圖</span>
+            <span>Google 大和博物館</span>
           </a>
-          <a href="https://maps.apple.com/?q=ベッセルホテル広島平和大通り" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+          <a href="https://maps.apple.com/?q=海上自衛隊呉史料館" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
             <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
-            <span>Apple 地圖</span>
+            <span>Apple 鐵鯨館</span>
           </a>
+        </div>
+      </div>
+
+      <!-- 吳市海軍咖哩與名物午餐 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">12:00 - 13:15</span>
+          <span class="tag tag-must">吳市美食</span>
+        </div>
+        <div class="card-title">吳市海軍咖哩 ＆《秘密のケンミンSHOW》名物</div>
+        <div class="card-desc">三處名店皆在吳市區平地、開車順路 5 分鐘內可達，點擊下方節點開啟地址與導航便籤：</div>
+
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>KURE PORT GOURMET ROUTE (點擊節點看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 195" fill="none">
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 170 120, 170 130" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 節點 1：吳海自咖哩 -->
+            <g class="trail-clickable" onclick="openMemo('呉ハイカラ食堂 / Beacon（吳海自咖哩）', '広島県呉市宝町4-21', '海上自衛隊艦艇官方認證復刻配方咖哩，大和博物館步行 2 分鐘即達。', '呉ハイカラ食堂')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">吳海自咖哩 (艦艇配方)</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(博物館旁步行即達)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 4分</text>
+            </g>
+
+            <!-- 節點 2：吳冷麵 珍來軒 -->
+            <g class="trail-clickable" onclick="openMemo('呉冷麺 珍来軒（吳冷麵 珍來軒）', '広島県呉市本通4-10-1', '【秘密のケンミンSHOW】平打寬麵配特製酸甜微辣湯汁與鮮蝦仁，吳市靈魂冷麵名店！', '珍来軒+呉市')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">吳冷麵 珍來軒</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(番組推薦・酸甜平打冷麵)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 2分</text>
+            </g>
+
+            <!-- 節點 3：メロンパン 吳市本店 -->
+            <g class="trail-clickable" onclick="openMemo('メロンパン 呉本店（橄欖球型哈密瓜麵包）', '広島県呉市本通7-14-1', '【秘密のケンミンSHOW】外型像橄欖球、內餡塞滿厚重特濃卡士達醬的昭和在地老牌麵包！', 'メロンパン+呉市本通')" transform="translate(80, 130)">
+              <rect width="180" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="90" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">メロンパン（吳市本店）</text>
+              <text x="90" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(橄欖球型厚卡士達麵包)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 廣島和平紀念資料館 ＆ 商店街 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">14:00 - 18:30</span>
+          <span class="tag tag-must">和平＆逛街</span>
+        </div>
+        <div class="card-title">廣島和平紀念資料館 ➔ 原爆圓頂屋 ➔ 本通商店街</div>
+        <div class="card-desc">
+          • <b>13:15 - 13:55</b> 原路開回廣島市區，停在「平和公園前」或本通周邊收費停車場。<br>
+          • <b>14:00 - 16:30</b> 參觀資料館（營業至 19:00，最晚 18:30 入館，建議預約 14:00 場次），步行串聯和平公園與原爆圓頂屋。<br>
+          • <b>16:30 - 18:30</b> 走過元安橋進入【廣島本通商店街 ＆ 廣島 PARCO】輕鬆逛街。
+        </div>
+        <div style="margin-bottom: 10px;">
+          <a href="https://hpmmuseum.jp/" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn" style="width: 100%; justify-content: center;">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="3" fill="#F6D27A"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+            <span>預約和平紀念資料館門票 (建議 14:00 場次)</span>
+          </a>
+        </div>
+
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>HIROSHIMA PEACE PARK WALK (點擊節點看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 110" fill="none">
+            <path d="M 85 50 L 250 50" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <g transform="translate(158, 22)">
+              <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 節點 1：和平資料館與原爆圓頂屋 -->
+            <g class="trail-clickable" onclick="openMemo('広島平和記念資料館 ＆ 原爆ドーム', '広島県広島市中区中島町1-2', '營業至 19:00（最晚 18:30 入館）。參觀完沿和平公園步行即可抵達原爆圓頂屋。', '広島平和記念資料館')" transform="translate(10, 20)">
+              <rect width="145" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="72" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">和平資料館＆圓頂屋</text>
+              <text x="72" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(營業至19:00・步行串聯)</text>
+              <text x="72" y="66" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
+            </g>
+
+            <!-- 節點 2：廣島本通商店街 & PARCO -->
+            <g class="trail-clickable" onclick="openMemo('広島本通商店街 ＆ 広島PARCO', '広島県広島市中区本通', '過元安橋即達廣島最核心有頂棚商店街，傍晚逛街採買不受天氣影響。', '広島本通商店街')" transform="translate(180, 20)">
+              <rect width="150" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">廣島本通 ＆ PARCO</text>
+              <text x="75" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(核心有頂棚商店街)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 週一晚間美食補完計畫 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">18:30 - 21:30</span>
+          <span class="tag tag-must">週一補完清單</span>
+        </div>
+        <div class="card-title">廣島牛尾湯 ＆《秘密のケンミンSHOW》週一營業名店</div>
+        <div class="card-desc">昨天（週日）公休的「中ちゃん」與「くにまつ」在週一全部正常營業！都在本通／流川步行圈內，晚間續住【維瑟爾廣島和平大道飯店】（第 2 晚）：</div>
+
+        <div class="visual-trail-card" style="background: #FFF7F5; border-color: var(--coral);">
+          <div class="visual-trail-title" style="color: #D9534F;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><circle cx="12" cy="14" r="8" fill="#F6D27A"/><path d="M4 14 Q12 18 20 14"/></svg>
+            <span>週一限定美食步行路線 (點擊節點看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 195" fill="none">
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 170 120, 170 130" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 節點 1：廣島牛尾湯 -->
+            <g class="trail-clickable" onclick="openMemo('廣島牛尾湯（テールスープ 専門）', '広島県広島市中区流川町', '營業時間 17:00–22:00，濃郁乳白牛尾湯搭配鹽味牛舌與白飯，暖胃首選！', 'テールスープ+流川町')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">廣島牛尾湯</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(17:00-22:00・濃郁暖胃)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+            </g>
+
+            <!-- 節點 2：鐵板燒 中ちゃん -->
+            <g class="trail-clickable" onclick="openMemo('鉄板焼 中ちゃん（海膽菠菜創始名店）', '広島県広島市中区弥生町6-7', '【秘密のケンミンSHOW】週一正常營業！招牌必點「海膽菠菜（ウニホーレン）」配烤法國麵包。', '中ちゃん+広島')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">鐵板燒 中ちゃん</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(週一營業・海膽菠菜)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 6分</text>
+            </g>
+
+            <!-- 節點 3：中華そば くにまつ 八丁堀本店 -->
+            <g class="trail-clickable" onclick="openMemo('中華そば くにまつ 八丁堀本店', '広島県広島市中区八丁堀8-10', '【秘密のケンミンSHOW】廣島無湯擔擔麵創始店！週一晚間 17:00–20:00 營業，記得攪拌 30 次以上再吃。', 'くにまつ+八丁堀本店')" transform="translate(80, 130)">
+              <rect width="180" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="90" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">中華そば くにまつ 本店</text>
+              <text x="90" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(晚間17-20點・無湯擔擔麵)</text>
+            </g>
+          </svg>
         </div>
       </div>
     `
     },
     d5: {
         title: "Day 5 (12/01)",
-        contentHtml: `<div class="card" style="text-align:center; padding:40px 16px;"><p style="font-size:1.1rem; font-weight:900;">Day 5 宮島 ➔ 吳市 ➔ 兵庫 規劃中</p></div>`
+        contentHtml: `
+      <!-- 宮島口渡輪與滿潮大鳥居 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">10:00 - 15:00</span>
+          <span class="tag tag-must">宮島半日遊</span>
+        </div>
+        <div class="card-title">廣島退房 ➔ 宮島口渡輪 ➔ 嚴島神社滿潮大鳥居</div>
+        <div class="card-desc">
+          • <b>10:00 - 10:40</b> 退房開往宮島口（車程約 40 分鐘，停周邊大型平面停車場）。<br>
+          • <b>11:00 左右</b> 搭 <b>JR 宮島渡輪</b>（09:10–16:10 班次刻意駛近大鳥居，來回票 400 円＋訪問稅 100 円＝共 500 円）。<br>
+          • 參拜 <b>嚴島神社</b>（06:30–17:00，門票 300 円）欣賞白天滿潮海上大鳥居，並逛宮島表參道商店街。
+        </div>
+        <div style="margin-bottom: 10px;">
+          <a href="https://jr-miyajimaferry.co.jp/timetable/" target="_blank" rel="noopener noreferrer" class="action-btn btn-warn" style="width: 100%; justify-content: center;">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><circle cx="12" cy="12" r="9" fill="#F6D27A"/><path d="M12 7v5l3 3"/></svg>
+            <span>查看 JR 宮島渡輪時刻表 (09:10-16:10 繞近鳥居)</span>
+          </a>
+        </div>
+
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>MIYAJIMA ISLAND ROUTE (點擊節點看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 195" fill="none">
+            <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <path d="M 245 105 C 245 120, 170 120, 170 130" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+
+            <!-- 節點 1：宮島口渡輪碼頭 -->
+            <g class="trail-clickable" onclick="openMemo('JR宮島フェリー 宮島口桟橋', '広島県廿日市市宮島口1-11-5', '09:10–16:10 班次會刻意駛近海上大鳥居！來回票 400円＋訪問稅 100円（宮島口老店穴子飯うえの亦在此）。', 'JR宮島フェリー+宮島口')" transform="translate(10, 15)">
+              <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">宮島口渡輪碼頭</text>
+              <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(JR渡輪・駛近大鳥居)</text>
+              <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">船程 10分</text>
+            </g>
+
+            <!-- 節點 2：嚴島神社 & 海上大鳥居 -->
+            <g class="trail-clickable" onclick="openMemo('嚴島神社 ＆ 海上大鳥居', '広島県廿日市市宮島町1-1', '營業時間 06:30–17:00，門票 300円。12/1 白天為滿潮景觀，整座朱紅社殿與大鳥居浮於海面上。', '嚴島神社')" transform="translate(170, 30)">
+              <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">嚴島神社＆海上大鳥居</text>
+              <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(12/1白天滿潮絕景)</text>
+              <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 5分</text>
+            </g>
+
+            <!-- 節點 3：宮島表參道商店街 & 星巴克 -->
+            <g class="trail-clickable" onclick="openMemo('宮島表参道商店街 ＆ スターバックス厳島表参道店', '広島県廿日市市宮島町535', '【秘密のケンミンSHOW】星鰻飯（あなごめし ふじたや/うえの）、現烤帶殼牡蠣、現炸紅葉饅頭、星巴克 2F 海景座！', '宮島表参道商店街')" transform="translate(75, 130)">
+              <rect width="190" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="95" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">宮島表參道 ＆ 星巴克海景店</text>
+              <text x="95" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(穴子飯・烤牡蠣・炸紅葉饅頭)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- THE OUTLETS HIROSHIMA & 山陽道休息站長征 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">15:00 - 20:00</span>
+          <span class="tag tag-car">順路購物＆長征</span>
+        </div>
+        <div class="card-title">THE OUTLETS HIROSHIMA ➔ 山陽道休息站 ➔ 岡山</div>
+        <div class="card-desc">
+          • <b>15:00 - 15:40</b> 搭船返回宮島口取車，北上開往五日市方向（車程約 25~30 分鐘）。<br>
+          • <b>15:40 - 17:30</b> 逛【THE OUTLETS HIROSHIMA】（營業至 20:00，免費停車），結束直接從旁邊【五日市 IC】上山陽道（SEP 100% 涵蓋）。<br>
+          • <b>17:30 - 20:00</b> 沿山陽自動車道向東返回岡山（約 2~2.5 小時，沿途順停休息站）。
+        </div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県広島市佐伯区石内東4-1-1')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>広島県広島市佐伯区石内東4-1-1</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
+        <div class="btn-row" style="margin-bottom: 10px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=THE+OUTLETS+HIROSHIMA" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google OUTLETS</span>
+          </a>
+          <a href="https://maps.apple.com/?q=THE+OUTLETS+HIROSHIMA" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple OUTLETS</span>
+          </a>
+        </div>
+
+        <div class="visual-trail-card" style="background: #FFFCF7;">
+          <div class="trail-label"><span>山陽自動車道沿途休息站（SA）特色推薦</span></div>
+          <div style="font-size: 0.82rem; line-height: 1.6; padding: 4px;">
+            • <b>小谷 SA</b>：廣島名產、安芸高田特色點心<br>
+            • <b>福山 SA</b>：薔薇霜淇淋、尾道拉麵伴手禮<br>
+            • <b>吉備 SA</b>：桃太郎周邊、岡山白桃聖代
+          </div>
+        </div>
+      </div>
+
+      <!-- 岡山住宿與夜間採買 -->
+      <div class="card">
+        <div class="card-header-bar">
+          <span class="card-time">20:00 - 23:00</span>
+          <span class="tag tag-hotel">住宿＆夜逛</span>
+        </div>
+        <div class="card-title">三井花園飯店岡山 ➔ AEON MALL ＆ 站前採買</div>
+        <div class="card-desc">飯店位於岡山站東口徒步 2 分鐘，正對面即為 AEON MALL 岡山。抵達後先衝 21:00 打烊的 AEON，再逛松本清與唐吉訶德：</div>
+        <div class="copy-chip" onclick="navigator.clipboard.writeText('岡山県岡山市北区駅元町1-7')">
+          <div class="copy-chip-left">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#F2A497"/></svg>
+            <span>岡山県岡山市北区駅元町1-7</span>
+          </div>
+          <span class="copy-badge">複製地址</span>
+        </div>
+        <div class="btn-row" style="margin-bottom: 12px;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=三井ガーデンホテル岡山&travelmode=driving" target="_blank" rel="noopener noreferrer" class="action-btn btn-gmap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21" fill="#A8D3E6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            <span>Google 直達飯店</span>
+          </a>
+          <a href="https://maps.apple.com/?daddr=三井ガーデンホテル岡山&dirflg=d" target="_blank" rel="noopener noreferrer" class="action-btn btn-amap">
+            <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5"><path d="M12 2C7.5 2 4 5.5 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.5-3.5-8-8-8z" fill="#F0EFEB"/><circle cx="12" cy="10" r="3" fill="#B9DAA5"/></svg>
+            <span>Apple 直達飯店</span>
+          </a>
+        </div>
+
+        <!-- 岡山站前購物手繪步道 -->
+        <div class="visual-trail-card">
+          <div class="visual-trail-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8C8885" stroke-width="2.5"><circle cx="12" cy="5" r="3"/><path d="M12 8v8l3 4M9 13l3-2 3 2"/></svg>
+            <span>OKAYAMA STATION SHOPPING (點擊節點看便籤)</span>
+          </div>
+          <svg class="interactive-trail-svg" viewBox="0 0 340 110" fill="none">
+            <path d="M 85 50 L 250 50" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
+            <g transform="translate(158, 22)">
+              <circle cx="8" cy="4" r="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M8 8 L8 18 L13 26 M8 18 L3 26 M4 12 L12 12" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 節點 1：AEON MALL 岡山 -->
+            <g class="trail-clickable" onclick="openMemo('イオンモール岡山（AEON MALL 岡山）', '岡山県岡山市北区下石井1-2-1', '10:00–21:00（部分餐廳至 22:00）。西日本最大級！星巴克備前燒杯、3COINS+、無印良品、中川政七商店、屋頂花園。', 'イオンモール岡山')" transform="translate(10, 20)">
+              <rect width="145" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="72" y="21" text-anchor="middle" font-size="11.5" font-weight="900" fill="#3E3A39">AEON MALL 岡山</text>
+              <text x="72" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(營業至21:00・飯店對面)</text>
+              <text x="72" y="66" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">徒歩 3分</text>
+            </g>
+
+            <!-- 節點 2：一番街 / Bic / 松本清 / 唐吉訶德 -->
+            <g class="trail-clickable" onclick="openMemo('岡山一番街 / Bic Camera / 松本清 / 唐吉訶德', '岡山県岡山市北区駅元町', '一番街(-20:00)換1500円券、Bic Camera(-20:30)換1000円券、松本清東口店(-23:00)、唐吉訶德營業至凌晨。', '岡山一番街')" transform="translate(180, 20)">
+              <rect width="150" height="50" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
+              <text x="75" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">一番街・藥妝・唐吉訶德</text>
+              <text x="75" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(松本清至23:00・唐吉凌晨)</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="alert-box" style="margin-top: 10px;">
+          <div class="alert-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.5"><polygon points="12,2 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1" fill="#D9534F"/></svg>
+            <span>百貨打烊＆兌換券彈性策略</span>
+          </div>
+          • 若想在 12/1 晚間換到 <b>一番街（20:00）</b>與 <b>Bic Camera（20:30）</b>抵用券，建議 17:00 前離開 OUTLETS（約 19:15 抵岡山）。<br>
+          • 若想在 OUTLETS 逛久一點，則把一番街、Bic Camera 與 AEON 留到 <b>12/2（週三）早上 10:00</b> 退房寄放行李後去逛（走過馬路即達）。
+        </div>
+      </div>
+    `
     },
     d6: {
         title: "Day 6 (12/02)",
