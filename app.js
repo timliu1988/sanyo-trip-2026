@@ -915,7 +915,7 @@ const ITINERARY_DATA = {
           <span class="card-time">09:30 - 12:00</span>
           <span class="tag tag-car">軍港自駕</span>
         </div>
-        <div class="card-title">廣島出發 ➔ 呉市海事歷史科學館（大和博物館）＆ 鐵鯨館</div>
+        <div class="card-title">廣島出發 ➔ 呉市海事歴史科學館（大和博物館）＆ 鐵鯨館</div>
         <div class="card-desc">
           • <b>09:30 - 10:10</b> 從維瑟爾廣島和平大道飯店出發，走廣島呉道路（クレアライン），車程約 35~40 分鐘（獨立收費道路，非 SEP 範圍，單程約 730 円）。<br>
           • <b>10:10 - 12:00</b> 參觀 1/10 大和號戰艦模型與馬路正對面的退役真實潛水艇【鐵鯨館】。車停【大和博物館停車場】或對面【youme Town 呉】。
