@@ -909,16 +909,16 @@ const ITINERARY_DATA = {
     d4: {
         title: "Day 4 (11/30)",
         contentHtml: `
-      <!-- 吳市軍港巡禮 -->
+      <!-- 呉市軍港巡禮 -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">09:30 - 12:00</span>
           <span class="tag tag-car">軍港自駕</span>
         </div>
-        <div class="card-title">廣島出發 ➔ 吳市海事歷史科學館（大和博物館）＆ 鐵鯨館</div>
+        <div class="card-title">廣島出發 ➔ 呉市海事歷史科學館（大和博物館）＆ 鐵鯨館</div>
         <div class="card-desc">
-          • <b>09:30 - 10:10</b> 從維瑟爾廣島和平大道飯店出發，走廣島吳道路（クレアライン），車程約 35~40 分鐘（獨立收費道路，非 SEP 範圍，單程約 730 円）。<br>
-          • <b>10:10 - 12:00</b> 參觀 1/10 大和號戰艦模型與馬路正對面的退役真實潛水艇【鐵鯨館】。車停【大和博物館停車場】或對面【youme Town 吳】。
+          • <b>09:30 - 10:10</b> 從維瑟爾廣島和平大道飯店出發，走廣島呉道路（クレアライン），車程約 35~40 分鐘（獨立收費道路，非 SEP 範圍，單程約 730 円）。<br>
+          • <b>10:10 - 12:00</b> 參觀 1/10 大和號戰艦模型與馬路正對面的退役真實潛水艇【鐵鯨館】。車停【大和博物館停車場】或對面【youme Town 呉】。
         </div>
         <div class="copy-chip" onclick="navigator.clipboard.writeText('広島県呉市宝町5-20')">
           <div class="copy-chip-left">
@@ -939,14 +939,14 @@ const ITINERARY_DATA = {
         </div>
       </div>
 
-      <!-- 吳市海軍咖哩與名物午餐 -->
+      <!-- 呉市海軍咖哩與名物午餐 -->
       <div class="card">
         <div class="card-header-bar">
           <span class="card-time">12:00 - 13:15</span>
-          <span class="tag tag-must">吳市美食</span>
+          <span class="tag tag-must">呉市美食</span>
         </div>
-        <div class="card-title">吳市海軍咖哩 ＆《秘密のケンミンSHOW》名物</div>
-        <div class="card-desc">三處名店皆在吳市區平地、開車順路 5 分鐘內可達，點擊下方節點開啟地址與導航便籤：</div>
+        <div class="card-title">呉市海軍咖哩 ＆《秘密のケンミンSHOW》名物</div>
+        <div class="card-desc">三處名店皆在呉市區平地、開車順路 5 分鐘內可達，點擊下方節點開啟地址與導航便籤：</div>
 
         <div class="visual-trail-card">
           <div class="visual-trail-title">
@@ -957,26 +957,26 @@ const ITINERARY_DATA = {
             <path d="M 85 55 C 130 55, 140 60, 245 60" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
             <path d="M 245 105 C 245 120, 170 120, 170 130" stroke="#3E3A39" stroke-width="2.2" stroke-dasharray="5 5"/>
 
-            <!-- 節點 1：吳海自咖哩 -->
-            <g class="trail-clickable" onclick="openMemo('呉ハイカラ食堂 / Beacon（吳海自咖哩）', '広島県呉市宝町4-21', '海上自衛隊艦艇官方認證復刻配方咖哩，大和博物館步行 2 分鐘即達。', '呉ハイカラ食堂')" transform="translate(10, 15)">
+            <!-- 節點 1：呉海自咖哩 -->
+            <g class="trail-clickable" onclick="openMemo('呉ハイカラ食堂 / Beacon（呉海自咖哩）', '広島県呉市宝町4-21', '海上自衛隊艦艇官方認證復刻配方咖哩，大和博物館步行 2 分鐘即達。', '呉ハイカラ食堂')" transform="translate(10, 15)">
               <rect width="150" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">吳海自咖哩 (艦艇配方)</text>
+              <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">呉海自咖哩 (艦艇配方)</text>
               <text x="75" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(博物館旁步行即達)</text>
               <text x="75" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 4分</text>
             </g>
 
-            <!-- 節點 2：吳冷麵 珍來軒 -->
-            <g class="trail-clickable" onclick="openMemo('呉冷麺 珍来軒（吳冷麵 珍來軒）', '広島県呉市本通4-10-1', '【秘密のケンミンSHOW】平打寬麵配特製酸甜微辣湯汁與鮮蝦仁，吳市靈魂冷麵名店！', '珍来軒+呉市')" transform="translate(170, 30)">
+            <!-- 節點 2：呉冷麵 珍來軒 -->
+            <g class="trail-clickable" onclick="openMemo('呉冷麺 珍来軒（呉冷麵 珍來軒）', '広島県呉市本通4-10-1', '【秘密のケンミンSHOW】平打寬麵配特製酸甜微辣湯汁與鮮蝦仁，呉市靈魂冷麵名店！', '珍来軒+呉市')" transform="translate(170, 30)">
               <rect width="155" height="46" rx="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">吳冷麵 珍來軒</text>
+              <text x="77" y="20" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">呉冷麵 珍來軒</text>
               <text x="77" y="34" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(番組推薦・酸甜平打冷麵)</text>
               <text x="77" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">車程 2分</text>
             </g>
 
-            <!-- 節點 3：メロンパン 吳市本店 -->
+            <!-- 節點 3：メロンパン 呉市本店 -->
             <g class="trail-clickable" onclick="openMemo('メロンパン 呉本店（橄欖球型哈密瓜麵包）', '広島県呉市本通7-14-1', '【秘密のケンミンSHOW】外型像橄欖球、內餡塞滿厚重特濃卡士達醬的昭和在地老牌麵包！', 'メロンパン+呉市本通')" transform="translate(80, 130)">
               <rect width="180" height="48" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.2"/>
-              <text x="90" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">メロンパン（吳市本店）</text>
+              <text x="90" y="21" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">メロンパン（呉市本店）</text>
               <text x="90" y="36" text-anchor="middle" font-size="9" font-weight="800" fill="#777">(橄欖球型厚卡士達麵包)</text>
             </g>
           </svg>
