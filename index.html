@@ -29,7 +29,7 @@
       <span>山陽自駕手帳</span>
     </div>
     <div class="nav-tabs">
-      <button class="nav-btn active" onclick="switchView('view-itinerary')" id="btn-itinerary">
+      <button class="nav-btn" onclick="switchView('view-itinerary')" id="btn-itinerary">
         <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
         <span>行程</span>
       </button>
@@ -46,7 +46,7 @@
 
   <main>
     <!-- 首頁 -->
-    <div id="view-home" class="view-container">
+    <div id="view-home" class="view-container active">
       <div class="hero-title-wrap">
         <h1 class="main-title">關西・瀬戸内海 自駕小旅行</h1>
         <p class="sub-title">神戸・岡山・尾道・廣島・宮島 7 日手帳</p>
@@ -181,7 +181,7 @@
     </div>
 
     <!-- 行程頁面：動態由 app.js 渲染 -->
-    <div id="view-itinerary" class="view-container active">
+    <div id="view-itinerary" class="view-container">
       <div class="day-selector" id="day-selector-bar">
         <!-- 由 app.js 動態生成 Day 1 ~ Day 7 按鈕 -->
       </div>
